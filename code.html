@@ -1,0 +1,2453 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Advocate Jay Patel | Elite Litigation Strategy</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#e9c176",
+              secondary: "#c8c6c5",
+              "on-tertiary-fixed-variant": "#474646",
+              "on-tertiary": "#313030",
+              background: "#08090a",
+              "primary-fixed-dim": "#e9c176",
+              "error-container": "#93000a",
+              "on-surface-variant": "#d1c5b4",
+              "surface-container-highest": "#1c1e1f",
+              "on-error-container": "#ffdad6",
+              "tertiary-container": "#a7a5a4",
+              "secondary-fixed-dim": "#c8c6c5",
+              "tertiary-fixed-dim": "#c9c6c5",
+              "on-surface": "#e2e2e2",
+              surface: "#0d0f10",
+              "on-tertiary-fixed": "#1c1b1b",
+              "on-primary": "#261900",
+              "inverse-on-surface": "#2f3131",
+              "outline-variant": "#4e4639",
+              "on-background": "#e2e2e2",
+              "primary-fixed": "#ffdea5",
+              "on-secondary-fixed": "#1c1b1b",
+              tertiary: "#c9c6c5",
+              "on-tertiary-container": "#3c3b3b",
+              "on-error": "#ffffff",
+              "surface-variant": "#1c1e1f",
+              "on-primary-container": "#4e3700",
+              "surface-container-high": "#141617",
+              "surface-bright": "#1c1e1f",
+              "on-secondary-container": "#bab8b7",
+              primary: "#d4af37",
+              "surface-container-lowest": "#050607",
+              "inverse-surface": "#e2e2e2",
+              "inverse-primary": "#775a19",
+              "surface-container": "#0f1112",
+              "tertiary-fixed": "#e5e2e1",
+              "secondary-container": "#4a4949",
+              "primary-container": "#c5a059",
+              outline: "#9a8f80",
+              "on-secondary-fixed-variant": "#474646",
+              "on-primary-fixed-variant": "#5d4201",
+              error: "#ff5252",
+              "surface-dim": "#08090a",
+              "secondary-fixed": "#e5e2e1",
+              "on-secondary": "#313030",
+              "on-primary-fixed": "#261900",
+              "surface-container-low": "#0b0c0d",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+            spacing: {
+              unit: "8px",
+              "section-padding": "160px",
+              "margin-page": "64px",
+              "gutter-grid": "32px",
+            },
+            fontFamily: {
+              "label-caps": ["Inter"],
+              "display-xl": ["Newsreader"],
+              "headline-md": ["Newsreader"],
+              "body-lg": ["Inter"],
+              "headline-lg": ["Newsreader"],
+              "body-md": ["Inter"],
+            },
+            fontSize: {
+              "label-caps": [
+                "12px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.15em",
+                  fontWeight: "600",
+                },
+              ],
+              "display-xl": [
+                "88px",
+                {
+                  lineHeight: "1.05",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "300",
+                },
+              ],
+              "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "400" }],
+              "body-lg": [
+                "18px",
+                {
+                  lineHeight: "1.6",
+                  letterSpacing: "0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-lg": [
+                "56px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "400",
+                },
+              ],
+              "body-md": [
+                "16px",
+                {
+                  lineHeight: "1.6",
+                  letterSpacing: "0.01em",
+                  fontWeight: "400",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #08090a;
+        overflow-x: hidden;
+      }
+
+      .backdrop-blur-md {
+        backdrop-filter: blur(16px);
+      }
+
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+
+      /* ============================================
+         GLOBAL ATMOSPHERIC GRADIENT BACKGROUND
+         ============================================ */
+      .global-aurora {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+        background: #08090a;
+      }
+
+      .aurora-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(140px);
+        opacity: 0.55;
+        will-change: transform;
+      }
+
+      .aurora-1 {
+        width: 700px;
+        height: 700px;
+        background: radial-gradient(
+          circle,
+          rgba(120, 80, 220, 0.55) 0%,
+          rgba(70, 50, 180, 0.25) 40%,
+          transparent 70%
+        );
+        top: -10%;
+        left: -10%;
+        animation: drift-1 28s ease-in-out infinite;
+      }
+
+      .aurora-2 {
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(
+          circle,
+          rgba(40, 90, 200, 0.5) 0%,
+          rgba(30, 60, 160, 0.2) 45%,
+          transparent 70%
+        );
+        top: 30%;
+        right: -15%;
+        animation: drift-2 32s ease-in-out infinite;
+      }
+
+      .aurora-3 {
+        width: 650px;
+        height: 650px;
+        background: radial-gradient(
+          circle,
+          rgba(212, 175, 55, 0.35) 0%,
+          rgba(180, 140, 40, 0.15) 45%,
+          transparent 70%
+        );
+        bottom: 5%;
+        left: 20%;
+        animation: drift-3 36s ease-in-out infinite;
+      }
+
+      .aurora-4 {
+        width: 550px;
+        height: 550px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.08) 0%,
+          rgba(200, 200, 220, 0.04) 45%,
+          transparent 70%
+        );
+        top: 60%;
+        left: 40%;
+        animation: drift-4 40s ease-in-out infinite;
+      }
+
+      .aurora-5 {
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(160, 60, 220, 0.4) 0%,
+          rgba(100, 40, 180, 0.15) 45%,
+          transparent 70%
+        );
+        top: 10%;
+        left: 50%;
+        animation: drift-5 30s ease-in-out infinite;
+      }
+
+      @keyframes drift-1 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(80px, 120px) scale(1.1);
+        }
+        66% {
+          transform: translate(-60px, 80px) scale(0.95);
+        }
+      }
+      @keyframes drift-2 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(-100px, 60px) scale(1.08);
+        }
+        66% {
+          transform: translate(50px, -80px) scale(0.92);
+        }
+      }
+      @keyframes drift-3 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(70px, -90px) scale(1.05);
+        }
+        66% {
+          transform: translate(-80px, 50px) scale(1.1);
+        }
+      }
+      @keyframes drift-4 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(120px, -100px) scale(1.15);
+        }
+      }
+      @keyframes drift-5 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        25% {
+          transform: translate(-90px, 40px) scale(1.06);
+        }
+        75% {
+          transform: translate(60px, 100px) scale(0.94);
+        }
+      }
+
+      /* Subtle noise overlay for premium texture */
+      .noise-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0.025;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      /* ============================================
+         FLOATING LAW SYMBOLS
+         ============================================ */
+      .floating-symbols {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .float-symbol {
+        position: absolute;
+        color: rgba(212, 175, 55, 0.15);
+        font-size: 28px;
+        will-change: transform;
+      }
+
+      .float-symbol.large {
+        font-size: 48px;
+        color: rgba(212, 175, 55, 0.08);
+      }
+
+      .float-symbol.purple {
+        color: rgba(160, 100, 220, 0.18);
+      }
+
+      .float-symbol.blue {
+        color: rgba(80, 130, 220, 0.18);
+      }
+
+      @keyframes float-up {
+        0% {
+          transform: translateY(20px) rotate(0deg);
+          opacity: 0;
+        }
+        15% {
+          opacity: 1;
+        }
+        85% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100px) rotate(15deg);
+          opacity: 0;
+        }
+      }
+
+      @keyframes float-drift {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+          transform: translate(15px, -20px) rotate(5deg);
+        }
+        50% {
+          transform: translate(-10px, -30px) rotate(-3deg);
+        }
+        75% {
+          transform: translate(20px, -15px) rotate(8deg);
+        }
+      }
+
+      .float-drift-1 {
+        animation: float-drift 14s ease-in-out infinite;
+      }
+      .float-drift-2 {
+        animation: float-drift 18s ease-in-out infinite reverse;
+      }
+      .float-drift-3 {
+        animation: float-drift 22s ease-in-out infinite;
+      }
+      .float-drift-4 {
+        animation: float-drift 16s ease-in-out infinite reverse;
+      }
+      .float-drift-5 {
+        animation: float-drift 20s ease-in-out infinite;
+      }
+
+      /* ============================================
+         3D LADY JUSTICE
+         ============================================ */
+      .justice-stage {
+        perspective: 1500px;
+        perspective-origin: 50% 50%;
+        transform-style: preserve-3d;
+      }
+
+      .justice-3d {
+        will-change: transform;
+        animation: justice-float 8s ease-in-out infinite;
+        transform-style: preserve-3d;
+        filter: drop-shadow(0 30px 60px rgba(212, 175, 55, 0.25))
+          drop-shadow(0 0 80px rgba(120, 80, 220, 0.2));
+      }
+
+      @keyframes justice-float {
+        0%,
+        100% {
+          transform: translateY(0) rotateY(-5deg) rotateX(2deg);
+        }
+        50% {
+          transform: translateY(-25px) rotateY(5deg) rotateX(-2deg);
+        }
+      }
+
+      .justice-glow-ring {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      .ring-1 {
+        inset: 10%;
+        border: 1px solid rgba(212, 175, 55, 0.15);
+        animation: ring-rotate 30s linear infinite;
+      }
+
+      .ring-2 {
+        inset: 5%;
+        border: 1px solid rgba(120, 80, 220, 0.12);
+        animation: ring-rotate 45s linear infinite reverse;
+      }
+
+      .ring-3 {
+        inset: 15%;
+        border: 1px dashed rgba(80, 130, 220, 0.1);
+        animation: ring-rotate 60s linear infinite;
+      }
+
+      @keyframes ring-rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .light-particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(212, 175, 55, 0.8);
+        border-radius: 50%;
+        box-shadow:
+          0 0 12px rgba(212, 175, 55, 0.9),
+          0 0 24px rgba(212, 175, 55, 0.5);
+        will-change: transform;
+      }
+
+      @keyframes particle-orbit-1 {
+        0% {
+          transform: rotate(0deg) translateX(220px) rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg) translateX(220px) rotate(-360deg);
+        }
+      }
+      @keyframes particle-orbit-2 {
+        0% {
+          transform: rotate(120deg) translateX(260px) rotate(-120deg);
+        }
+        100% {
+          transform: rotate(480deg) translateX(260px) rotate(-480deg);
+        }
+      }
+      @keyframes particle-orbit-3 {
+        0% {
+          transform: rotate(240deg) translateX(190px) rotate(-240deg);
+        }
+        100% {
+          transform: rotate(600deg) translateX(190px) rotate(-600deg);
+        }
+      }
+      @keyframes particle-orbit-4 {
+        0% {
+          transform: rotate(60deg) translateX(280px) rotate(-60deg);
+        }
+        100% {
+          transform: rotate(420deg) translateX(280px) rotate(-420deg);
+        }
+      }
+
+      .particle-1 {
+        animation: particle-orbit-1 20s linear infinite;
+        background: rgba(212, 175, 55, 0.9);
+      }
+      .particle-2 {
+        animation: particle-orbit-2 25s linear infinite;
+        background: rgba(160, 100, 220, 0.9);
+        box-shadow: 0 0 12px rgba(160, 100, 220, 0.9);
+      }
+      .particle-3 {
+        animation: particle-orbit-3 18s linear infinite;
+        background: rgba(80, 130, 220, 0.9);
+        box-shadow: 0 0 12px rgba(80, 130, 220, 0.9);
+      }
+      .particle-4 {
+        animation: particle-orbit-4 28s linear infinite;
+      }
+
+      /* ============================================
+         SCROLL REVEAL ANIMATIONS
+         ============================================ */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+          opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-stagger > * {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .reveal-stagger.visible > *:nth-child(1) {
+        transition-delay: 0.05s;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-stagger.visible > *:nth-child(2) {
+        transition-delay: 0.1s;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-stagger.visible > *:nth-child(3) {
+        transition-delay: 0.15s;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-stagger.visible > *:nth-child(4) {
+        transition-delay: 0.2s;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-stagger.visible > *:nth-child(5) {
+        transition-delay: 0.25s;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-stagger.visible > *:nth-child(6) {
+        transition-delay: 0.3s;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-stagger.visible > *:nth-child(7) {
+        transition-delay: 0.35s;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-stagger.visible > *:nth-child(8) {
+        transition-delay: 0.4s;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-stagger.visible > *:nth-child(9) {
+        transition-delay: 0.45s;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-stagger.visible > *:nth-child(10) {
+        transition-delay: 0.5s;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-stagger.visible > *:nth-child(11) {
+        transition-delay: 0.55s;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-stagger.visible > *:nth-child(12) {
+        transition-delay: 0.6s;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ============================================
+         HERO TEXT ENTRANCE
+         ============================================ */
+      @keyframes hero-rise {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-rise-1 {
+        animation: hero-rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+      }
+      .hero-rise-2 {
+        animation: hero-rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+      }
+      .hero-rise-3 {
+        animation: hero-rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+      }
+      .hero-rise-4 {
+        animation: hero-rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
+      }
+
+      @keyframes nav-rise {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .nav-rise {
+        animation: nav-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+      }
+
+      /* ============================================
+         GRADIENT TEXT
+         ============================================ */
+      .gradient-text-gold {
+        background: linear-gradient(
+          135deg,
+          #f4d472 0%,
+          #d4af37 35%,
+          #c5a059 65%,
+          #f4d472 100%
+        );
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradient-shift 8s ease infinite;
+      }
+
+      .gradient-text-mixed {
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #d4af37 40%,
+          #a06ddc 70%,
+          #5082dc 100%
+        );
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradient-shift 10s ease infinite;
+      }
+
+      @keyframes gradient-shift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      /* ============================================
+         SHIMMER NAV PILL
+         ============================================ */
+      @keyframes shimmer {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+      .animate-shimmer {
+        animation: shimmer 8s infinite linear;
+      }
+
+      .glass-pill {
+        background: linear-gradient(
+          135deg,
+          rgba(28, 30, 31, 0.6) 0%,
+          rgba(13, 15, 16, 0.5) 100%
+        );
+      }
+
+      /* ============================================
+         PREMIUM CARD EFFECTS
+         ============================================ */
+      .premium-card {
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.025) 0%,
+          rgba(255, 255, 255, 0.005) 100%
+        );
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow: hidden;
+      }
+
+      .premium-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(212, 175, 55, 0.08),
+          transparent 40%
+        );
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        pointer-events: none;
+      }
+
+      .premium-card:hover::before {
+        opacity: 1;
+      }
+
+      .premium-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          transparent 40%,
+          rgba(212, 175, 55, 0.3) 50%,
+          transparent 60%
+        );
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+      }
+
+      .premium-card:hover {
+        border-color: rgba(212, 175, 55, 0.3);
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.05) 0%,
+          rgba(160, 100, 220, 0.03) 100%
+        );
+        transform: translateY(-6px);
+        box-shadow:
+          0 30px 60px rgba(0, 0, 0, 0.5),
+          0 0 60px rgba(212, 175, 55, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      }
+
+      .premium-card:hover::after {
+        opacity: 1;
+        transform: translateX(100%);
+        transition:
+          transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+          opacity 0.4s ease;
+      }
+
+      /* Card border gradient glow on hover */
+      .gradient-border-card {
+        position: relative;
+      }
+
+      .gradient-border-card::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.4),
+          rgba(160, 100, 220, 0.4),
+          rgba(80, 130, 220, 0.4)
+        );
+        border-radius: inherit;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+      }
+
+      .gradient-border-card:hover::before {
+        opacity: 1;
+      }
+
+      /* ============================================
+         BUTTON EFFECTS
+         ============================================ */
+      .btn-primary {
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          #f4d472 0%,
+          #d4af37 50%,
+          #c5a059 100%
+        );
+        background-size: 200% 200%;
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow: hidden;
+      }
+
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          transparent 30%,
+          rgba(255, 255, 255, 0.3) 50%,
+          transparent 70%
+        );
+        transform: translateX(-100%);
+        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .btn-primary:hover::before {
+        transform: translateX(100%);
+      }
+
+      .btn-primary:hover {
+        background-position: 100% 100%;
+        box-shadow:
+          0 20px 50px rgba(212, 175, 55, 0.35),
+          0 0 60px rgba(212, 175, 55, 0.2);
+        transform: translateY(-3px);
+      }
+
+      .btn-ghost {
+        position: relative;
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow: hidden;
+      }
+
+      .btn-ghost::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.15),
+          rgba(160, 100, 220, 0.1)
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .btn-ghost:hover {
+        border-color: rgba(212, 175, 55, 0.4);
+        transform: translateY(-3px);
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.3),
+          0 0 30px rgba(212, 175, 55, 0.1);
+      }
+
+      .btn-ghost:hover::before {
+        opacity: 1;
+      }
+
+      .btn-ghost > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ============================================
+         SECTION-SPECIFIC GRADIENT BACKDROPS
+         ============================================ */
+      .section-glow-purple {
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(120, 80, 220, 0.18) 0%,
+          transparent 60%
+        );
+        filter: blur(100px);
+        pointer-events: none;
+      }
+
+      .section-glow-blue {
+        position: absolute;
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(60, 110, 220, 0.18) 0%,
+          transparent 60%
+        );
+        filter: blur(100px);
+        pointer-events: none;
+      }
+
+      .section-glow-gold {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(212, 175, 55, 0.15) 0%,
+          transparent 60%
+        );
+        filter: blur(100px);
+        pointer-events: none;
+      }
+
+      /* ============================================
+         HERO STATUE LIGHTING
+         ============================================ */
+      .hero-spotlight {
+        background:
+          radial-gradient(
+            circle at 75% 50%,
+            rgba(212, 175, 55, 0.18) 0%,
+            transparent 45%
+          ),
+          radial-gradient(
+            circle at 60% 60%,
+            rgba(160, 100, 220, 0.12) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 85% 30%,
+            rgba(80, 130, 220, 0.1) 0%,
+            transparent 50%
+          );
+      }
+
+      /* ============================================
+         CRISIS SECTION
+         ============================================ */
+      .crisis-bg {
+        background:
+          radial-gradient(
+            circle at 25% 50%,
+            rgba(180, 30, 50, 0.25) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            circle at 75% 30%,
+            rgba(120, 40, 200, 0.18) 0%,
+            transparent 55%
+          ),
+          linear-gradient(135deg, #0d0d0d 0%, #1a0a14 50%, #1a1018 100%);
+      }
+
+      @keyframes pulse-error {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.6;
+          transform: scale(1.15);
+        }
+      }
+      .animate-pulse-error {
+        animation: pulse-error 3s ease-in-out infinite;
+      }
+
+      /* ============================================
+         INPUT FIELDS
+         ============================================ */
+      .input-line,
+      .input-line:hover,
+      .input-line:focus,
+      .input-line:active {
+        background-color: transparent !important;
+        background-image: none !important;
+        border: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-radius: 0 !important;
+        padding: 14px 0 !important;
+        color: #ffffff !important;
+        font-size: 16px;
+        letter-spacing: 0.01em;
+        transition:
+          border-color 0.4s ease,
+          box-shadow 0.4s ease;
+        box-shadow: none !important;
+        --tw-ring-shadow: 0 0 #0000 !important;
+        --tw-ring-color: transparent !important;
+      }
+
+      .input-line::placeholder {
+        color: rgba(255, 255, 255, 0.25) !important;
+        font-weight: 300;
+      }
+
+      .input-line:hover {
+        border-bottom-color: rgba(255, 255, 255, 0.25) !important;
+      }
+
+      .input-line:focus {
+        outline: none !important;
+        border-bottom-color: #d4af37 !important;
+        box-shadow: 0 1px 0 0 rgba(212, 175, 55, 0.4) !important;
+      }
+
+      /* Kill autofill white background (Chrome/Safari) */
+      .input-line:-webkit-autofill,
+      .input-line:-webkit-autofill:hover,
+      .input-line:-webkit-autofill:focus {
+        -webkit-text-fill-color: #ffffff !important;
+        -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+        transition: background-color 5000s ease-in-out 0s;
+        caret-color: #d4af37;
+      }
+
+      /* ============================================
+         AUTHORITY STRIP MICRO ANIMATIONS
+         ============================================ */
+      .authority-item {
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .authority-item:hover {
+        transform: translateY(-3px);
+      }
+      .authority-item:hover .material-symbols-outlined {
+        color: #f4d472;
+        transform: scale(1.15) rotate(-5deg);
+        filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.6));
+      }
+
+      /* ============================================
+         PHASE CARDS HOVER
+         ============================================ */
+      .phase-card {
+        position: relative;
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow: hidden;
+      }
+      .phase-card::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(180deg, #d4af37, #a06ddc, #5082dc);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .phase-card:hover::after {
+        transform: scaleY(1);
+      }
+      .phase-card:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.04) 0%,
+          rgba(160, 100, 220, 0.03) 100%
+        );
+        border-color: rgba(212, 175, 55, 0.25);
+        transform: translateX(8px);
+      }
+
+      /* ============================================
+         SCROLLBAR
+         ============================================ */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #08090a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #d4af37, #a06ddc);
+        border-radius: 4px;
+      }
+
+      /* Mobile adjustments */
+      @media (max-width: 1024px) {
+        .aurora-orb {
+          opacity: 0.4;
+        }
+      }
+    </style>
+  </head>
+  <body class="text-on-surface selection:bg-primary/30 selection:text-primary">
+    <!-- ============================================
+         GLOBAL ANIMATED AURORA BACKGROUND
+         ============================================ -->
+    <div class="global-aurora">
+      <div class="aurora-orb aurora-1"></div>
+      <div class="aurora-orb aurora-2"></div>
+      <div class="aurora-orb aurora-3"></div>
+      <div class="aurora-orb aurora-4"></div>
+      <div class="aurora-orb aurora-5"></div>
+    </div>
+    <div class="noise-overlay"></div>
+
+    <!-- ============================================
+         TOP NAV
+         ============================================ -->
+    <nav
+      class="fixed top-0 w-full z-50 flex justify-between items-center px-6 nav-rise"
+      style="background: transparent"
+    >
+      <div class="max-w-6xl mx-auto w-full mt-6">
+        <div
+          class="glass-pill relative overflow-hidden flex justify-between items-center px-8 py-2 rounded-full border border-white/10 backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.5),0_0_30px_rgba(212,175,55,0.08)] transition-all duration-500 hover:border-white/20 hover:shadow-[0_0_50px_rgba(0,0,0,0.5),0_0_40px_rgba(212,175,55,0.15)]"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-shimmer pointer-events-none"
+          ></div>
+          <div
+            class="font-headline-md text-2xl text-white tracking-tighter z-10"
+          >
+            Advocate Jay Patel
+          </div>
+          <div class="hidden lg:flex items-center gap-12 z-10">
+            <a
+              class="relative font-label-caps text-label-caps text-on-surface/60 hover:text-white transition-all uppercase tracking-[0.2em] group"
+              href="#expertise"
+            >
+              Expertise
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-primary to-purple-400 transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_rgba(212,175,55,0.8)]"
+              ></span>
+            </a>
+            <a
+              class="relative font-label-caps text-label-caps text-on-surface/60 hover:text-white transition-all uppercase tracking-[0.2em] group"
+              href="#strategy"
+            >
+              Strategy
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-primary to-purple-400 transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_rgba(212,175,55,0.8)]"
+              ></span>
+            </a>
+            <a
+              class="relative font-label-caps text-label-caps text-on-surface/60 hover:text-white transition-all uppercase tracking-[0.2em] group"
+              href="#crisis"
+            >
+              Crisis Response
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-primary to-purple-400 transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_rgba(212,175,55,0.8)]"
+              ></span>
+            </a>
+            <a
+              class="relative font-label-caps text-label-caps text-on-surface/60 hover:text-white transition-all uppercase tracking-[0.2em] group"
+              href="#about"
+            >
+              About
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-primary to-purple-400 transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_rgba(212,175,55,0.8)]"
+              ></span>
+            </a>
+          </div>
+          <a
+            class="btn-primary z-10 font-label-caps text-label-caps text-on-primary px-8 py-3 rounded-full uppercase tracking-widest flex items-center gap-2 border border-white/10"
+            href="#contact"
+          >
+            Consultation
+            <span class="material-symbols-outlined scale-75"
+              >arrow_forward</span
+            >
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ============================================
+         FLOATING ACTION BUTTONS
+         ============================================ -->
+    <aside class="fixed right-8 bottom-8 z-50 flex flex-col items-end gap-4">
+      <a
+        class="glass-panel text-on-surface p-4 rounded-full hover:bg-primary hover:text-on-primary transition-all duration-500 shadow-xl hover:scale-110 hover:rotate-6 hover:shadow-[0_0_30px_rgba(212,175,55,0.4)]"
+        href="#"
+        title="WhatsApp"
+      >
+        <span class="material-symbols-outlined">chat</span>
+      </a>
+      <a
+        class="glass-panel text-on-surface p-4 rounded-full hover:bg-primary hover:text-on-primary transition-all duration-500 shadow-xl hover:scale-110 hover:-rotate-6 hover:shadow-[0_0_30px_rgba(212,175,55,0.4)]"
+        href="#"
+        title="Call Now"
+      >
+        <span class="material-symbols-outlined">call</span>
+      </a>
+    </aside>
+
+    <main class="relative z-10">
+      <!-- ============================================
+           HERO
+           ============================================ -->
+      <section
+        class="relative min-h-screen flex items-center px-margin-page overflow-hidden"
+      >
+        <!-- 3D Lady Justice -->
+        <div
+          class="absolute inset-y-0 right-0 w-full lg:w-[60%] h-full flex items-center justify-center justice-stage z-10"
+        >
+          <div class="relative w-full h-full flex items-center justify-center">
+            <!-- Orbital particles -->
+            <div class="absolute top-1/2 left-1/2 w-1 h-1">
+              <div class="light-particle particle-1"></div>
+              <div class="light-particle particle-2"></div>
+              <div class="light-particle particle-3"></div>
+              <div class="light-particle particle-4"></div>
+            </div>
+
+            <!-- Lady Justice image with 3D float -->
+            <div
+              class="justice-3d relative w-full h-full flex items-center justify-center"
+              id="justice3d"
+            >
+              <img
+                alt="Lady Justice"
+                class="w-auto h-[85%] object-contain"
+                src="https://lh3.googleusercontent.com/aida/ADBb0uhpgNXbVU0_3VDoSW2WOywaDwtMWFqZL_GcwSQgOdEIMvybIZZWOQK3x2EZ1znmjbo7GaDYRfRHvBst3fTFJ7oT4DJpcXzm6HOH5dj-Y_Ai2wjEqePQqRsMigYzJfMAd548gXbcLUCAd3x4ai8eetvl212TnhPG-o4kbOpcB_Yt62JkijKkCskNGfS8IwC2V9DAGNnW1sNt1wPlCZsQE92drY7lSEL7uplkb4vC5AjrpOXAIAzFb9cAuVD9-0iIQDRei6GyPO_t"
+                style="
+                  mask-image:
+                    radial-gradient(
+                      circle at 50% 50%,
+                      black 40%,
+                      transparent 75%
+                    ),
+                    linear-gradient(
+                      to bottom,
+                      transparent 0%,
+                      black 12%,
+                      black 88%,
+                      transparent 100%
+                    );
+                  mask-composite: intersect;
+                  -webkit-mask-composite: source-in;
+                "
+              />
+            </div>
+
+            <!-- Hero spotlight overlay -->
+            <div
+              class="absolute inset-0 hero-spotlight pointer-events-none"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Left content fade for legibility -->
+        <div
+          class="absolute inset-y-0 left-0 w-full lg:w-[55%] z-20 pointer-events-none"
+          style="
+            background: linear-gradient(
+              to right,
+              #08090a 0%,
+              rgba(8, 9, 10, 0.85) 40%,
+              transparent 70%
+            );
+          "
+        ></div>
+
+        <!-- Content -->
+        <div class="relative z-30 space-y-8 pt-20 max-w-2xl">
+          <div
+            class="hero-rise-1 inline-flex items-center gap-4 text-primary font-label-caps text-label-caps uppercase tracking-[0.4em]"
+          >
+            <span
+              class="w-12 h-px bg-gradient-to-r from-transparent via-primary to-transparent"
+            ></span>
+            Legal Excellence
+          </div>
+          <h1
+            class="hero-rise-2 font-display-xl text-white text-headline-lg leading-[1.05]"
+          >
+            When Business Risk Becomes Criminal Exposure, <br />
+            <span class="italic relative inline-block gradient-text-mixed">
+              Strategy Becomes Critical.
+              <span
+                class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary/40 via-purple-500/40 to-blue-500/40 blur-sm"
+              ></span>
+            </span>
+          </h1>
+          <p
+            class="hero-rise-3 font-body-lg text-on-surface/80 max-w-xl leading-relaxed"
+          >
+            Advising and defending individuals, directors, and businesses in
+            high-stakes criminal, financial, and complex litigation matters with
+            surgical precision.
+          </p>
+          <div class="hero-rise-4 flex flex-wrap gap-6 pt-6">
+            <button
+              class="btn-primary font-label-caps text-label-caps text-on-primary px-10 py-5 rounded-full uppercase tracking-widest flex items-center gap-2"
+            >
+              Learn More
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+            <button
+              class="btn-ghost font-label-caps text-label-caps text-white px-10 py-5 rounded-full uppercase tracking-widest"
+            >
+              Immediate Assistance
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           AUTHORITY STRIP (slim)
+           ============================================ -->
+      <section
+        class="py-6 backdrop-blur-sm border-y border-white/5 relative z-10"
+        style="
+          background: linear-gradient(
+            90deg,
+            rgba(120, 80, 220, 0.04) 0%,
+            rgba(212, 175, 55, 0.04) 50%,
+            rgba(80, 130, 220, 0.04) 100%
+          );
+        "
+      >
+        <div
+          class="px-margin-page grid grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger"
+        >
+          <div class="authority-item flex flex-row items-center gap-3 group">
+            <span
+              class="material-symbols-outlined text-primary transition-all duration-500"
+              style="font-size: 20px"
+              >gavel</span
+            >
+            <span
+              class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-wider group-hover:text-on-surface/80 transition-colors"
+              >Trial-Focused Litigation</span
+            >
+          </div>
+          <div class="authority-item flex flex-row items-center gap-3 group">
+            <span
+              class="material-symbols-outlined text-primary transition-all duration-500"
+              style="font-size: 20px"
+              >verified_user</span
+            >
+            <span
+              class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-wider group-hover:text-on-surface/80 transition-colors"
+              >High-Stakes Matters</span
+            >
+          </div>
+          <div class="authority-item flex flex-row items-center gap-3 group">
+            <span
+              class="material-symbols-outlined text-primary transition-all duration-500"
+              style="font-size: 20px"
+              >account_balance</span
+            >
+            <span
+              class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-wider group-hover:text-on-surface/80 transition-colors"
+              >Corporate Expertise</span
+            >
+          </div>
+          <div class="authority-item flex flex-row items-center gap-3 group">
+            <span
+              class="material-symbols-outlined text-primary transition-all duration-500"
+              style="font-size: 20px"
+              >person</span
+            >
+            <span
+              class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-wider group-hover:text-on-surface/80 transition-colors"
+              >Direct Advocate Access</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           PHILOSOPHY / POSITIONING
+           ============================================ -->
+      <section
+        class="relative py-section-padding px-margin-page overflow-hidden"
+      >
+        <div class="section-glow-purple" style="top: -10%; right: -10%"></div>
+        <div class="section-glow-gold" style="bottom: -10%; left: -10%"></div>
+
+        <div class="floating-symbols">
+          <span
+            class="material-symbols-outlined float-symbol purple float-drift-1"
+            style="top: 10%; right: 15%"
+            >scale</span
+          >
+          <span
+            class="material-symbols-outlined float-symbol blue float-drift-3"
+            style="bottom: 20%; right: 8%"
+            >menu_book</span
+          >
+        </div>
+
+        <div class="relative z-10 grid lg:grid-cols-2 gap-24 items-center">
+          <div class="order-2 lg:order-1 reveal">
+            <div
+              class="relative aspect-[4/5] overflow-hidden rounded-xl border border-white/10 group shadow-2xl gradient-border-card"
+            >
+              <img
+                alt="Minimalist legal workspace"
+                class="w-full h-full object-cover opacity-30 grayscale group-hover:scale-105 group-hover:opacity-40 transition-all duration-1000"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-2gJ82J5zshcSoDIsUmuzFRsubuKfErqGfYr0M_kfozEkErxBK5ViBIbE4_GN0JcKRZkGRFJTHObz9tWhWDZcacBJwiG0NAUJK3Iw3c4GxjpWcrC-Saw_7-rtcmE0uAB4QRHeoCWcnpGqP2cJ_ZodzVq0n3T4HYOwF0406w0RqvB-0Sc5G8F9cGUR9_2OJeEWu8VpsUteue_oQoWVvFD1JXuGWJjsE6XtQqu30Gv_tk1U2iC5Hf4iqbSrgBwyRMuwW0IktE9wRwM"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"
+              ></div>
+              <!-- Gradient color overlay -->
+              <div
+                class="absolute inset-0 mix-blend-overlay opacity-30 group-hover:opacity-50 transition-opacity duration-1000"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(212, 175, 55, 0.3) 0%,
+                    rgba(160, 100, 220, 0.3) 100%
+                  );
+                "
+              ></div>
+
+              <div
+                class="absolute bottom-12 left-12 p-8 glass-panel max-w-xs rounded-xl shadow-2xl border-white/10"
+              >
+                <p
+                  class="font-label-caps text-label-caps text-primary mb-3 uppercase tracking-widest"
+                >
+                  Core Philosophy
+                </p>
+                <p
+                  class="font-headline-md text-headline-md italic text-white leading-tight"
+                >
+                  "Victory is determined before the court is even in session."
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2 space-y-10 reveal">
+            <h2
+              class="font-headline-lg text-headline-lg leading-tight text-white"
+            >
+              Execution is the only measure of
+              <span class="italic gradient-text-gold">Success.</span>
+            </h2>
+            <div
+              class="w-24 h-px bg-gradient-to-r from-primary via-purple-400 to-transparent"
+            ></div>
+            <p class="font-body-lg text-on-surface/60 leading-relaxed">
+              In the legal arena, timing is not a factor—it is the factor. Our
+              positioning is defined by an editorial rigor that treats every
+              case as a complex piece of architecture. We do not just react; we
+              orchestrate outcomes through precise tactical maneuvers and deep
+              intellectual analysis of the law.
+            </p>
+            <div class="pt-4">
+              <button
+                class="btn-ghost font-label-caps text-label-caps text-primary flex items-center gap-2 uppercase tracking-widest group px-6 py-3 rounded-full"
+              >
+                The Strategic Approach
+                <span
+                  class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+                  >east</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           PRACTICE AREAS
+           ============================================ -->
+      <section
+        class="relative py-section-padding px-margin-page overflow-hidden"
+        id="expertise"
+      >
+        <div class="section-glow-blue" style="top: 20%; left: -10%"></div>
+        <div class="section-glow-purple" style="bottom: 10%; right: -10%"></div>
+
+        <div class="floating-symbols">
+          <span
+            class="material-symbols-outlined float-symbol float-drift-2"
+            style="top: 15%; left: 30%"
+            >balance</span
+          >
+          <span
+            class="material-symbols-outlined float-symbol blue float-drift-4"
+            style="top: 60%; right: 20%"
+            >gavel</span
+          >
+          <span
+            class="material-symbols-outlined float-symbol purple large float-drift-5"
+            style="bottom: 20%; left: 12%"
+            >scale</span
+          >
+        </div>
+
+        <div class="relative z-10">
+          <div
+            class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8 reveal"
+          >
+            <div class="space-y-4">
+              <p
+                class="font-label-caps text-label-caps text-primary uppercase tracking-[0.4em]"
+              >
+                Core Competencies
+              </p>
+              <h2 class="font-headline-lg text-headline-lg text-white">
+                Fields of
+                <span class="gradient-text-mixed italic">Practice</span>
+              </h2>
+            </div>
+            <p class="font-body-md text-on-surface/40 max-w-sm">
+              Specialized legal solutions for complex individual and corporate
+              challenges.
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger"
+          >
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >payments</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Cheque Return Matters
+              </h3>
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >savings</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Money Recovery Suits
+              </h3>
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >family_restroom</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Family Matters
+              </h3>
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >heart_broken</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Divorce Cases
+              </h3>
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >shield_person</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Domestic Violence
+              </h3>
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >terrain</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Land Revenue Cases
+              </h3>
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >map</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Land Disputes
+              </h3>
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >key</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Bail Matters
+              </h3>
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >gavel</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Criminal Cases
+              </h3>
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >account_balance</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Sessions Court
+              </h3>
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >policy</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                CBI Cases
+              </h3>
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >currency_exchange</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                ED &amp; Money Laundering
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           STRATEGIC FRAMEWORK
+           ============================================ -->
+      <section
+        class="relative py-section-padding px-margin-page overflow-hidden"
+        id="strategy"
+      >
+        <div class="section-glow-purple" style="top: 20%; right: 10%"></div>
+        <div class="section-glow-blue" style="bottom: 20%; left: 10%"></div>
+
+        <div class="floating-symbols">
+          <span
+            class="material-symbols-outlined float-symbol purple float-drift-1"
+            style="top: 30%; left: 5%"
+            >menu_book</span
+          >
+          <span
+            class="material-symbols-outlined float-symbol blue float-drift-3"
+            style="bottom: 30%; right: 10%"
+            >balance</span
+          >
+        </div>
+
+        <div class="relative z-10 grid lg:grid-cols-12 gap-16">
+          <div class="lg:col-span-5 space-y-12 reveal">
+            <div>
+              <p
+                class="font-label-caps text-label-caps text-primary mb-4 uppercase tracking-[0.3em]"
+              >
+                The Blueprint
+              </p>
+              <h2 class="font-headline-lg text-headline-lg text-white">
+                Strategic
+                <span class="gradient-text-gold italic">Framework</span>
+              </h2>
+            </div>
+            <div
+              class="p-10 glass-panel rounded-xl border-l-2 border-l-primary/40 relative overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 opacity-30"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(212, 175, 55, 0.05) 0%,
+                    rgba(160, 100, 220, 0.08) 100%
+                  );
+                "
+              ></div>
+              <p
+                class="relative font-body-lg text-on-surface/70 italic leading-relaxed"
+              >
+                "Operational excellence in the courtroom is a product of
+                exhaustive intellectual preparation behind the scenes."
+              </p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 space-y-4 reveal-stagger">
+            <div
+              class="phase-card p-8 glass-panel rounded-xl border-white/5 relative"
+            >
+              <div class="flex justify-between items-start mb-4">
+                <span
+                  class="font-label-caps text-label-caps text-primary uppercase tracking-widest"
+                  >Phase 01</span
+                >
+                <span
+                  class="material-symbols-outlined text-primary/30 transition-all duration-500 group-hover:text-primary group-hover:rotate-12"
+                  >analytics</span
+                >
+              </div>
+              <h3 class="font-headline-md text-headline-md text-white mb-2">
+                Case Analysis
+              </h3>
+              <p class="font-body-md text-on-surface/50">
+                Exhaustive review of factual landscape and legislative nuance.
+              </p>
+            </div>
+            <div
+              class="phase-card p-8 glass-panel rounded-xl border-white/5 relative"
+            >
+              <div class="flex justify-between items-start mb-4">
+                <span
+                  class="font-label-caps text-label-caps text-primary uppercase tracking-widest"
+                  >Phase 02</span
+                >
+                <span
+                  class="material-symbols-outlined text-primary/30 transition-all duration-500"
+                  >security</span
+                >
+              </div>
+              <h3 class="font-headline-md text-headline-md text-white mb-2">
+                Risk Assessment
+              </h3>
+              <p class="font-body-md text-on-surface/50">
+                Identifying exposure points and secondary consequences.
+              </p>
+            </div>
+            <div
+              class="phase-card p-8 glass-panel rounded-xl border-white/5 relative"
+            >
+              <div class="flex justify-between items-start mb-4">
+                <span
+                  class="font-label-caps text-label-caps text-primary uppercase tracking-widest"
+                  >Phase 03</span
+                >
+                <span
+                  class="material-symbols-outlined text-primary/30 transition-all duration-500"
+                  >model_training</span
+                >
+              </div>
+              <h3 class="font-headline-md text-headline-md text-white mb-2">
+                Strategy Development
+              </h3>
+              <p class="font-body-md text-on-surface/50">
+                Constructing multi-tier defensive and offensive postures.
+              </p>
+            </div>
+            <div
+              class="phase-card p-8 glass-panel rounded-xl border-white/5 relative"
+            >
+              <div class="flex justify-between items-start mb-4">
+                <span
+                  class="font-label-caps text-label-caps text-primary uppercase tracking-widest"
+                  >Phase 04</span
+                >
+                <span
+                  class="material-symbols-outlined text-primary/30 transition-all duration-500"
+                  >gavel</span
+                >
+              </div>
+              <h3 class="font-headline-md text-headline-md text-white mb-2">
+                Courtroom Execution
+              </h3>
+              <p class="font-body-md text-on-surface/50">
+                High-precision advocacy focused on trial-ready presentation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           CRISIS RESPONSE
+           ============================================ -->
+      <section
+        class="relative py-section-padding px-margin-page overflow-hidden"
+        id="crisis"
+      >
+        <div
+          class="reveal relative z-10 overflow-hidden rounded-3xl border border-error/20 p-12 lg:p-24 backdrop-blur-xl shadow-2xl crisis-bg"
+        >
+          <div
+            class="absolute -right-20 -top-20 w-96 h-96 bg-error/10 rounded-full blur-[100px] animate-pulse-error"
+          ></div>
+          <div
+            class="absolute -left-20 -bottom-20 w-96 h-96 rounded-full blur-[100px] animate-pulse-error"
+            style="background: rgba(120, 40, 200, 0.15)"
+          ></div>
+
+          <div class="floating-symbols">
+            <span
+              class="material-symbols-outlined float-symbol float-drift-2"
+              style="top: 20%; right: 30%; color: rgba(255, 82, 82, 0.2)"
+              >warning</span
+            >
+            <span
+              class="material-symbols-outlined float-symbol purple float-drift-4"
+              style="bottom: 30%; left: 40%"
+              >priority_high</span
+            >
+          </div>
+
+          <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+              <div
+                class="inline-flex items-center gap-3 text-error px-5 py-2 border border-error/30 rounded-full font-label-caps text-label-caps uppercase bg-error/5 backdrop-blur-md"
+              >
+                <span
+                  class="w-2 h-2 bg-error rounded-full animate-pulse"
+                ></span>
+                Critical Response Unit
+              </div>
+              <h2 class="font-headline-lg text-headline-lg text-white">
+                Immediate
+                <span
+                  class="italic"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #ff5252 0%,
+                      #a06ddc 100%
+                    );
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                  "
+                  >Intervention.</span
+                >
+              </h2>
+              <p class="font-body-lg text-on-surface/70 leading-relaxed">
+                Facing an FIR, Police inquiry, ED/CBI involvement, or an
+                imminent arrest? Every second without elite counsel is an
+                irreversible risk.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                <div
+                  class="flex items-center gap-4 text-on-surface/80 group transition-all duration-500 hover:translate-x-2"
+                >
+                  <span
+                    class="text-error/60 font-bold text-lg group-hover:text-error transition-colors"
+                    >01</span
+                  >
+                  <span
+                    class="font-label-caps text-label-caps uppercase tracking-widest"
+                    >FIR Filing &amp; Quashing</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-4 text-on-surface/80 group transition-all duration-500 hover:translate-x-2"
+                >
+                  <span
+                    class="text-error/60 font-bold text-lg group-hover:text-error transition-colors"
+                    >02</span
+                  >
+                  <span
+                    class="font-label-caps text-label-caps uppercase tracking-widest"
+                    >ED Notices</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-4 text-on-surface/80 group transition-all duration-500 hover:translate-x-2"
+                >
+                  <span
+                    class="text-error/60 font-bold text-lg group-hover:text-error transition-colors"
+                    >03</span
+                  >
+                  <span
+                    class="font-label-caps text-label-caps uppercase tracking-widest"
+                    >CBI Inquiries</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-4 text-on-surface/80 group transition-all duration-500 hover:translate-x-2"
+                >
+                  <span
+                    class="text-error/60 font-bold text-lg group-hover:text-error transition-colors"
+                    >04</span
+                  >
+                  <span
+                    class="font-label-caps text-label-caps uppercase tracking-widest"
+                    >Anticipatory Bail</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center lg:justify-end">
+              <a
+                class="font-label-caps text-label-caps text-white px-12 py-8 rounded-full hover:scale-105 transition-all duration-500 uppercase tracking-widest text-center flex flex-col items-center gap-2 border border-white/10 relative overflow-hidden group"
+                href="#contact"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    #1a1c1c 0%,
+                    #ff5252 50%,
+                    #a06ddc 100%
+                  );
+                  background-size: 200% 200%;
+                  box-shadow: 0 20px 50px rgba(255, 82, 82, 0.4);
+                "
+              >
+                <span
+                  class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
+                ></span>
+                <span class="font-bold relative">Emergency Consultation</span>
+                <span class="text-[10px] opacity-80 font-semibold relative"
+                  >Direct Access to Jay Patel</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           ABOUT
+           ============================================ -->
+      <section
+        class="relative py-section-padding px-margin-page overflow-hidden"
+        id="about"
+      >
+        <div class="section-glow-gold" style="top: 0; right: 0"></div>
+        <div class="section-glow-blue" style="bottom: 0; left: 0"></div>
+
+        <div class="floating-symbols">
+          <span
+            class="material-symbols-outlined float-symbol purple float-drift-1"
+            style="top: 40%; left: 5%"
+            >scale</span
+          >
+          <span
+            class="material-symbols-outlined float-symbol blue float-drift-3"
+            style="top: 20%; right: 8%"
+            >menu_book</span
+          >
+        </div>
+
+        <div class="relative z-10 grid lg:grid-cols-12 gap-24 items-center">
+          <div class="lg:col-span-5 relative group reveal">
+            <div
+              class="absolute -inset-4 rounded-xl blur-xl transition-all duration-700"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(212, 175, 55, 0.1) 0%,
+                  rgba(160, 100, 220, 0.1) 100%
+                );
+              "
+            ></div>
+            <div
+              class="relative z-10 rounded-xl overflow-hidden border border-white/10 shadow-2xl gradient-border-card"
+            >
+              <img
+                alt="Professional portrait of Advocate Jay Patel"
+                class="w-full aspect-[3/4] object-cover grayscale brightness-75 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-1000"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV2NKXp3M_ekAxe53Pu1RCb8Y2kkAcD4U7y4zHmPEKe20QWjO4i9tuFTVi9XKQlrqZQOf-QLKlNHw5JxJ5pheqybOMvFnHa-NhpaS5-F72Pfr6I7SzaA0Zg81Hl3krd6ekWH3ownVd-dBECjiPpO5TtV22uIE9xJosSIRbBo3VMRSEeV9jJQ3dr7MsqI5QtR1AvqHiB4Gf31ejSzlqGP2HyNOWqvUu0iDYkG6j8qD4U_AmaELuup-IoiMWNybjO2DiuHFgXOMX8_0"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"
+              ></div>
+              <div
+                class="absolute inset-0 mix-blend-overlay opacity-20 group-hover:opacity-40 transition-opacity duration-1000"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(212, 175, 55, 0.4) 0%,
+                    rgba(160, 100, 220, 0.3) 100%
+                  );
+                "
+              ></div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 space-y-10 reveal">
+            <div>
+              <p
+                class="font-label-caps text-label-caps text-primary mb-6 uppercase tracking-widest"
+              >
+                The Lead Advocate
+              </p>
+              <h2
+                class="font-headline-lg text-headline-lg text-white mb-8 leading-tight"
+              >
+                Gujarat High Court Exposure. <br />
+                <span class="italic font-light gradient-text-mixed"
+                  >Strategic Precision.</span
+                >
+              </h2>
+            </div>
+            <div
+              class="space-y-6 font-body-lg text-on-surface/60 leading-relaxed max-w-2xl"
+            >
+              <p>
+                Advocate Jay Patel operates with a singular focus on
+                trial-centric litigation. His practice is built on the belief
+                that a case is won long before the final argument through
+                meticulous handling of procedural nuances and strategic evidence
+                management.
+              </p>
+              <p>
+                With significant exposure in the Gujarat High Court and various
+                specialized tribunals, his approach combines the aggression of a
+                seasoned trial lawyer with the calculated restraint of a legal
+                strategist.
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 reveal-stagger"
+            >
+              <div class="premium-card p-6 rounded-xl">
+                <p class="font-headline-md text-white mb-2 italic">
+                  Trial-Centric
+                </p>
+                <p class="text-sm text-on-surface/40">
+                  Preparing for the final courtroom battle from day one.
+                </p>
+              </div>
+              <div class="premium-card p-6 rounded-xl">
+                <p class="font-headline-md text-white mb-2 italic">
+                  Direct Handling
+                </p>
+                <p class="text-sm text-on-surface/40">
+                  No junior delegation for high-stakes strategic moves.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           CONTACT
+           ============================================ -->
+      <section
+        class="relative py-section-padding px-margin-page border-t border-white/5 overflow-hidden"
+        id="contact"
+      >
+        <div class="section-glow-purple" style="top: 10%; left: -5%"></div>
+        <div class="section-glow-gold" style="bottom: 10%; right: -5%"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+          <div class="grid lg:grid-cols-2 gap-24">
+            <div class="space-y-12 reveal">
+              <div>
+                <h2 class="font-headline-lg text-headline-lg text-white mb-6">
+                  Initiate Strategic
+                  <span class="gradient-text-gold italic">Consultation</span>
+                </h2>
+                <p class="font-body-lg text-on-surface/50">
+                  Formal engagement begins with a confidential review of your
+                  legal posture. We operate with absolute discretion.
+                </p>
+              </div>
+              <div class="space-y-8 reveal-stagger">
+                <div
+                  class="flex items-center gap-6 group transition-all duration-500 hover:translate-x-2"
+                >
+                  <div
+                    class="w-16 h-16 rounded-full flex items-center justify-center border border-primary/20 transition-all duration-500 group-hover:scale-110 group-hover:border-primary/60"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 175, 55, 0.08) 0%,
+                        rgba(160, 100, 220, 0.05) 100%
+                      );
+                    "
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary group-hover:rotate-12 transition-transform duration-500"
+                      >call</span
+                    >
+                  </div>
+                  <div>
+                    <p
+                      class="font-label-caps text-label-caps text-primary uppercase text-[10px] tracking-widest"
+                    >
+                      Direct Line
+                    </p>
+                    <a
+                      class="text-2xl text-white hover:text-primary transition-colors"
+                      href="tel:+910000000000"
+                      >+91 000 000 0000</a
+                    >
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-6 group transition-all duration-500 hover:translate-x-2"
+                >
+                  <div
+                    class="w-16 h-16 rounded-full flex items-center justify-center border border-primary/20 transition-all duration-500 group-hover:scale-110 group-hover:border-primary/60"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 175, 55, 0.08) 0%,
+                        rgba(80, 130, 220, 0.05) 100%
+                      );
+                    "
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary group-hover:rotate-12 transition-transform duration-500"
+                      >mail</span
+                    >
+                  </div>
+                  <div>
+                    <p
+                      class="font-label-caps text-label-caps text-primary uppercase text-[10px] tracking-widest"
+                    >
+                      Confidential Email
+                    </p>
+                    <p class="text-2xl text-white">
+                      confidential@jaypatel.legal
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-6 group transition-all duration-500 hover:translate-x-2"
+                >
+                  <div
+                    class="w-16 h-16 rounded-full flex items-center justify-center border border-primary/20 transition-all duration-500 group-hover:scale-110 group-hover:border-primary/60"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(160, 100, 220, 0.08) 0%,
+                        rgba(80, 130, 220, 0.05) 100%
+                      );
+                    "
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary group-hover:rotate-12 transition-transform duration-500"
+                      >location_on</span
+                    >
+                  </div>
+                  <div>
+                    <p
+                      class="font-label-caps text-label-caps text-primary uppercase text-[10px] tracking-widest"
+                    >
+                      Chambers
+                    </p>
+                    <p class="text-2xl text-white">Ahmedabad, Gujarat</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="reveal premium-card p-10 lg:p-16 rounded-3xl relative shadow-2xl border-white/10"
+            >
+              <form class="space-y-8">
+                <div class="space-y-2">
+                  <label
+                    class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-widest text-[10px]"
+                    >Full Name</label
+                  >
+                  <input
+                    class="input-line w-full px-0 py-3 font-body-lg placeholder:text-on-surface/10 text-white"
+                    placeholder="John Doe"
+                    type="text"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-widest text-[10px]"
+                    >Professional Email</label
+                  >
+                  <input
+                    class="input-line w-full px-0 py-3 font-body-lg placeholder:text-on-surface/10 text-white"
+                    placeholder="email@company.com"
+                    type="email"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-widest text-[10px]"
+                    >Matter Description</label
+                  >
+                  <textarea
+                    class="input-line w-full px-0 py-3 font-body-lg placeholder:text-on-surface/10 resize-none text-white"
+                    placeholder="Brief overview of legal requirements"
+                    rows="2"
+                  ></textarea>
+                </div>
+                <button
+                  class="btn-primary w-full font-label-caps text-label-caps text-on-primary py-6 rounded-full uppercase tracking-[0.2em] flex items-center justify-center gap-3"
+                  type="submit"
+                >
+                  Submit Inquiry
+                  <span class="material-symbols-outlined">send</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer
+      class="relative w-full py-20 border-t border-white/5 px-margin-page overflow-hidden z-10"
+      style="
+        background: linear-gradient(
+          180deg,
+          rgba(8, 9, 10, 0.5) 0%,
+          rgba(13, 15, 16, 0.9) 100%
+        );
+      "
+    >
+      <div class="absolute inset-0 z-0 opacity-15">
+        <div
+          class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[300px] blur-[100px]"
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(212, 175, 55, 0.15) 0%,
+              rgba(160, 100, 220, 0.15) 50%,
+              rgba(80, 130, 220, 0.15) 100%
+            );
+          "
+        ></div>
+      </div>
+      <div
+        class="max-w-6xl mx-auto flex flex-col items-center gap-12 text-center relative z-10"
+      >
+        <div
+          class="font-headline-md text-3xl gradient-text-gold tracking-tight"
+        >
+          Advocate Jay Patel
+        </div>
+        <nav class="flex flex-wrap justify-center gap-x-12 gap-y-6">
+          <a
+            class="font-label-caps text-label-caps text-on-surface/40 hover:text-primary transition-colors uppercase tracking-widest"
+            href="#"
+            >Legal Notice</a
+          >
+          <a
+            class="font-label-caps text-label-caps text-on-surface/40 hover:text-primary transition-colors uppercase tracking-widest"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="font-label-caps text-label-caps text-on-surface/40 hover:text-primary transition-colors uppercase tracking-widest"
+            href="#"
+            >Disclaimer</a
+          >
+        </nav>
+        <div class="space-y-6">
+          <p class="font-body-md text-on-surface/20 max-w-2xl leading-relaxed">
+            © 2024 Advocate Jay Patel. All Rights Reserved. Confidentiality
+            Guaranteed. <br />
+            As per the rules of the Bar Council of India, this website is
+            intended for informational purposes only and does not constitute a
+            solicitation or advertisement.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <div
+            class="w-12 h-12 rounded-full border border-white/5 flex items-center justify-center text-on-surface/20 hover:border-primary/50 hover:text-primary hover:bg-white/5 hover:scale-110 transition-all duration-500 cursor-pointer"
+          >
+            <span class="material-symbols-outlined text-lg"
+              >calendar_month</span
+            >
+          </div>
+          <div
+            class="w-12 h-12 rounded-full border border-white/5 flex items-center justify-center text-on-surface/20 hover:border-primary/50 hover:text-primary hover:bg-white/5 hover:scale-110 transition-all duration-500 cursor-pointer"
+          >
+            <span class="material-symbols-outlined text-lg">gavel</span>
+          </div>
+          <div
+            class="w-12 h-12 rounded-full border border-white/5 flex items-center justify-center text-on-surface/20 hover:border-primary/50 hover:text-primary hover:bg-white/5 hover:scale-110 transition-all duration-500 cursor-pointer"
+          >
+            <span class="material-symbols-outlined text-lg">balance</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================
+         INTERACTIVE SCRIPTS
+         ============================================ -->
+    <script>
+      // Scroll-reveal observer
+      const revealEls = document.querySelectorAll(".reveal, .reveal-stagger");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -80px 0px" },
+      );
+      revealEls.forEach((el) => io.observe(el));
+
+      // 3D parallax tilt for Lady Justice based on cursor
+      const justice = document.getElementById("justice3d");
+      if (justice) {
+        const heroSection = justice.closest("section");
+        let rafId = null;
+        let targetX = 0,
+          targetY = 0;
+        let currentX = 0,
+          currentY = 0;
+
+        heroSection.addEventListener("mousemove", (e) => {
+          const rect = heroSection.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          targetX = x * 12; // max 12deg
+          targetY = y * 8; // max 8deg
+        });
+
+        heroSection.addEventListener("mouseleave", () => {
+          targetX = 0;
+          targetY = 0;
+        });
+
+        function animate() {
+          currentX += (targetX - currentX) * 0.08;
+          currentY += (targetY - currentY) * 0.08;
+          // Compose tilt with the running float animation by setting CSS variables
+          justice.style.setProperty("--tilt-x", `${currentX}deg`);
+          justice.style.setProperty("--tilt-y", `${-currentY}deg`);
+          rafId = requestAnimationFrame(animate);
+        }
+        animate();
+      }
+
+      // Card mouse-tracking spotlight
+      document.querySelectorAll(".premium-card").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = ((e.clientX - rect.left) / rect.width) * 100;
+          const y = ((e.clientY - rect.top) / rect.height) * 100;
+          card.style.setProperty("--mouse-x", `${x}%`);
+          card.style.setProperty("--mouse-y", `${y}%`);
+        });
+      });
+
+      // Subtle parallax on aurora orbs based on scroll
+      const orbs = document.querySelectorAll(".aurora-orb");
+      let lastScroll = 0;
+      window.addEventListener(
+        "scroll",
+        () => {
+          const scroll = window.scrollY;
+          if (Math.abs(scroll - lastScroll) > 5) {
+            orbs.forEach((orb, i) => {
+              const speed = (i + 1) * 0.05;
+              orb.style.transform = `translateY(${scroll * speed * -0.3}px)`;
+            });
+            lastScroll = scroll;
+          }
+        },
+        { passive: true },
+      );
+    </script>
+  </body>
+</html>
