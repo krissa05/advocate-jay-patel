@@ -1640,7 +1640,7 @@
         section.min-h-screen {
           min-height: 100svh;
           padding-top: 5.5rem;
-          padding-bottom: 2rem;
+          padding-bottom: 4rem;
           align-items: flex-start;
         }
         .justice-stage {
@@ -1668,6 +1668,7 @@
         .hero-rise-4 {
           flex-direction: column !important;
           gap: 0.75rem !important;
+          padding-top: 2.5rem !important;
         }
         .hero-rise-4 button {
           width: 100%;
@@ -1717,7 +1718,13 @@
         /* Practice areas grid */
         .practice-header {
           flex-direction: column !important;
+          align-items: flex-start !important;
+          justify-content: flex-start !important;
           margin-bottom: 2rem !important;
+        }
+        .practice-header > p {
+          max-width: 100% !important;
+          text-align: left !important;
         }
         .practice-grid {
           grid-template-columns: 1fr 1fr !important;
@@ -1762,7 +1769,10 @@
           gap: 2rem !important;
         }
         .about-photo {
-          aspect-ratio: 4/3 !important;
+          aspect-ratio: 3/4 !important;
+          max-height: 70vh;
+          object-fit: contain !important;
+          background: #0d0f10;
         }
         .about-stats {
           grid-template-columns: 1fr 1fr !important;
