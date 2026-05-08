@@ -1646,34 +1646,33 @@
           justify-content: space-between !important;
         }
 
-        /* Lady Justice: visible ghost in background center */
+        /* Lady Justice: visible on the right side */
         .justice-stage {
           position: absolute !important;
           inset: 0 !important;
           width: 100% !important;
-          opacity: 0.32 !important;
+          opacity: 0.55 !important;
           z-index: 1 !important;
         }
         .justice-3d img {
-          height: 78% !important;
+          height: 80% !important;
         }
 
-        /* Fade overlay: heavy at top (behind text) and bottom (behind buttons), transparent in middle so statue shows */
+        /* Fade overlay: only darken left 60% so statue on right stays visible */
         .absolute.inset-y-0.left-0 {
           width: 100% !important;
           background: linear-gradient(
-            to bottom,
-            rgba(8, 9, 10, 0.93) 0%,
-            rgba(8, 9, 10, 0.93) 30%,
-            rgba(8, 9, 10, 0.35) 55%,
-            rgba(8, 9, 10, 0.75) 80%,
-            rgba(8, 9, 10, 0.93) 100%
+            to right,
+            rgba(8, 9, 10, 0.97) 0%,
+            rgba(8, 9, 10, 0.97) 50%,
+            rgba(8, 9, 10, 0.4) 75%,
+            transparent 100%
           ) !important;
         }
 
-        /* Content wrapper: flex column, fill full height, push buttons to bottom */
+        /* Content wrapper: constrain to left 65% so statue peeks right */
         .relative.z-30.space-y-8 {
-          max-width: 100% !important;
+          max-width: 65% !important;
           padding-top: 0 !important;
           display: flex !important;
           flex-direction: column !important;
