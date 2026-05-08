@@ -1636,23 +1636,52 @@
           letter-spacing: 0.08em;
         }
 
-        /* HERO */
+        /* HERO — column layout: text top, image visible center, buttons bottom */
         section.min-h-screen {
           min-height: 100svh;
           padding-top: 5.5rem;
-          padding-bottom: 4rem;
-          align-items: flex-start;
+          padding-bottom: 2rem;
+          flex-direction: column !important;
+          align-items: stretch !important;
+          justify-content: space-between !important;
         }
+
+        /* Lady Justice: visible ghost in background center */
         .justice-stage {
           position: absolute !important;
           inset: 0 !important;
           width: 100% !important;
-          opacity: 0.15 !important;
+          opacity: 0.32 !important;
           z-index: 1 !important;
         }
         .justice-3d img {
-          height: 65% !important;
+          height: 78% !important;
         }
+
+        /* Fade overlay: heavy at top (behind text) and bottom (behind buttons), transparent in middle so statue shows */
+        .absolute.inset-y-0.left-0 {
+          width: 100% !important;
+          background: linear-gradient(
+            to bottom,
+            rgba(8, 9, 10, 0.93) 0%,
+            rgba(8, 9, 10, 0.93) 30%,
+            rgba(8, 9, 10, 0.35) 55%,
+            rgba(8, 9, 10, 0.75) 80%,
+            rgba(8, 9, 10, 0.93) 100%
+          ) !important;
+        }
+
+        /* Content wrapper: flex column, fill full height, push buttons to bottom */
+        .relative.z-30.space-y-8 {
+          max-width: 100% !important;
+          padding-top: 0 !important;
+          display: flex !important;
+          flex-direction: column !important;
+          flex: 1 !important;
+          min-height: calc(100svh - 7.5rem) !important;
+        }
+
+        /* Hero headline */
         .hero-rise-2 {
           font-size: 2.1rem !important;
           line-height: 1.1 !important;
@@ -1661,24 +1690,25 @@
         .hero-rise-2 br {
           display: none;
         }
+
+        /* Body text */
         .hero-rise-3 {
           font-size: 0.925rem !important;
           max-width: 100% !important;
         }
+
+        /* Buttons: pushed to bottom via margin-top auto */
         .hero-rise-4 {
           flex-direction: column !important;
           gap: 0.75rem !important;
-          padding-top: 2.5rem !important;
+          margin-top: auto !important;
+          padding-top: 2rem !important;
         }
         .hero-rise-4 button {
           width: 100%;
           justify-content: center;
-          padding: 0.875rem 1.5rem !important;
+          padding: 1rem 1.5rem !important;
           font-size: 11px !important;
-        }
-        .relative.z-30.space-y-8 {
-          max-width: 100% !important;
-          padding-top: 0 !important;
         }
 
         /* Authority strip */
