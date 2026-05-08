@@ -1118,6 +1118,529 @@
           opacity: 0.4;
         }
       }
+
+      /* ── Gold VisionOS Disclaimer Modal ───────────────────────── */
+      @keyframes vos-fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes vos-modal-rise {
+        from {
+          opacity: 0;
+          transform: translateY(28px) scale(0.96);
+          filter: blur(4px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+          filter: blur(0);
+        }
+      }
+      @keyframes vos-orb-pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.5;
+        }
+        50% {
+          transform: scale(1.08);
+          opacity: 0.65;
+        }
+      }
+
+      #vos-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        background:
+          radial-gradient(
+            ellipse 80% 60% at 50% 40%,
+            rgba(212, 175, 55, 0.06) 0%,
+            transparent 70%
+          ),
+          rgba(8, 9, 10, 0.88);
+        backdrop-filter: blur(28px) saturate(1.4);
+        -webkit-backdrop-filter: blur(28px) saturate(1.4);
+        animation: vos-fade-in 0.5s ease both;
+        transition: opacity 0.55s ease;
+      }
+      .vos-orb {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        will-change: transform;
+        filter: blur(90px);
+        animation: vos-orb-pulse 8s ease-in-out infinite;
+      }
+      .vos-orb-1 {
+        width: 560px;
+        height: 560px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-65%, -65%);
+        background: radial-gradient(
+          circle,
+          rgba(120, 80, 220, 0.18) 0%,
+          rgba(70, 50, 180, 0.07) 50%,
+          transparent 70%
+        );
+        animation-delay: 0s;
+      }
+      .vos-orb-2 {
+        width: 480px;
+        height: 480px;
+        top: 50%;
+        left: 50%;
+        transform: translate(5%, -10%);
+        background: radial-gradient(
+          circle,
+          rgba(212, 175, 55, 0.14) 0%,
+          rgba(180, 140, 40, 0.06) 50%,
+          transparent 70%
+        );
+        animation-delay: 3s;
+      }
+      .vos-orb-3 {
+        width: 320px;
+        height: 200px;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: radial-gradient(
+          ellipse,
+          rgba(212, 175, 55, 0.1) 0%,
+          transparent 70%
+        );
+        animation-delay: 1.5s;
+        filter: blur(60px);
+      }
+      #vos-modal {
+        position: relative;
+        width: 100%;
+        max-width: 680px;
+        max-height: 88vh;
+        display: flex;
+        flex-direction: column;
+        border-radius: 28px;
+        overflow: hidden;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.045) 0%,
+          rgba(255, 255, 255, 0.015) 40%,
+          rgba(212, 175, 55, 0.018) 100%
+        );
+        backdrop-filter: blur(40px) saturate(1.8) brightness(1.05);
+        -webkit-backdrop-filter: blur(40px) saturate(1.8) brightness(1.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow:
+          0 2px 0 0 rgba(255, 255, 255, 0.06) inset,
+          0 -1px 0 0 rgba(255, 255, 255, 0.02) inset,
+          0 40px 80px rgba(0, 0, 0, 0.6),
+          0 16px 40px rgba(0, 0, 0, 0.4),
+          0 4px 12px rgba(0, 0, 0, 0.3),
+          0 0 80px rgba(212, 175, 55, 0.08),
+          0 0 160px rgba(212, 175, 55, 0.04);
+        animation: vos-modal-rise 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation-delay: 0.1s;
+      }
+      #vos-modal::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 12%;
+        right: 12%;
+        height: 1px;
+        z-index: 2;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0) 10%,
+          rgba(212, 175, 55, 0.5) 35%,
+          rgba(255, 255, 255, 0.65) 50%,
+          rgba(212, 175, 55, 0.5) 65%,
+          rgba(255, 255, 255, 0) 90%,
+          transparent 100%
+        );
+        border-radius: 0 0 2px 2px;
+      }
+      #vos-modal::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 28px;
+        pointer-events: none;
+        opacity: 0.35;
+        z-index: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      }
+      #vos-header {
+        position: relative;
+        z-index: 1;
+        padding: 2rem 2.25rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        background: linear-gradient(
+          180deg,
+          rgba(212, 175, 55, 0.04) 0%,
+          transparent 100%
+        );
+        flex-shrink: 0;
+      }
+      .vos-eyebrow {
+        font-family: "Inter", sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(212, 175, 55, 0.75);
+        margin-bottom: 0.625rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .vos-eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 1px;
+        background: rgba(212, 175, 55, 0.5);
+      }
+      .vos-title {
+        font-family: "Newsreader", serif;
+        font-size: 30px;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        color: rgba(226, 226, 226, 0.97);
+        margin: 0;
+      }
+      .vos-subtitle {
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        color: rgba(209, 197, 180, 0.38);
+        letter-spacing: 0.01em;
+        margin-top: 0.35rem;
+      }
+      #vos-body {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        overflow-y: auto;
+        padding: 1.75rem 2.25rem;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(212, 175, 55, 0.2) transparent;
+      }
+      #vos-body::-webkit-scrollbar {
+        width: 4px;
+      }
+      #vos-body::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      #vos-body::-webkit-scrollbar-thumb {
+        background: rgba(212, 175, 55, 0.25);
+        border-radius: 4px;
+      }
+      .vos-notice {
+        position: relative;
+        padding: 1rem 1.25rem;
+        margin-bottom: 1.5rem;
+        border-radius: 12px;
+        background: rgba(212, 175, 55, 0.05);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        overflow: hidden;
+      }
+      .vos-notice::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(212, 175, 55, 0.4),
+          transparent
+        );
+      }
+      .vos-notice-text {
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(212, 175, 55, 0.9);
+        line-height: 1.65;
+        letter-spacing: 0.01em;
+      }
+      .vos-item {
+        display: flex;
+        gap: 0.875rem;
+        align-items: flex-start;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .vos-item:last-of-type {
+        border-bottom: none;
+      }
+      .vos-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: 7px;
+        background: rgba(212, 175, 55, 0.6);
+        box-shadow: 0 0 6px rgba(212, 175, 55, 0.35);
+      }
+      .vos-item-text {
+        font-family: "Inter", sans-serif;
+        font-size: 13.5px;
+        color: rgba(226, 226, 226, 0.48);
+        line-height: 1.7;
+        letter-spacing: 0.005em;
+      }
+      .vos-footnote {
+        font-family: "Inter", sans-serif;
+        font-size: 12px;
+        color: rgba(209, 197, 180, 0.28);
+        line-height: 1.7;
+        letter-spacing: 0.01em;
+        padding-top: 1.25rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        margin-top: 0.5rem;
+      }
+      #vos-footer {
+        position: relative;
+        z-index: 1;
+        padding: 1.375rem 2.25rem 1.75rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        background: linear-gradient(
+          0deg,
+          rgba(8, 9, 10, 0.4) 0%,
+          transparent 100%
+        );
+        flex-shrink: 0;
+      }
+      .vos-checkbox-label {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      .vos-checkbox-wrap {
+        position: relative;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      #vos-checkbox {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 17px;
+        height: 17px;
+        border-radius: 4px;
+        border: 1px solid rgba(212, 175, 55, 0.35);
+        background: rgba(255, 255, 255, 0.03);
+        cursor: pointer;
+        display: block;
+        transition: all 0.2s ease;
+      }
+      #vos-checkbox:checked {
+        background: rgba(212, 175, 55, 0.12);
+        border-color: rgba(212, 175, 55, 0.7);
+        box-shadow:
+          0 0 10px rgba(212, 175, 55, 0.25),
+          inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      }
+      .vos-check-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        font-size: 12px;
+        color: rgba(212, 175, 55, 1);
+        pointer-events: none;
+        transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      #vos-checkbox:checked ~ .vos-check-icon {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .vos-checkbox-text {
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        color: rgba(209, 197, 180, 0.45);
+        line-height: 1.6;
+        letter-spacing: 0.005em;
+      }
+      #vos-agree {
+        width: 100%;
+        padding: 0.875rem 2rem;
+        border-radius: 50px;
+        border: 1px solid rgba(212, 175, 55, 0.22);
+        background: rgba(212, 175, 55, 0.06);
+        color: rgba(212, 175, 55, 0.38);
+        font-family: "Inter", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        cursor: not-allowed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.625rem;
+        transition:
+          background 0.3s ease,
+          border-color 0.3s ease,
+          color 0.3s ease,
+          box-shadow 0.3s ease,
+          transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      #vos-agree::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50px 50px 0 0;
+      }
+      #vos-agree.active {
+        cursor: pointer;
+        background: rgba(212, 175, 55, 0.12);
+        border-color: rgba(212, 175, 55, 0.5);
+        color: rgba(232, 193, 118, 0.97);
+        box-shadow:
+          0 0 20px rgba(212, 175, 55, 0.15),
+          0 0 40px rgba(212, 175, 55, 0.08),
+          0 4px 16px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      }
+      #vos-agree.active::before {
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(212, 175, 55, 0.2),
+          transparent
+        );
+      }
+      #vos-agree.active:hover {
+        transform: translateY(-3px) scale(1.015);
+        background: rgba(212, 175, 55, 0.18);
+        border-color: rgba(212, 175, 55, 0.65);
+        box-shadow:
+          0 0 28px rgba(212, 175, 55, 0.22),
+          0 0 56px rgba(212, 175, 55, 0.1),
+          0 8px 24px rgba(0, 0, 0, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      }
+      #vos-agree.active:active {
+        transform: translateY(-1px) scale(1.005);
+      }
+      #vos-overlay.vos-dismiss {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* ── Mobile Responsive: Disclaimer Modal ──────────────────── */
+      @media (max-width: 640px) {
+        #vos-overlay {
+          padding: 0;
+          align-items: flex-end;
+        }
+        #vos-modal {
+          max-width: 100%;
+          max-height: 92vh;
+          border-radius: 24px 24px 0 0;
+          border-bottom: none;
+        }
+        #vos-modal::before {
+          left: 20%;
+          right: 20%;
+        }
+        #vos-header {
+          padding: 1.5rem 1.25rem 1.125rem;
+        }
+        .vos-eyebrow {
+          font-size: 9px;
+          letter-spacing: 0.18em;
+        }
+        .vos-title {
+          font-size: 22px;
+        }
+        .vos-subtitle {
+          font-size: 12px;
+        }
+        #vos-body {
+          padding: 1.25rem 1.25rem;
+        }
+        .vos-notice {
+          padding: 0.875rem 1rem;
+          border-radius: 10px;
+          margin-bottom: 1.125rem;
+        }
+        .vos-notice-text {
+          font-size: 12px;
+          line-height: 1.6;
+        }
+        .vos-item {
+          padding: 0.625rem 0;
+          gap: 0.75rem;
+        }
+        .vos-item-text {
+          font-size: 12.5px;
+          line-height: 1.65;
+        }
+        .vos-dot {
+          margin-top: 6px;
+        }
+        .vos-footnote {
+          font-size: 11px;
+          padding-top: 1rem;
+        }
+        #vos-footer {
+          padding: 1.125rem 1.25rem 1.5rem;
+        }
+        .vos-checkbox-label {
+          gap: 0.625rem;
+          margin-bottom: 0.875rem;
+          align-items: flex-start;
+        }
+        #vos-checkbox {
+          width: 18px;
+          height: 18px;
+          flex-shrink: 0;
+          margin-top: 1px;
+        }
+        .vos-checkbox-text {
+          font-size: 12px;
+          line-height: 1.55;
+        }
+        #vos-agree {
+          padding: 1rem 1.5rem;
+          font-size: 11px;
+          letter-spacing: 0.1em;
+          border-radius: 50px;
+        }
+        .vos-orb-1,
+        .vos-orb-2 {
+          display: none;
+        }
+        .vos-orb-3 {
+          width: 200px;
+          height: 120px;
+        }
+      }
     </style>
   </head>
   <body class="text-on-surface selection:bg-primary/30 selection:text-primary">
@@ -2286,6 +2809,113 @@
     </main>
 
     <!-- ============================================
+         GOLD VISIONOS DISCLAIMER MODAL
+         ============================================ -->
+    <div id="vos-overlay">
+      <div class="vos-orb vos-orb-1"></div>
+      <div class="vos-orb vos-orb-2"></div>
+      <div class="vos-orb vos-orb-3"></div>
+      <div
+        id="vos-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="vos-title"
+      >
+        <div id="vos-header">
+          <p class="vos-eyebrow">Bar Council of India</p>
+          <h2 class="vos-title" id="vos-title">Legal Disclaimer</h2>
+          <p class="vos-subtitle">Please read carefully before proceeding</p>
+        </div>
+        <div id="vos-body">
+          <div class="vos-notice">
+            <p class="vos-notice-text">
+              The Bar Council of India prohibits advocates from soliciting work
+              or advertising in any form. This website is strictly for
+              informational purposes only and does not constitute solicitation
+              or advertisement.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div class="vos-dot"></div>
+            <p class="vos-item-text">
+              This website is meant solely for informational purposes and does
+              not constitute any form of advertisement, personal communication,
+              solicitation, invitation, or inducement of any sort whatsoever.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div class="vos-dot"></div>
+            <p class="vos-item-text">
+              You are visiting this website voluntarily and solely to obtain
+              information for your own use and will. Any information accessed on
+              this website is at your own discretion.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div class="vos-dot"></div>
+            <p class="vos-item-text">
+              No lawyer-client relationship is created by accessing, reading, or
+              using any information provided on this website. Transmission of
+              information does not create attorney-client privilege.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div class="vos-dot"></div>
+            <p class="vos-item-text">
+              The information provided herein is made available upon the user's
+              specific request and any information obtained, retained, or
+              downloaded is the act of volition of the user.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div class="vos-dot"></div>
+            <p class="vos-item-text">
+              Advocate Jay Patel and associates are neither privy nor
+              responsible for any consequences of any action taken by the user
+              relying upon material or information provided on this website.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div class="vos-dot"></div>
+            <p class="vos-item-text">
+              For any specific legal issues, you must seek independent legal
+              advice from a qualified legal practitioner. This website cannot
+              substitute professional legal counsel.
+            </p>
+          </div>
+          <p class="vos-footnote">
+            Access to this website is granted only upon confirmation that you
+            have read, understood, and agreed to the above disclaimer as per the
+            rules and regulations of the Bar Council of India.
+          </p>
+        </div>
+        <div id="vos-footer">
+          <label class="vos-checkbox-label" for="vos-checkbox">
+            <div class="vos-checkbox-wrap">
+              <input id="vos-checkbox" type="checkbox" />
+              <span class="material-symbols-outlined vos-check-icon"
+                >check</span
+              >
+            </div>
+            <span class="vos-checkbox-text"
+              >I have read, understood, and agree to the above disclaimer. I am
+              accessing this website voluntarily for informational purposes
+              only.</span
+            >
+          </label>
+          <button id="vos-agree" disabled aria-disabled="true">
+            <span
+              class="material-symbols-outlined"
+              style="font-size: 15px; opacity: 0.7"
+              >gavel</span
+            >
+            I Agree &amp; Enter
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
          FOOTER
          ============================================ -->
     <footer
@@ -2371,6 +3001,40 @@
          INTERACTIVE SCRIPTS
          ============================================ -->
     <script>
+      // ── Gold VisionOS Disclaimer ───────────────────────────────
+      (function () {
+        var STORAGE_KEY = "vos_disclaimer_agreed_v1";
+        var overlay = document.getElementById("vos-overlay");
+        var checkbox = document.getElementById("vos-checkbox");
+        var btn = document.getElementById("vos-agree");
+        if (!overlay) return;
+        if (sessionStorage.getItem(STORAGE_KEY)) {
+          overlay.remove();
+          return;
+        }
+        document.body.style.overflow = "hidden";
+        checkbox.addEventListener("change", function () {
+          if (this.checked) {
+            btn.classList.add("active");
+            btn.removeAttribute("disabled");
+            btn.removeAttribute("aria-disabled");
+          } else {
+            btn.classList.remove("active");
+            btn.setAttribute("disabled", "true");
+            btn.setAttribute("aria-disabled", "true");
+          }
+        });
+        btn.addEventListener("click", function () {
+          if (!checkbox.checked) return;
+          overlay.classList.add("vos-dismiss");
+          setTimeout(function () {
+            overlay.remove();
+            document.body.style.overflow = "";
+            sessionStorage.setItem(STORAGE_KEY, "true");
+          }, 520);
+        });
+      })();
+
       // Scroll-reveal observer
       const revealEls = document.querySelectorAll(".reveal, .reveal-stagger");
       const io = new IntersectionObserver(
