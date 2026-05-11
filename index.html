@@ -2474,101 +2474,1060 @@
       <!-- ============================================
            PHILOSOPHY / POSITIONING
            ============================================ -->
-      <section
-        class="relative py-section-padding px-margin-page overflow-hidden"
-      >
-        <div class="section-glow-purple" style="top: -10%; right: -10%"></div>
-        <div class="section-glow-gold" style="bottom: -10%; left: -10%"></div>
+      <!--
+╔══════════════════════════════════════════════════════════════╗
+║  REPLACE the entire Philosophy section with this block.      ║
+║  This is fully self-contained — styles are embedded.         ║
+║  Just find the section containing "Execution is the only     ║
+║  measure of Success" and replace the whole <section>...</section> ║
+╚══════════════════════════════════════════════════════════════╝
+-->
 
-        <div class="floating-symbols">
+      <style>
+        /* ── Experience Section ──────────────────────────────────────── */
+        .exp-section {
+          position: relative;
+          padding: 100px 64px 160px;
+          overflow: hidden;
+        }
+
+        /* Background orbs */
+        .exp-bg {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          pointer-events: none;
+          z-index: 0;
+        }
+        .exp-orb {
+          position: absolute;
+          border-radius: 50%;
+          pointer-events: none;
+        }
+        .exp-orb-gold {
+          width: 700px;
+          height: 700px;
+          top: -15%;
+          right: -8%;
+          background: radial-gradient(
+            circle,
+            rgba(212, 175, 55, 0.17) 0%,
+            rgba(180, 140, 40, 0.07) 45%,
+            transparent 70%
+          );
+          filter: blur(110px);
+          animation: drift-3 40s ease-in-out infinite;
+        }
+        .exp-orb-navy {
+          width: 800px;
+          height: 800px;
+          top: 20%;
+          left: -15%;
+          background: radial-gradient(
+            circle,
+            rgba(20, 40, 100, 0.28) 0%,
+            rgba(10, 20, 70, 0.1) 50%,
+            transparent 70%
+          );
+          filter: blur(120px);
+          animation: drift-2 46s ease-in-out infinite;
+        }
+        .exp-orb-purple {
+          width: 640px;
+          height: 640px;
+          bottom: -10%;
+          right: 5%;
+          background: radial-gradient(
+            circle,
+            rgba(100, 55, 200, 0.2) 0%,
+            rgba(70, 35, 160, 0.08) 50%,
+            transparent 70%
+          );
+          filter: blur(100px);
+          animation: drift-1 36s ease-in-out infinite;
+        }
+        .exp-orb-amber {
+          width: 480px;
+          height: 480px;
+          top: 50%;
+          left: 38%;
+          background: radial-gradient(
+            circle,
+            rgba(180, 120, 30, 0.1) 0%,
+            transparent 65%
+          );
+          filter: blur(90px);
+          animation: drift-4 52s ease-in-out infinite;
+        }
+        .exp-grain {
+          position: absolute;
+          inset: 0;
+          opacity: 0.028;
+          mix-blend-mode: overlay;
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+          pointer-events: none;
+        }
+
+        /* Hero text */
+        .exp-hero-text {
+          text-align: center;
+          margin-bottom: 5rem;
+          position: relative;
+          z-index: 10;
+        }
+        .exp-eyebrow {
+          font-family: "Inter", sans-serif;
+          font-size: 10.5px;
+          font-weight: 600;
+          letter-spacing: 0.3em;
+          text-transform: uppercase;
+          color: rgba(212, 175, 55, 0.75);
+          display: inline-flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 1.5rem;
+        }
+        .exp-eyebrow-bar {
+          display: inline-block;
+          width: 40px;
+          height: 1px;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(212, 175, 55, 0.6),
+            rgba(212, 175, 55, 0.9)
+          );
+        }
+        .exp-eyebrow-bar.right {
+          background: linear-gradient(
+            270deg,
+            transparent,
+            rgba(212, 175, 55, 0.6),
+            rgba(212, 175, 55, 0.9)
+          );
+        }
+        .exp-heading {
+          font-family: "Newsreader", serif;
+          font-size: clamp(36px, 5vw, 64px);
+          font-weight: 400;
+          line-height: 1.1;
+          letter-spacing: -0.025em;
+          color: rgba(232, 232, 232, 0.97);
+          margin: 0 0 1.5rem;
+        }
+        .exp-heading-gold {
+          font-style: italic;
+          font-weight: 300;
+          background: linear-gradient(
+            135deg,
+            #f4d472 0%,
+            #d4af37 35%,
+            #c5a059 65%,
+            #f4d472 100%
+          );
+          background-size: 200% 200%;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: gradient-shift 8s ease infinite;
+        }
+        .exp-subhead {
+          font-family: "Inter", sans-serif;
+          font-size: 17px;
+          line-height: 1.72;
+          letter-spacing: 0.01em;
+          color: rgba(226, 226, 226, 0.45);
+          max-width: 580px;
+          margin: 0 auto;
+        }
+
+        /* ── Shared card base ─────────────────────────────────────── */
+        .exp-card {
+          position: relative;
+          border-radius: 28px;
+          overflow: hidden;
+          background: linear-gradient(
+            148deg,
+            rgba(30, 24, 14, 0.84) 0%,
+            rgba(18, 16, 12, 0.92) 50%,
+            rgba(14, 12, 22, 0.95) 100%
+          );
+          border: 1px solid rgba(212, 175, 55, 0.14);
+          backdrop-filter: blur(36px) saturate(1.7) brightness(1.04);
+          -webkit-backdrop-filter: blur(36px) saturate(1.7) brightness(1.04);
+          box-shadow:
+            inset 0 1px 0 rgba(255, 210, 80, 0.1),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.02),
+            0 24px 60px rgba(0, 0, 0, 0.55),
+            0 8px 24px rgba(0, 0, 0, 0.35);
+          transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .exp-card::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 8%;
+          right: 8%;
+          height: 1px;
+          background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(212, 175, 55, 0.5) 30%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(212, 175, 55, 0.5) 70%,
+            transparent 100%
+          );
+          border-radius: 0 0 2px 2px;
+          z-index: 2;
+        }
+        .exp-card::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          background: radial-gradient(
+            420px circle at var(--ex, 50%) var(--ey, 50%),
+            rgba(212, 175, 55, 0.08),
+            rgba(100, 60, 200, 0.04) 40%,
+            transparent 65%
+          );
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          pointer-events: none;
+          z-index: 1;
+        }
+        .exp-card:hover::after {
+          opacity: 1;
+        }
+        .exp-card:hover {
+          border-color: rgba(212, 175, 55, 0.3);
+          transform: translateY(-7px);
+          box-shadow:
+            inset 0 1px 0 rgba(255, 210, 80, 0.18),
+            0 40px 80px rgba(0, 0, 0, 0.6),
+            0 0 60px rgba(212, 175, 55, 0.1),
+            0 0 120px rgba(212, 175, 55, 0.04);
+        }
+
+        /* Card shimmer sweep */
+        .exp-card-shimmer {
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          background: linear-gradient(
+            110deg,
+            transparent 30%,
+            rgba(212, 175, 55, 0.18) 50%,
+            rgba(255, 255, 255, 0.07) 52%,
+            transparent 68%
+          );
+          transform: translateX(-100%) skewX(-8deg);
+          pointer-events: none;
+          z-index: 3;
+          transition: transform 0s;
+        }
+        .exp-card:hover .exp-card-shimmer {
+          transform: translateX(130%) skewX(-8deg);
+          transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Inner glow */
+        .exp-card-glow {
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          background: radial-gradient(
+            ellipse 85% 55% at 50% 0%,
+            rgba(212, 175, 55, 0.065) 0%,
+            transparent 65%
+          );
+          pointer-events: none;
+          z-index: 0;
+          opacity: 0.55;
+          transition: opacity 0.55s ease;
+        }
+        .exp-card:hover .exp-card-glow {
+          opacity: 1;
+        }
+
+        .exp-card-inner {
+          position: relative;
+          z-index: 4;
+          padding: 2.25rem 2rem 2rem;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        /* ── STAT CARDS grid ────────────────────────────────────── */
+        .exp-stat-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1.25rem;
+          margin-bottom: 1.5rem;
+          position: relative;
+          z-index: 10;
+        }
+
+        .exp-stat-icon {
+          font-size: 22px;
+          color: rgba(212, 175, 55, 0.35);
+          font-variation-settings:
+            "FILL" 0,
+            "wght" 200,
+            "GRAD" 0,
+            "opsz" 24;
+          margin-bottom: 1.2rem;
+          display: block;
+          transition: all 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .exp-card:hover .exp-stat-icon {
+          color: rgba(212, 175, 55, 0.75);
+          transform: scale(1.08) rotate(-5deg);
+          filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+        }
+
+        .exp-stat-num {
+          font-family: "Newsreader", serif;
+          font-size: 56px;
+          font-weight: 300;
+          line-height: 1;
+          letter-spacing: -0.03em;
+          margin: 0 0 0.4rem;
+          background: linear-gradient(
+            135deg,
+            rgba(244, 212, 114, 0.95) 0%,
+            rgba(212, 175, 55, 0.85) 50%,
+            rgba(197, 160, 89, 0.9) 100%
+          );
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .exp-stat-num-sm {
+          font-family: "Newsreader", serif;
+          font-size: 26px;
+          font-weight: 300;
+          line-height: 1.25;
+          letter-spacing: -0.02em;
+          margin: 0 0 0.4rem;
+          background: linear-gradient(
+            135deg,
+            rgba(244, 212, 114, 0.95) 0%,
+            rgba(212, 175, 55, 0.85) 50%,
+            rgba(197, 160, 89, 0.9) 100%
+          );
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .exp-stat-plus {
+          font-size: 32px;
+          vertical-align: super;
+          opacity: 0.7;
+        }
+
+        .exp-stat-label {
+          font-family: "Inter", sans-serif;
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          color: rgba(226, 226, 226, 0.45);
+          margin: 0 0 1rem;
+        }
+        .exp-stat-rule {
+          width: 100%;
+          height: 1px;
+          margin-top: auto;
+          margin-bottom: 0.85rem;
+          background: linear-gradient(
+            90deg,
+            rgba(212, 175, 55, 0.25),
+            rgba(100, 60, 200, 0.15),
+            transparent 80%
+          );
+        }
+        .exp-stat-sub {
+          font-family: "Inter", sans-serif;
+          font-size: 12.5px;
+          line-height: 1.65;
+          color: rgba(200, 200, 200, 0.35);
+          transition: color 0.45s ease;
+        }
+        .exp-card:hover .exp-stat-sub {
+          color: rgba(200, 200, 200, 0.58);
+        }
+
+        /* ── BOTTOM 2-card grid ─────────────────────────────────── */
+        .exp-bottom-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.25rem;
+          position: relative;
+          z-index: 10;
+        }
+
+        .exp-card--wide .exp-card-inner {
+          padding: 2rem 2.25rem;
+        }
+
+        .exp-wide-header {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 1.75rem;
+          padding-bottom: 1.25rem;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .exp-wide-icon {
+          font-size: 24px;
+          color: rgba(212, 175, 55, 0.5);
+          font-variation-settings:
+            "FILL" 0,
+            "wght" 200,
+            "GRAD" 0,
+            "opsz" 24;
+          flex-shrink: 0;
+          transition: all 0.55s ease;
+        }
+        .exp-card:hover .exp-wide-icon {
+          color: rgba(212, 175, 55, 0.85);
+          filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+        }
+        .exp-wide-label {
+          font-family: "Inter", sans-serif;
+          font-size: 9px;
+          font-weight: 600;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: rgba(212, 175, 55, 0.55);
+          margin: 0 0 3px;
+        }
+        .exp-wide-title {
+          font-family: "Newsreader", serif;
+          font-size: 22px;
+          font-weight: 400;
+          letter-spacing: -0.015em;
+          color: rgba(232, 232, 232, 0.95);
+          margin: 0;
+        }
+
+        /* Practice tags */
+        .exp-tags-grid {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.6rem;
+        }
+        .exp-tag {
+          font-family: "Inter", sans-serif;
+          font-size: 10.5px;
+          font-weight: 500;
+          letter-spacing: 0.06em;
+          color: rgba(212, 175, 55, 0.72);
+          padding: 0.45rem 1rem;
+          border: 1px solid rgba(212, 175, 55, 0.2);
+          border-radius: 999px;
+          background: rgba(212, 175, 55, 0.055);
+          backdrop-filter: blur(8px);
+          transition: all 0.4s ease;
+          cursor: default;
+        }
+        .exp-tag:hover {
+          color: rgba(212, 175, 55, 1);
+          border-color: rgba(212, 175, 55, 0.45);
+          background: rgba(212, 175, 55, 0.12);
+          transform: translateY(-2px);
+        }
+        /* Courts Practiced In */
+        .exp-courts-list {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+        }
+        .exp-court-item {
+          display: flex;
+          align-items: center;
+          gap: 0.875rem;
+          padding: 0.75rem 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          position: relative;
+          transition: all 0.4s ease;
+        }
+        .exp-court-item:hover {
+          transform: translateX(5px);
+        }
+        .exp-court-left {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          flex-shrink: 0;
+          width: 12px;
+        }
+        .exp-court-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: rgba(212, 175, 55, 0.6);
+          box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+          flex-shrink: 0;
+          transition: all 0.4s ease;
+        }
+        .exp-court-item:hover .exp-court-dot {
+          background: rgba(212, 175, 55, 1);
+          box-shadow: 0 0 14px rgba(212, 175, 55, 0.7);
+        }
+        .exp-court-connector {
+          width: 1px;
+          flex: 1;
+          min-height: 18px;
+          background: linear-gradient(
+            180deg,
+            rgba(212, 175, 55, 0.25),
+            rgba(212, 175, 55, 0.05)
+          );
+          margin-top: 3px;
+        }
+        .exp-court-content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          min-width: 0;
+        }
+        .exp-court-name {
+          font-family: "Inter", sans-serif;
+          font-size: 13px;
+          font-weight: 600;
+          color: rgba(226, 226, 226, 0.88);
+          letter-spacing: 0.01em;
+          transition: color 0.4s ease;
+        }
+        .exp-court-item:hover .exp-court-name {
+          color: rgba(244, 212, 114, 0.95);
+        }
+        .exp-court-sub {
+          font-family: "Inter", sans-serif;
+          font-size: 11px;
+          color: rgba(200, 200, 200, 0.32);
+          letter-spacing: 0.02em;
+        }
+        .exp-court-badge {
+          font-family: "Inter", sans-serif;
+          font-size: 9px;
+          font-weight: 600;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: rgba(212, 175, 55, 0.6);
+          border: 1px solid rgba(212, 175, 55, 0.18);
+          background: rgba(212, 175, 55, 0.05);
+          border-radius: 999px;
+          padding: 3px 10px;
+          flex-shrink: 0;
+          transition: all 0.4s ease;
+        }
+        .exp-court-item:hover .exp-court-badge {
+          color: rgba(212, 175, 55, 0.95);
+          border-color: rgba(212, 175, 55, 0.4);
+          background: rgba(212, 175, 55, 0.1);
+        }
+
+        /* Credentials */
+        .exp-cred-seal {
+          position: absolute;
+          top: 1.75rem;
+          right: 1.75rem;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          border: 1px solid rgba(212, 175, 55, 0.18);
+          background: linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.08),
+            rgba(100, 60, 200, 0.06)
+          );
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgba(212, 175, 55, 0.28);
+          z-index: 5;
+          transition: all 0.55s ease;
+        }
+        .exp-cred-seal .material-symbols-outlined {
+          font-size: 22px;
+          font-variation-settings:
+            "FILL" 0,
+            "wght" 200,
+            "GRAD" 0,
+            "opsz" 24;
+        }
+        .exp-card:hover .exp-cred-seal {
+          color: rgba(212, 175, 55, 0.65);
+          border-color: rgba(212, 175, 55, 0.35);
+          box-shadow: 0 0 18px rgba(212, 175, 55, 0.2);
+        }
+
+        .exp-cred-list {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+        }
+        .exp-cred-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.875rem;
+          padding: 0.9rem 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          transition: all 0.4s ease;
+        }
+        .exp-cred-item:last-child {
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+        .exp-cred-item:hover {
+          transform: translateX(4px);
+        }
+        .exp-cred-dot {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: rgba(212, 175, 55, 0.5);
+          box-shadow: 0 0 6px rgba(212, 175, 55, 0.3);
+          flex-shrink: 0;
+          margin-top: 7px;
+          transition: all 0.45s ease;
+        }
+        .exp-cred-item:hover .exp-cred-dot {
+          background: rgba(212, 175, 55, 0.9);
+          box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+        }
+        .exp-cred-title {
+          font-family: "Inter", sans-serif;
+          font-size: 13.5px;
+          font-weight: 600;
+          letter-spacing: 0.01em;
+          color: rgba(232, 232, 232, 0.88);
+          display: block;
+          margin-bottom: 2px;
+        }
+        .exp-cred-desc {
+          font-family: "Inter", sans-serif;
+          font-size: 11.5px;
+          color: rgba(200, 200, 200, 0.38);
+          display: block;
+          letter-spacing: 0.02em;
+        }
+
+        /* Mobile */
+        @media (max-width: 1100px) {
+          .exp-stat-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 768px) {
+          .exp-section {
+            padding: 30px 20px 80px;
+          }
+          .exp-heading {
+            font-size: 2.1rem;
+          }
+          .exp-subhead {
+            font-size: 15px;
+          }
+          .exp-hero-text {
+            margin-bottom: 3rem;
+          }
+          .exp-stat-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+          }
+          .exp-bottom-grid {
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+          }
+          .exp-card-inner {
+            padding: 1.5rem 1.25rem;
+          }
+          .exp-stat-num {
+            font-size: 40px;
+          }
+          .exp-card {
+            border-radius: 20px;
+          }
+        }
+        @media (max-width: 480px) {
+          .exp-stat-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+
+      <!-- ══════════════════════════════════════════════════════════════
+     EXPERIENCE & LEGAL EXPERTISE SECTION
+     ══════════════════════════════════════════════════════════════ -->
+      <section class="exp-section" id="experience">
+        <!-- Background atmosphere -->
+        <div class="exp-bg" aria-hidden="true">
+          <div class="exp-orb exp-orb-gold"></div>
+          <div class="exp-orb exp-orb-navy"></div>
+          <div class="exp-orb exp-orb-purple"></div>
+          <div class="exp-orb exp-orb-amber"></div>
+          <div class="exp-grain"></div>
+        </div>
+
+        <!-- Floating symbols (uses existing site CSS) -->
+        <div class="floating-symbols" aria-hidden="true">
           <span
             class="material-symbols-outlined float-symbol purple float-drift-1"
-            style="top: 10%; right: 15%"
-            >scale</span
+            style="top: 10%; right: 14%"
+            >balance</span
           >
           <span
             class="material-symbols-outlined float-symbol blue float-drift-3"
-            style="bottom: 20%; right: 8%"
+            style="bottom: 18%; left: 6%"
+            >gavel</span
+          >
+          <span
+            class="material-symbols-outlined float-symbol large float-drift-5"
+            style="top: 55%; right: 4%"
             >menu_book</span
           >
         </div>
 
-        <div
-          class="philosophy-grid relative z-10 grid lg:grid-cols-2 gap-24 items-center"
-        >
-          <div class="space-y-10 reveal">
-            <h2
-              class="font-headline-lg text-headline-lg leading-tight text-white"
-            >
-              Execution is the only measure of
-              <span class="italic gradient-text-gold">Success.</span>
-            </h2>
-            <div
-              class="w-24 h-px bg-gradient-to-r from-primary via-purple-400 to-transparent"
-            ></div>
-            <p class="font-body-lg text-on-surface/60 leading-relaxed">
-              In the legal arena, timing is not a factor—it is the factor. Our
-              positioning is defined by an editorial rigor that treats every
-              case as a complex piece of architecture. We do not just react; we
-              orchestrate outcomes through precise tactical maneuvers and deep
-              intellectual analysis of the law.
+        <div class="relative z-10">
+          <!-- ── TOP: Eyebrow + Heading + Sub ── -->
+          <div class="exp-hero-text reveal">
+            <p class="exp-eyebrow">
+              <span class="exp-eyebrow-bar"></span>
+              Professional Excellence
+              <span class="exp-eyebrow-bar right"></span>
             </p>
-            <div class="pt-4">
-              <a
-                href="#strategy"
-                class="btn-ghost font-label-caps text-label-caps text-primary inline-flex items-center gap-2 uppercase tracking-widest group px-6 py-3 rounded-full w-fit"
+            <h2 class="exp-heading">
+              15+ Years of&nbsp;<em class="exp-heading-gold"
+                >Courtroom Experience</em
               >
-                The Strategic Approach
-                <span
-                  class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
-                  >east</span
-                >
-              </a>
-            </div>
+            </h2>
+            <p class="exp-subhead">
+              Representing clients across complex criminal, civil, and dispute
+              matters with strategic legal precision, courtroom discipline, and
+              extensive trial experience across Gujarat.
+            </p>
           </div>
-          <div class="reveal">
-            <div
-              class="philosophy-image-wrap relative aspect-[4/5] overflow-hidden rounded-xl border border-white/10 group shadow-2xl gradient-border-card"
-            >
-              <img
-                alt="Minimalist legal workspace"
-                class="w-full h-full object-cover opacity-30 grayscale group-hover:scale-105 group-hover:opacity-40 transition-all duration-1000"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-2gJ82J5zshcSoDIsUmuzFRsubuKfErqGfYr0M_kfozEkErxBK5ViBIbE4_GN0JcKRZkGRFJTHObz9tWhWDZcacBJwiG0NAUJK3Iw3c4GxjpWcrC-Saw_7-rtcmE0uAB4QRHeoCWcnpGqP2cJ_ZodzVq0n3T4HYOwF0406w0RqvB-0Sc5G8F9cGUR9_2OJeEWu8VpsUteue_oQoWVvFD1JXuGWJjsE6XtQqu30Gv_tk1U2iC5Hf4iqbSrgBwyRMuwW0IktE9wRwM"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"
-              ></div>
-              <!-- Gradient color overlay -->
-              <div
-                class="absolute inset-0 mix-blend-overlay opacity-30 group-hover:opacity-50 transition-opacity duration-1000"
-                style="
-                  background: linear-gradient(
-                    135deg,
-                    rgba(212, 175, 55, 0.3) 0%,
-                    rgba(160, 100, 220, 0.3) 100%
-                  );
-                "
-              ></div>
 
-              <div
-                class="quote-overlay absolute bottom-12 left-12 p-8 glass-panel max-w-xs rounded-xl shadow-2xl border-white/10"
-              >
-                <p
-                  class="font-label-caps text-label-caps text-primary mb-3 uppercase tracking-widest"
+          <!-- ── STAT CARDS — 4 columns ── -->
+          <div class="exp-stat-grid reveal-stagger">
+            <!-- Card 1: Years -->
+            <div class="exp-card" tabindex="0">
+              <div class="exp-card-shimmer" aria-hidden="true"></div>
+              <div class="exp-card-glow" aria-hidden="true"></div>
+              <div class="exp-card-inner">
+                <span
+                  class="material-symbols-outlined exp-stat-icon"
+                  aria-hidden="true"
+                  >history_edu</span
                 >
-                  Core Philosophy
+                <p class="exp-stat-num">
+                  15<span class="exp-stat-plus">+</span>
                 </p>
-                <p
-                  class="font-headline-md text-headline-md italic text-white leading-tight"
+                <p class="exp-stat-label">Years of Legal Experience</p>
+                <div class="exp-stat-rule"></div>
+                <p class="exp-stat-sub">
+                  Practising since 2009 across Gujarat's criminal and civil
+                  courts
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2: Matters -->
+            <div class="exp-card" tabindex="0">
+              <div class="exp-card-shimmer" aria-hidden="true"></div>
+              <div class="exp-card-glow" aria-hidden="true"></div>
+              <div class="exp-card-inner">
+                <span
+                  class="material-symbols-outlined exp-stat-icon"
+                  aria-hidden="true"
+                  >assured_workload</span
                 >
-                  "Victory is determined before the court is even in session."
+                <p class="exp-stat-num">
+                  200<span class="exp-stat-plus">+</span>
+                </p>
+                <p class="exp-stat-label">
+                  Successful Matters &amp; Judgements
+                </p>
+                <div class="exp-stat-rule"></div>
+                <p class="exp-stat-sub">
+                  Favourable outcomes across trial, appellate, and tribunal
+                  forums
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 3: Courts -->
+            <div class="exp-card" tabindex="0">
+              <div class="exp-card-shimmer" aria-hidden="true"></div>
+              <div class="exp-card-glow" aria-hidden="true"></div>
+              <div class="exp-card-inner">
+                <span
+                  class="material-symbols-outlined exp-stat-icon"
+                  aria-hidden="true"
+                  >account_balance</span
+                >
+                <p class="exp-stat-num-sm">
+                  District &amp;<br />Sessions Courts
+                </p>
+                <p class="exp-stat-label">Court Practice Locations</p>
+                <div class="exp-stat-rule"></div>
+                <p class="exp-stat-sub">
+                  Ahmedabad, Gandhinagar &amp; across Gujarat — including High
+                  Court
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 4: Multi-disciplinary -->
+            <div class="exp-card" tabindex="0">
+              <div class="exp-card-shimmer" aria-hidden="true"></div>
+              <div class="exp-card-glow" aria-hidden="true"></div>
+              <div class="exp-card-inner">
+                <span
+                  class="material-symbols-outlined exp-stat-icon"
+                  aria-hidden="true"
+                  >workspaces</span
+                >
+                <p class="exp-stat-num-sm">Multi-<br />Disciplinary</p>
+                <p class="exp-stat-label">Practice Scope</p>
+                <div class="exp-stat-rule"></div>
+                <p class="exp-stat-sub">
+                  Criminal, Family, Revenue &amp; Civil Matters handled with
+                  precision
                 </p>
               </div>
             </div>
           </div>
+          <!-- /stat grid -->
+
+          <!-- ── BOTTOM: 2 wide cards ── -->
+          <div class="exp-bottom-grid reveal-stagger">
+            <!-- Areas of Practice -->
+            <!-- Courts Practiced In -->
+            <div class="exp-card exp-card--wide" tabindex="0">
+              <div class="exp-card-shimmer" aria-hidden="true"></div>
+              <div class="exp-card-glow" aria-hidden="true"></div>
+              <div class="exp-card-inner">
+                <div class="exp-wide-header">
+                  <span
+                    class="material-symbols-outlined exp-wide-icon"
+                    aria-hidden="true"
+                    >account_balance</span
+                  >
+                  <div>
+                    <p class="exp-wide-label">Jurisdictional Reach</p>
+                    <h3 class="exp-wide-title">Courts Practiced In</h3>
+                  </div>
+                </div>
+                <div class="exp-courts-list">
+                  <div class="exp-court-item">
+                    <div class="exp-court-left">
+                      <span class="exp-court-dot"></span>
+                      <div class="exp-court-connector"></div>
+                    </div>
+                    <div class="exp-court-content">
+                      <span class="exp-court-name">Gujarat High Court</span>
+                      <span class="exp-court-sub"
+                        >Appellate & Writ Jurisdiction</span
+                      >
+                    </div>
+                    <span class="exp-court-badge">High Court</span>
+                  </div>
+                  <div class="exp-court-item">
+                    <div class="exp-court-left">
+                      <span class="exp-court-dot"></span>
+                      <div class="exp-court-connector"></div>
+                    </div>
+                    <div class="exp-court-content">
+                      <span class="exp-court-name"
+                        >District & Sessions Court — Ahmedabad</span
+                      >
+                      <span class="exp-court-sub"
+                        >Criminal & Civil Trial Jurisdiction</span
+                      >
+                    </div>
+                    <span class="exp-court-badge">Sessions</span>
+                  </div>
+                  <div class="exp-court-item">
+                    <div class="exp-court-left">
+                      <span class="exp-court-dot"></span>
+                      <div class="exp-court-connector"></div>
+                    </div>
+                    <div class="exp-court-content">
+                      <span class="exp-court-name"
+                        >District & Sessions Court — Gandhinagar</span
+                      >
+                      <span class="exp-court-sub"
+                        >Criminal & Civil Trial Jurisdiction</span
+                      >
+                    </div>
+                    <span class="exp-court-badge">Sessions</span>
+                  </div>
+                  <div class="exp-court-item">
+                    <div class="exp-court-left">
+                      <span class="exp-court-dot"></span>
+                      <div class="exp-court-connector"></div>
+                    </div>
+                    <div class="exp-court-content">
+                      <span class="exp-court-name"
+                        >Magistrate Courts — Across Gujarat</span
+                      >
+                      <span class="exp-court-sub"
+                        >Trial & Summary Jurisdiction</span
+                      >
+                    </div>
+                    <span class="exp-court-badge">Magistrate</span>
+                  </div>
+                  <div class="exp-court-item" style="border-bottom: none">
+                    <div class="exp-court-left">
+                      <span class="exp-court-dot"></span>
+                    </div>
+                    <div class="exp-court-content">
+                      <span class="exp-court-name"
+                        >Revenue & Specialised Tribunals</span
+                      >
+                      <span class="exp-court-sub"
+                        >Gujarat Revenue Tribunal, Family Courts</span
+                      >
+                    </div>
+                    <span class="exp-court-badge">Tribunal</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Professional Credentials -->
+            <div
+              class="exp-card exp-card--wide"
+              tabindex="0"
+              style="position: relative"
+            >
+              <div class="exp-card-shimmer" aria-hidden="true"></div>
+              <div class="exp-card-glow" aria-hidden="true"></div>
+              <!-- Gold seal -->
+              <div class="exp-cred-seal" aria-hidden="true">
+                <span class="material-symbols-outlined">military_tech</span>
+              </div>
+              <div class="exp-card-inner">
+                <div class="exp-wide-header">
+                  <span
+                    class="material-symbols-outlined exp-wide-icon"
+                    aria-hidden="true"
+                    >verified</span
+                  >
+                  <div>
+                    <p class="exp-wide-label">
+                      Qualifications &amp; Memberships
+                    </p>
+                    <h3 class="exp-wide-title">Professional Credentials</h3>
+                  </div>
+                </div>
+                <div class="exp-cred-list">
+                  <div class="exp-cred-item">
+                    <span class="exp-cred-dot" aria-hidden="true"></span>
+                    <div>
+                      <span class="exp-cred-title">B.COM</span>
+                      <span class="exp-cred-desc">Bachelor of Commerce</span>
+                    </div>
+                  </div>
+                  <div class="exp-cred-item">
+                    <span class="exp-cred-dot" aria-hidden="true"></span>
+                    <div>
+                      <span class="exp-cred-title">LL.B.</span>
+                      <span class="exp-cred-desc">Bachelor of Laws</span>
+                    </div>
+                  </div>
+                  <div class="exp-cred-item">
+                    <span class="exp-cred-dot" aria-hidden="true"></span>
+                    <div>
+                      <span class="exp-cred-title">Bar Council of Gujarat</span>
+                      <span class="exp-cred-desc">Enrolled Member</span>
+                    </div>
+                  </div>
+                  <div class="exp-cred-item">
+                    <span class="exp-cred-dot" aria-hidden="true"></span>
+                    <div>
+                      <span class="exp-cred-title"
+                        >District &amp; Sessions Court Ahmedabad (Rural)</span
+                      >
+                      <span class="exp-cred-desc">Active Member</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /bottom grid -->
         </div>
+        <!-- /relative z-10 -->
       </section>
 
+      <!-- Script: mouse spotlight + counter animation -->
+      <script>
+        (function () {
+          /* Mouse spotlight per card */
+          document.querySelectorAll(".exp-card").forEach(function (card) {
+            card.addEventListener("mousemove", function (e) {
+              var r = card.getBoundingClientRect();
+              card.style.setProperty(
+                "--ex",
+                ((e.clientX - r.left) / r.width) * 100 + "%",
+              );
+              card.style.setProperty(
+                "--ey",
+                ((e.clientY - r.top) / r.height) * 100 + "%",
+              );
+            });
+          });
+
+          /* Count-up animation for stat numbers */
+          function animateCount(el, target, suffix) {
+            var duration = 1600;
+            var startTime = null;
+            var easeOut = function (t) {
+              return 1 - Math.pow(1 - t, 3);
+            };
+            var plusEl = el.querySelector(".exp-stat-plus");
+            function step(ts) {
+              if (!startTime) startTime = ts;
+              var progress = Math.min((ts - startTime) / duration, 1);
+              var val = Math.round(easeOut(progress) * target);
+              if (plusEl) {
+                el.childNodes[0].nodeValue = val;
+              } else {
+                el.textContent = val + (suffix || "");
+              }
+              if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          }
+
+          var animated = new Set();
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (!entry.isIntersecting || animated.has(entry.target)) return;
+                var el = entry.target;
+                animated.add(el);
+                var raw = el.textContent.replace(/\+/g, "").trim();
+                var target = parseInt(raw, 10);
+                if (!isNaN(target)) animateCount(el, target);
+              });
+            },
+            { threshold: 0.6 },
+          );
+
+          document.querySelectorAll(".exp-stat-num").forEach(function (el) {
+            io.observe(el);
+          });
+        })();
+      </script>
       <!-- ============================================
            PRACTICE AREAS
            ============================================ -->
