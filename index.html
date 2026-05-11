@@ -869,6 +869,10 @@
         border: 1px solid rgba(255, 255, 255, 0.15);
         transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         overflow: hidden;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        align-items: center;
       }
 
       .btn-ghost::before {
@@ -1647,80 +1651,32 @@
         }
 
         /* Lady Justice: visible on the right side */
-        /* Statue: right side, tall, visible */
         .justice-stage {
           position: absolute !important;
           inset: 0 !important;
           width: 100% !important;
-          opacity: 1 !important;
+          opacity: 0.85 !important;
           z-index: 1 !important;
-          display: flex !important;
-          align-items: flex-end !important;
-          justify-content: flex-end !important;
-        }
-        .justice-3d {
-          width: 55% !important;
-          height: 100% !important;
-          display: flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-          position: absolute !important;
-          right: 0 !important;
-          top: 0 !important;
-          bottom: 0 !important;
         }
         .justice-3d img {
-          height: 75% !important;
-          width: auto !important;
-          margin-top: 80px !important;
-          object-fit: contain !important;
-          mask-image:
-            radial-gradient(
-              ellipse 80% 90% at 55% 50%,
-              black 35%,
-              transparent 75%
-            ),
-            linear-gradient(
-              to bottom,
-              transparent 0%,
-              black 10%,
-              black 85%,
-              transparent 100%
-            ) !important;
-          mask-composite: intersect !important;
-          -webkit-mask-image:
-            radial-gradient(
-              ellipse 80% 90% at 55% 50%,
-              black 35%,
-              transparent 75%
-            ),
-            linear-gradient(
-              to bottom,
-              transparent 0%,
-              black 10%,
-              black 85%,
-              transparent 100%
-            ) !important;
-          -webkit-mask-composite: source-in !important;
-          filter: drop-shadow(0 20px 40px rgba(212, 175, 55, 0.25))
-            brightness(0.85) !important;
+          height: 100% !important;
         }
 
-        /* Overlay: dark on left so text is readable, fades to transparent on right */
+        /* Fade overlay: only darken left 60% so statue on right stays visible */
         .absolute.inset-y-0.left-0 {
           width: 100% !important;
           background: linear-gradient(
             to right,
-            rgba(8, 9, 10, 1) 0%,
-            rgba(8, 9, 10, 1) 45%,
-            rgba(8, 9, 10, 0.6) 65%,
+            rgba(8, 9, 10, 0.92) 0%,
+            rgba(8, 9, 10, 0.75) 55%,
+            rgba(8, 9, 10, 0.3) 80%,
             transparent 100%
           ) !important;
         }
 
-        /* Text: left 55% only, statue occupies right 45% */
+        /* Content wrapper: constrain to left 65% so statue peeks right */
         .relative.z-30.space-y-8 {
-          max-width: 50% !important;
+          max-width: 100% !important;
           padding-top: 0 !important;
           display: flex !important;
           flex-direction: column !important;
@@ -1730,7 +1686,7 @@
 
         /* Hero headline */
         .hero-rise-2 {
-          font-size: 1.6rem !important;
+          font-size: 2.1rem !important;
           line-height: 1.1 !important;
           letter-spacing: -0.02em;
         }
@@ -1751,11 +1707,15 @@
           margin-top: auto !important;
           padding-top: 2rem !important;
         }
-        .hero-rise-4 button {
+        .hero-rise-4 button,
+        .hero-rise-4 a {
           width: 100%;
           justify-content: center;
+          text-align: center;
           padding: 1rem 1.5rem !important;
           font-size: 11px !important;
+          display: flex !important;
+          box-sizing: border-box !important;
         }
 
         /* Authority strip */
@@ -5060,38 +5020,7 @@
       revealEls.forEach((el) => io.observe(el));
 
       // 3D parallax tilt for Lady Justice based on cursor
-      const justice = document.getElementById("justice3d");
-      if (justice) {
-        const heroSection = justice.closest("section");
-        let rafId = null;
-        let targetX = 0,
-          targetY = 0;
-        let currentX = 0,
-          currentY = 0;
-
-        heroSection.addEventListener("mousemove", (e) => {
-          const rect = heroSection.getBoundingClientRect();
-          const x = (e.clientX - rect.left) / rect.width - 0.5;
-          const y = (e.clientY - rect.top) / rect.height - 0.5;
-          targetX = x * 12; // max 12deg
-          targetY = y * 8; // max 8deg
-        });
-
-        heroSection.addEventListener("mouseleave", () => {
-          targetX = 0;
-          targetY = 0;
-        });
-
-        function animate() {
-          currentX += (targetX - currentX) * 0.08;
-          currentY += (targetY - currentY) * 0.08;
-          // Compose tilt with the running float animation by setting CSS variables
-          justice.style.setProperty("--tilt-x", `${currentX}deg`);
-          justice.style.setProperty("--tilt-y", `${-currentY}deg`);
-          rafId = requestAnimationFrame(animate);
-        }
-        animate();
-      }
+      // Parallax disabled to prevent glitch
 
       // Card mouse-tracking spotlight
       document.querySelectorAll(".premium-card").forEach((card) => {
