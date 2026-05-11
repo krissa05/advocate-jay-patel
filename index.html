@@ -1647,32 +1647,79 @@
         }
 
         /* Lady Justice: visible on the right side */
+        /* Statue: right side, tall, visible */
         .justice-stage {
           position: absolute !important;
           inset: 0 !important;
           width: 100% !important;
-          opacity: 0.55 !important;
+          opacity: 1 !important;
           z-index: 1 !important;
+          display: flex !important;
+          align-items: flex-end !important;
+          justify-content: flex-end !important;
+        }
+        .justice-3d {
+          width: 55% !important;
+          height: 100% !important;
+          display: flex !important;
+          align-items: flex-end !important;
+          justify-content: center !important;
+          position: absolute !important;
+          right: 0 !important;
+          bottom: 0 !important;
         }
         .justice-3d img {
-          height: 80% !important;
+          height: 85% !important;
+          width: auto !important;
+          margin-top: 0 !important;
+          object-fit: contain !important;
+          mask-image:
+            radial-gradient(
+              ellipse 80% 90% at 55% 50%,
+              black 35%,
+              transparent 75%
+            ),
+            linear-gradient(
+              to bottom,
+              transparent 0%,
+              black 10%,
+              black 85%,
+              transparent 100%
+            ) !important;
+          mask-composite: intersect !important;
+          -webkit-mask-image:
+            radial-gradient(
+              ellipse 80% 90% at 55% 50%,
+              black 35%,
+              transparent 75%
+            ),
+            linear-gradient(
+              to bottom,
+              transparent 0%,
+              black 10%,
+              black 85%,
+              transparent 100%
+            ) !important;
+          -webkit-mask-composite: source-in !important;
+          filter: drop-shadow(0 20px 40px rgba(212, 175, 55, 0.25))
+            brightness(0.85) !important;
         }
 
-        /* Fade overlay: only darken left 60% so statue on right stays visible */
+        /* Overlay: dark on left so text is readable, fades to transparent on right */
         .absolute.inset-y-0.left-0 {
           width: 100% !important;
           background: linear-gradient(
             to right,
-            rgba(8, 9, 10, 0.97) 0%,
-            rgba(8, 9, 10, 0.97) 50%,
-            rgba(8, 9, 10, 0.4) 75%,
+            rgba(8, 9, 10, 1) 0%,
+            rgba(8, 9, 10, 1) 45%,
+            rgba(8, 9, 10, 0.6) 65%,
             transparent 100%
           ) !important;
         }
 
-        /* Content wrapper: constrain to left 65% so statue peeks right */
+        /* Text: left 55% only, statue occupies right 45% */
         .relative.z-30.space-y-8 {
-          max-width: 65% !important;
+          max-width: 58% !important;
           padding-top: 0 !important;
           display: flex !important;
           flex-direction: column !important;
