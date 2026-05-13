@@ -1,0 +1,88 @@
+
+/* SECTION-SPECIFIC GRADIENT BACKDROPS */
+      .section-glow-purple {
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(120, 80, 220, 0.18) 0%,
+          transparent 60%
+        );
+        filter: blur(100px);
+        pointer-events: none;
+      }
+
+      .section-glow-blue {
+        position: absolute;
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(60, 110, 220, 0.18) 0%,
+          transparent 60%
+        );
+        filter: blur(100px);
+        pointer-events: none;
+      }
+
+      .section-glow-gold {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(212, 175, 55, 0.15) 0%,
+          transparent 60%
+        );
+        filter: blur(100px);
+        pointer-events: none;
+      }
+
+
+/* SECTION-SPECIFIC GRADIENT BACKDROPS */
+      .section-glow-purple {
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(120, 80, 220, 0.18) 0%,
+          transparent 60%
+        );
+        filter: blur(100px);
+        pointer-events: none;
+      }
+
+      .section-glow-blue {
+        position: absolute;
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(60, 110, 220, 0.18) 0%,
+          transparent 60%
+        );
+        filter: blur(100px);
+        pointer-events: none;
+      }
+
+      .section-glow-gold {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(212, 175, 55, 0.15) 0%,
+          transparent 60%
+        );
+        filter: blur(100px);
+        pointer-events: none;
+      }
+

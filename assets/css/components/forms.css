@@ -1,0 +1,96 @@
+
+/* INPUT FIELDS */
+      .input-line,
+      .input-line:hover,
+      .input-line:focus,
+      .input-line:active {
+        background-color: transparent !important;
+        background-image: none !important;
+        border: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-radius: 0 !important;
+        padding: 14px 0 !important;
+        color: #ffffff !important;
+        font-size: 16px;
+        letter-spacing: 0.01em;
+        transition:
+          border-color 0.4s ease,
+          box-shadow 0.4s ease;
+        box-shadow: none !important;
+        --tw-ring-shadow: 0 0 #0000 !important;
+        --tw-ring-color: transparent !important;
+      }
+
+      .input-line::placeholder {
+        color: rgba(255, 255, 255, 0.25) !important;
+        font-weight: 300;
+      }
+
+      .input-line:hover {
+        border-bottom-color: rgba(255, 255, 255, 0.25) !important;
+      }
+
+      .input-line:focus {
+        outline: none !important;
+        border-bottom-color: #d4af37 !important;
+        box-shadow: 0 1px 0 0 rgba(212, 175, 55, 0.4) !important;
+      }
+
+      /* Kill autofill white background (Chrome/Safari) */
+      .input-line:-webkit-autofill,
+      .input-line:-webkit-autofill:hover,
+      .input-line:-webkit-autofill:focus {
+        -webkit-text-fill-color: #ffffff !important;
+        -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+        transition: background-color 5000s ease-in-out 0s;
+        caret-color: #d4af37;
+      }
+
+
+/* INPUT FIELDS */
+      .input-line,
+      .input-line:hover,
+      .input-line:focus,
+      .input-line:active {
+        background-color: transparent !important;
+        background-image: none !important;
+        border: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-radius: 0 !important;
+        padding: 14px 0 !important;
+        color: #ffffff !important;
+        font-size: 16px;
+        letter-spacing: 0.01em;
+        transition:
+          border-color 0.4s ease,
+          box-shadow 0.4s ease;
+        box-shadow: none !important;
+        --tw-ring-shadow: 0 0 #0000 !important;
+        --tw-ring-color: transparent !important;
+      }
+
+      .input-line::placeholder {
+        color: rgba(255, 255, 255, 0.25) !important;
+        font-weight: 300;
+      }
+
+      .input-line:hover {
+        border-bottom-color: rgba(255, 255, 255, 0.25) !important;
+      }
+
+      .input-line:focus {
+        outline: none !important;
+        border-bottom-color: #d4af37 !important;
+        box-shadow: 0 1px 0 0 rgba(212, 175, 55, 0.4) !important;
+      }
+
+      /* Kill autofill white background (Chrome/Safari) */
+      .input-line:-webkit-autofill,
+      .input-line:-webkit-autofill:hover,
+      .input-line:-webkit-autofill:focus {
+        -webkit-text-fill-color: #ffffff !important;
+        -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+        transition: background-color 5000s ease-in-out 0s;
+        caret-color: #d4af37;
+      }
+

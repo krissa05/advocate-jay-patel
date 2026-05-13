@@ -1,0 +1,928 @@
+/* Modal styles */
+
+      /* ── Emergency Consultation Modal ─────────────────────────── */
+      #emergency-modal-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9998;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        background:
+          radial-gradient(
+            ellipse 60% 50% at 30% 40%,
+            rgba(255, 82, 82, 0.09) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 50% 50% at 70% 60%,
+            rgba(160, 100, 220, 0.07) 0%,
+            transparent 60%
+          ),
+          rgba(8, 9, 10, 0.88);
+        backdrop-filter: blur(32px) saturate(1.5);
+        -webkit-backdrop-filter: blur(32px) saturate(1.5);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.45s ease;
+      }
+      #emergency-modal-overlay.ec-visible {
+        opacity: 1;
+        pointer-events: all;
+      }
+      #emergency-modal-overlay.ec-visible #emergency-modal {
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+        opacity: 1;
+      }
+
+      /* Ambient orbs */
+      .ec-orb {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        filter: blur(110px);
+        animation: vos-orb-pulse 8s ease-in-out infinite;
+      }
+      .ec-orb-1 {
+        width: 520px;
+        height: 520px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-80%, -70%);
+        background: radial-gradient(
+          circle,
+          rgba(255, 82, 82, 0.2) 0%,
+          rgba(160, 40, 80, 0.08) 50%,
+          transparent 70%
+        );
+      }
+      .ec-orb-2 {
+        width: 440px;
+        height: 440px;
+        top: 50%;
+        left: 50%;
+        transform: translate(15%, 10%);
+        background: radial-gradient(
+          circle,
+          rgba(160, 100, 220, 0.2) 0%,
+          transparent 70%
+        );
+        animation-delay: 3s;
+      }
+      .ec-orb-3 {
+        width: 300px;
+        height: 200px;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: radial-gradient(
+          ellipse,
+          rgba(212, 175, 55, 0.1) 0%,
+          transparent 70%
+        );
+        filter: blur(70px);
+        animation-delay: 1.5s;
+      }
+
+      /* Modal card */
+      #emergency-modal {
+        position: relative;
+        width: 100%;
+        max-width: 660px;
+        max-height: 90vh;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 82, 82, 0.2) transparent;
+        border-radius: 28px;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.048) 0%,
+          rgba(255, 255, 255, 0.014) 40%,
+          rgba(255, 82, 82, 0.018) 100%
+        );
+        backdrop-filter: blur(48px) saturate(1.9) brightness(1.06);
+        -webkit-backdrop-filter: blur(48px) saturate(1.9) brightness(1.06);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        box-shadow:
+          0 2px 0 0 rgba(255, 255, 255, 0.07) inset,
+          0 -1px 0 0 rgba(255, 255, 255, 0.02) inset,
+          0 48px 96px rgba(0, 0, 0, 0.7),
+          0 20px 48px rgba(0, 0, 0, 0.45),
+          0 0 100px rgba(255, 82, 82, 0.12),
+          0 0 200px rgba(255, 82, 82, 0.05);
+        transform: translateY(32px) scale(0.96);
+        filter: blur(4px);
+        opacity: 0;
+        transition:
+          transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+          opacity 0.6s ease,
+          filter 0.6s ease;
+      }
+      #emergency-modal::-webkit-scrollbar {
+        width: 4px;
+      }
+      #emergency-modal::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      #emergency-modal::-webkit-scrollbar-thumb {
+        background: rgba(255, 82, 82, 0.22);
+        border-radius: 4px;
+      }
+
+      /* Noise texture overlay */
+      #emergency-modal::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 28px;
+        pointer-events: none;
+        opacity: 0.3;
+        z-index: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      }
+
+      /* Top shimmer line */
+      .ec-modal-shimmer {
+        position: absolute;
+        top: 0;
+        left: 10%;
+        right: 10%;
+        height: 1px;
+        z-index: 2;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255, 82, 82, 0.55) 30%,
+          rgba(255, 255, 255, 0.75) 50%,
+          rgba(160, 100, 220, 0.55) 70%,
+          transparent 100%
+        );
+      }
+
+      /* Header */
+      .ec-header {
+        position: relative;
+        z-index: 1;
+        padding: 2.25rem 2.5rem 1.75rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 82, 82, 0.05) 0%,
+          transparent 100%
+        );
+      }
+      .ec-eyebrow {
+        font-family: "Inter", sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(255, 82, 82, 0.88);
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 1rem;
+      }
+      .ec-pulse-dot {
+        width: 7px;
+        height: 7px;
+        background: #ff5252;
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow:
+          0 0 10px rgba(255, 82, 82, 0.9),
+          0 0 20px rgba(255, 82, 82, 0.4);
+        animation: pulse-error 2s ease-in-out infinite;
+        flex-shrink: 0;
+      }
+      .ec-title {
+        font-family: "Newsreader", serif;
+        font-size: 30px;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        color: rgba(226, 226, 226, 0.97);
+        margin: 0 0 0.4rem;
+      }
+      .ec-title-gold {
+        background: linear-gradient(
+          135deg,
+          #f4d472 0%,
+          #d4af37 40%,
+          #c5a059 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-style: italic;
+      }
+      .ec-subtitle {
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        color: rgba(209, 197, 180, 0.36);
+        letter-spacing: 0.02em;
+      }
+      .ec-close {
+        position: absolute;
+        top: 1.75rem;
+        right: 1.75rem;
+        width: 38px;
+        height: 38px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.03);
+        color: rgba(226, 226, 226, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 2;
+      }
+      .ec-close:hover {
+        border-color: rgba(255, 82, 82, 0.5);
+        color: rgba(255, 82, 82, 0.9);
+        background: rgba(255, 82, 82, 0.09);
+        transform: rotate(90deg);
+      }
+      .ec-close .material-symbols-outlined {
+        font-size: 18px;
+      }
+
+      /* Body */
+      .ec-body {
+        padding: 1.75rem 2.5rem 2.25rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ── Identity card ── */
+      .ec-identity-card {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 18px;
+        border-radius: 16px;
+        border: 1px solid rgba(212, 175, 55, 0.18);
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.06) 0%,
+          rgba(255, 255, 255, 0.02) 100%
+        );
+        margin-bottom: 1.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .ec-identity-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(212, 175, 55, 0.4),
+          transparent
+        );
+      }
+      .ec-identity-avatar {
+        width: 52px;
+        height: 52px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.15),
+          rgba(160, 100, 220, 0.1)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(212, 175, 55, 0.8);
+      }
+      .ec-identity-avatar .material-symbols-outlined {
+        font-size: 26px;
+      }
+      .ec-identity-info {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        flex: 1;
+        min-width: 0;
+      }
+      .ec-identity-name {
+        font-family: "Newsreader", serif;
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        color: rgba(226, 226, 226, 0.95);
+      }
+      .ec-identity-title {
+        font-family: "Inter", sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        color: rgba(212, 175, 55, 0.7);
+        letter-spacing: 0.02em;
+      }
+      .ec-identity-court {
+        font-family: "Inter", sans-serif;
+        font-size: 10px;
+        color: rgba(226, 226, 226, 0.28);
+        letter-spacing: 0.02em;
+      }
+      .ec-identity-badge {
+        font-family: "Inter", sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(37, 211, 102, 0.85);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background: rgba(37, 211, 102, 0.08);
+        border: 1px solid rgba(37, 211, 102, 0.2);
+        border-radius: 20px;
+        padding: 4px 10px;
+        flex-shrink: 0;
+      }
+      .ec-badge-dot {
+        width: 5px;
+        height: 5px;
+        background: #25d366;
+        border-radius: 50%;
+        box-shadow: 0 0 6px rgba(37, 211, 102, 0.8);
+        animation: pulse-error 2s ease-in-out infinite;
+        flex-shrink: 0;
+      }
+
+      /* ── Divider ── */
+      .ec-divider {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 1.25rem;
+      }
+      .ec-divider-line {
+        flex: 1;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .ec-divider-label {
+        font-family: "Inter", sans-serif;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(226, 226, 226, 0.2);
+        white-space: nowrap;
+      }
+
+      /* Contact grid */
+      .ec-contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 1.5rem;
+      }
+      @media (max-width: 560px) {
+        .ec-contact-grid {
+          grid-template-columns: 1fr;
+        }
+        #emergency-modal {
+          border-radius: 20px;
+          max-height: 95vh;
+        }
+        .ec-header,
+        .ec-body {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+        .ec-identity-badge {
+          display: none;
+        }
+      }
+
+      /* Contact card base */
+      .ec-contact-card {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        padding: 14px 16px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        background: rgba(255, 255, 255, 0.022);
+        backdrop-filter: blur(16px);
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .ec-contact-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+      }
+      .ec-contact-card:hover {
+        transform: translateY(-3px);
+      }
+      .ec-contact-card:hover::before {
+        opacity: 1;
+      }
+
+      /* WhatsApp card */
+      .ec-card-wa:hover {
+        border-color: rgba(37, 211, 102, 0.35);
+        box-shadow:
+          0 16px 40px rgba(37, 211, 102, 0.12),
+          0 0 0 1px rgba(37, 211, 102, 0.1);
+      }
+      .ec-card-wa::before {
+        background: radial-gradient(
+          circle at 20% 50%,
+          rgba(37, 211, 102, 0.1),
+          transparent 60%
+        );
+      }
+      .ec-wa-icon {
+        background: rgba(37, 211, 102, 0.12) !important;
+        color: #25d366;
+      }
+      .ec-card-wa:hover .ec-wa-icon {
+        background: rgba(37, 211, 102, 0.22) !important;
+        box-shadow: 0 0 18px rgba(37, 211, 102, 0.35);
+      }
+
+      /* Phone card */
+      .ec-card-phone:hover {
+        border-color: rgba(212, 175, 55, 0.35);
+        box-shadow:
+          0 16px 40px rgba(212, 175, 55, 0.12),
+          0 0 0 1px rgba(212, 175, 55, 0.1);
+      }
+      .ec-card-phone::before {
+        background: radial-gradient(
+          circle at 20% 50%,
+          rgba(212, 175, 55, 0.1),
+          transparent 60%
+        );
+      }
+      .ec-phone-icon {
+        background: rgba(212, 175, 55, 0.1) !important;
+        color: #d4af37;
+      }
+      .ec-card-phone:hover .ec-phone-icon {
+        background: rgba(212, 175, 55, 0.2) !important;
+        box-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
+      }
+
+      /* Email card */
+      .ec-card-email:hover {
+        border-color: rgba(160, 100, 220, 0.35);
+        box-shadow:
+          0 16px 40px rgba(160, 100, 220, 0.12),
+          0 0 0 1px rgba(160, 100, 220, 0.1);
+      }
+      .ec-card-email::before {
+        background: radial-gradient(
+          circle at 20% 50%,
+          rgba(160, 100, 220, 0.1),
+          transparent 60%
+        );
+      }
+      .ec-email-icon {
+        background: rgba(160, 100, 220, 0.1) !important;
+        color: #a06ddc;
+      }
+      .ec-card-email:hover .ec-email-icon {
+        background: rgba(160, 100, 220, 0.2) !important;
+        box-shadow: 0 0 18px rgba(160, 100, 220, 0.35);
+      }
+
+      /* Location card */
+      .ec-location-icon {
+        background: rgba(80, 130, 220, 0.1) !important;
+        color: #5082dc;
+      }
+      .ec-card-location {
+        cursor: default;
+      }
+      .ec-card-location:hover {
+        transform: none;
+        border-color: rgba(80, 130, 220, 0.2);
+      }
+      .ec-card-location::before {
+        background: radial-gradient(
+          circle at 20% 50%,
+          rgba(80, 130, 220, 0.07),
+          transparent 60%
+        );
+      }
+
+      /* Icon wrap */
+      .ec-card-icon-wrap {
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+      }
+      .ec-card-icon-wrap .material-symbols-outlined {
+        font-size: 20px;
+      }
+
+      /* Card text */
+      .ec-card-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+      .ec-card-label {
+        font-family: "Inter", sans-serif;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(226, 226, 226, 0.28);
+      }
+      .ec-card-value {
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(226, 226, 226, 0.9);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .ec-card-cta {
+        font-family: "Inter", sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        color: rgba(226, 226, 226, 0.28);
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+      }
+      .ec-contact-card:hover .ec-card-cta {
+        color: rgba(226, 226, 226, 0.65);
+      }
+
+      /* Disclaimer */
+      .ec-disclaimer {
+        font-family: "Inter", sans-serif;
+        font-size: 11px;
+        color: rgba(209, 197, 180, 0.24);
+        line-height: 1.65;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        padding-top: 1.25rem;
+        margin-top: 0;
+      }
+    
+      /* ── Practice Area Modal ─────────────────────────────────── */
+      #pa-modal-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9997;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        /* Deep dark frosted backdrop — matches screenshot */
+        background: rgba(6, 7, 8, 0.78);
+        backdrop-filter: blur(32px) saturate(1.6);
+        -webkit-backdrop-filter: blur(32px) saturate(1.6);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.38s ease;
+      }
+      #pa-modal-overlay.pa-visible {
+        opacity: 1;
+        pointer-events: all;
+      }
+      #pa-modal-overlay.pa-visible #pa-modal {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+      }
+
+      /* Subtle ambient glow orbs behind the card */
+      .pa-orb {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        filter: blur(110px);
+        animation: vos-orb-pulse 9s ease-in-out infinite;
+      }
+      .pa-orb-1 {
+        width: 480px;
+        height: 480px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-75%, -72%);
+        background: radial-gradient(
+          circle,
+          rgba(160, 120, 40, 0.22) 0%,
+          transparent 70%
+        );
+      }
+      .pa-orb-2 {
+        width: 400px;
+        height: 400px;
+        top: 50%;
+        left: 50%;
+        transform: translate(8%, 8%);
+        background: radial-gradient(
+          circle,
+          rgba(80, 60, 20, 0.18) 0%,
+          transparent 70%
+        );
+        animation-delay: 4s;
+      }
+      .pa-orb-3 {
+        width: 300px;
+        height: 200px;
+        bottom: 6%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: radial-gradient(
+          ellipse,
+          rgba(212, 175, 55, 0.1) 0%,
+          transparent 70%
+        );
+        filter: blur(80px);
+        animation-delay: 2s;
+      }
+
+      /* Modal card — rich dark glass matching screenshot */
+      #pa-modal {
+        position: relative;
+        width: 100%;
+        max-width: 520px;
+        /* Layered glassmorphism: frosted dark card with very subtle gold tint */
+        background: linear-gradient(
+          160deg,
+          rgba(38, 34, 24, 0.92) 0%,
+          rgba(22, 20, 14, 0.96) 50%,
+          rgba(18, 16, 10, 0.98) 100%
+        );
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(180, 150, 60, 0.18);
+        border-radius: 20px;
+        overflow: hidden;
+        padding: 2rem 2rem 2rem;
+        transform: translateY(28px) scale(0.96);
+        opacity: 0;
+        filter: blur(4px);
+        transition:
+          transform 0.48s cubic-bezier(0.16, 1, 0.3, 1),
+          opacity 0.42s ease,
+          filter 0.42s ease;
+        box-shadow:
+          0 0 0 1px rgba(212, 175, 55, 0.1),
+          0 32px 64px rgba(0, 0, 0, 0.7),
+          inset 0 1px 0 rgba(255, 220, 100, 0.08);
+      }
+
+      /* Mobile: slide up sheet */
+      @media (max-width: 640px) {
+        #pa-modal-overlay {
+          align-items: flex-end;
+          padding: 0;
+        }
+        #pa-modal {
+          max-width: 100%;
+          border-radius: 20px 20px 0 0;
+          border-bottom: none;
+          padding: 1.75rem 1.5rem 2.25rem;
+          transform: translateY(100%);
+        }
+        #pa-modal-overlay.pa-visible #pa-modal {
+          transform: translateY(0) scale(1);
+          filter: blur(0);
+          opacity: 1;
+        }
+      }
+
+      /* Subtle inner top glow line */
+      .pa-shimmer-line {
+        position: absolute;
+        top: 0;
+        left: 10%;
+        right: 10%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(212, 175, 55, 0.55) 35%,
+          rgba(212, 175, 55, 0.3) 65%,
+          transparent 100%
+        );
+        border-radius: 0 0 2px 2px;
+      }
+
+      /* Close button — circular, matches screenshot */
+      .pa-close {
+        position: absolute;
+        top: 1.1rem;
+        right: 1.1rem;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.06);
+        color: rgba(226, 226, 226, 0.55);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        backdrop-filter: blur(8px);
+      }
+      .pa-close:hover {
+        border-color: rgba(212, 175, 55, 0.5);
+        color: #e9c176;
+        background: rgba(212, 175, 55, 0.1);
+      }
+
+      /* Header row */
+      .pa-header {
+        display: flex;
+        align-items: center;
+        gap: 0.875rem;
+        margin-bottom: 0;
+        padding-right: 2rem;
+      }
+
+      /* Icon box — rounded square with warm amber glass fill, matching screenshot */
+      .pa-icon-box {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+        border-radius: 12px;
+        border: 1px solid rgba(180, 140, 50, 0.3);
+        background: linear-gradient(
+          145deg,
+          rgba(100, 78, 20, 0.55) 0%,
+          rgba(60, 45, 10, 0.65) 100%
+        );
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 210, 80, 0.15),
+          0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      .pa-modal-icon-sym {
+        font-size: 22px;
+        color: #d4af37;
+        /* Use filled style for icon matching screenshot */
+        font-variation-settings:
+          "FILL" 1,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+
+      /* Label + title */
+      .pa-label-sm {
+        font-family: "Inter", sans-serif;
+        font-size: 9.5px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(212, 175, 55, 0.65);
+        margin-bottom: 2px;
+      }
+      .pa-modal-title-text {
+        font-family: "Newsreader", serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: #e8e8e8;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+      }
+
+      /* Divider */
+      .pa-divider {
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        margin: 1.25rem 0 1.25rem;
+      }
+
+      /* Summary */
+      .pa-summary {
+        font-family: "Inter", sans-serif;
+        font-size: 14.5px;
+        line-height: 1.72;
+        color: rgba(218, 218, 218, 0.68);
+        margin-bottom: 1.25rem;
+      }
+
+      /* Approach box — dark glass inner panel, matching screenshot */
+      .pa-approach-box {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        padding: 1rem 1.25rem;
+        margin-bottom: 1.75rem;
+        backdrop-filter: blur(6px);
+      }
+      .pa-approach-label {
+        font-family: "Inter", sans-serif;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(212, 175, 55, 0.5);
+        margin-bottom: 0.5rem;
+      }
+      .pa-approach-body {
+        font-family: "Inter", sans-serif;
+        font-size: 13.5px;
+        line-height: 1.68;
+        color: rgba(210, 210, 210, 0.58);
+      }
+
+      /* CTA buttons row */
+      .pa-cta-row {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .pa-btn-call,
+      .pa-btn-wa {
+        flex: 1;
+        min-width: 130px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Inter", sans-serif;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        padding: 0.9rem 1.25rem;
+        border-radius: 999px; /* full pill — matches screenshot */
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        white-space: nowrap;
+      }
+
+      /* Gold Call Now pill */
+      .pa-btn-call {
+        background: linear-gradient(135deg, #d4af37 0%, #b8922a 100%);
+        color: #1a1200;
+        box-shadow:
+          0 6px 20px rgba(180, 145, 40, 0.4),
+          inset 0 1px 0 rgba(255, 240, 140, 0.25);
+      }
+      .pa-btn-call:hover {
+        background: linear-gradient(135deg, #e9c84a 0%, #d4af37 100%);
+        box-shadow: 0 10px 28px rgba(212, 175, 55, 0.5);
+        transform: translateY(-1px);
+        color: #1a1200;
+      }
+
+      /* Green WhatsApp pill */
+      .pa-btn-wa {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 90, 50, 0.75) 0%,
+          rgba(20, 65, 35, 0.85) 100%
+        );
+        border: 1px solid rgba(37, 211, 102, 0.3);
+        color: #4ade80;
+        box-shadow:
+          0 4px 14px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(37, 211, 102, 0.1);
+      }
+      .pa-btn-wa:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(37, 120, 65, 0.85) 0%,
+          rgba(25, 85, 45, 0.9) 100%
+        );
+        border-color: rgba(37, 211, 102, 0.5);
+        box-shadow: 0 8px 22px rgba(37, 211, 102, 0.2);
+        transform: translateY(-1px);
+        color: #6ee7a0;
+      }
+    

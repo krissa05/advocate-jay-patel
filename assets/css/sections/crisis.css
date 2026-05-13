@@ -1,0 +1,64 @@
+
+/* CRISIS SECTION */
+      .crisis-bg {
+        background:
+          radial-gradient(
+            circle at 25% 50%,
+            rgba(180, 30, 50, 0.25) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            circle at 75% 30%,
+            rgba(120, 40, 200, 0.18) 0%,
+            transparent 55%
+          ),
+          linear-gradient(135deg, #0d0d0d 0%, #1a0a14 50%, #1a1018 100%);
+      }
+
+      @keyframes pulse-error {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.6;
+          transform: scale(1.15);
+        }
+      }
+      .animate-pulse-error {
+        animation: pulse-error 3s ease-in-out infinite;
+      }
+
+
+/* CRISIS SECTION */
+      .crisis-bg {
+        background:
+          radial-gradient(
+            circle at 25% 50%,
+            rgba(180, 30, 50, 0.25) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            circle at 75% 30%,
+            rgba(120, 40, 200, 0.18) 0%,
+            transparent 55%
+          ),
+          linear-gradient(135deg, #0d0d0d 0%, #1a0a14 50%, #1a1018 100%);
+      }
+
+      @keyframes pulse-error {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.6;
+          transform: scale(1.15);
+        }
+      }
+      .animate-pulse-error {
+        animation: pulse-error 3s ease-in-out infinite;
+      }
+

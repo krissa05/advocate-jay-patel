@@ -717,7 +717,11 @@
       }
 
       .glass-pill {
-        background: transparent;
+        background: linear-gradient(
+          135deg,
+          rgba(28, 30, 31, 0.6) 0%,
+          rgba(13, 15, 16, 0.5) 100%
+        );
       }
 
       /* ============================================
@@ -1056,7 +1060,6 @@
          ============================================ */
       .authority-item {
         transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        position: relative;
       }
       .authority-item:hover {
         transform: translateY(-3px);
@@ -1065,156 +1068,6 @@
         color: #f4d472;
         transform: scale(1.15) rotate(-5deg);
         filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.6));
-      }
-      .authority-strip-wrap {
-        position: relative;
-        display: inline-flex;
-        flex-wrap: wrap;
-        border-radius: 24px;
-        overflow: hidden;
-        border: 1px solid rgba(212, 175, 55, 0.18);
-        background: linear-gradient(
-          135deg,
-          rgba(20, 16, 8, 0.85) 0%,
-          rgba(30, 20, 10, 0.75) 30%,
-          rgba(18, 12, 28, 0.85) 60%,
-          rgba(10, 14, 30, 0.9) 100%
-        );
-        backdrop-filter: blur(32px) saturate(1.8) brightness(1.05);
-        -webkit-backdrop-filter: blur(32px) saturate(1.8) brightness(1.05);
-        box-shadow:
-          inset 0 1px 0 rgba(255, 210, 80, 0.12),
-          inset 0 -1px 0 rgba(120, 80, 220, 0.08),
-          inset 1px 0 0 rgba(255, 255, 255, 0.03),
-          0 24px 60px rgba(0, 0, 0, 0.5),
-          0 0 40px rgba(212, 175, 55, 0.06),
-          0 0 80px rgba(120, 80, 220, 0.05);
-      }
-      .authority-strip-wrap::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 8%;
-        right: 8%;
-        height: 1px;
-        background: linear-gradient(
-          90deg,
-          transparent 0%,
-          rgba(212, 175, 55, 0.5) 30%,
-          rgba(255, 255, 255, 0.55) 50%,
-          rgba(160, 100, 220, 0.4) 70%,
-          transparent 100%
-        );
-        border-radius: 0 0 2px 2px;
-        z-index: 2;
-      }
-      .authority-strip-wrap::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 24px;
-        background: radial-gradient(
-          ellipse 80% 60% at 50% 0%,
-          rgba(212, 175, 55, 0.06) 0%,
-          rgba(120, 80, 220, 0.04) 50%,
-          transparent 70%
-        );
-        pointer-events: none;
-        z-index: 0;
-      }
-      .authority-stat-item {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 28px 40px;
-        min-width: 160px;
-        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        cursor: default;
-      }
-      .authority-stat-item::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(
-          circle at 50% 60%,
-          rgba(212, 175, 55, 0.07),
-          rgba(120, 80, 220, 0.04) 50%,
-          transparent 70%
-        );
-        opacity: 0;
-        transition: opacity 0.5s ease;
-      }
-      .authority-stat-item:hover::before {
-        opacity: 1;
-      }
-      .authority-stat-item:hover {
-        transform: translateY(-4px);
-      }
-      .authority-stat-item:hover .authority-stat-icon {
-        color: #f4d472;
-        transform: scale(1.15) rotate(-5deg);
-        filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.7));
-      }
-      .authority-stat-icon {
-        font-size: 24px;
-        color: rgba(212, 175, 55, 0.7);
-        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        font-variation-settings:
-          "FILL" 0,
-          "wght" 300,
-          "GRAD" 0,
-          "opsz" 24;
-      }
-      .authority-stat-num {
-        font-family: "Newsreader", serif;
-        font-size: 30px;
-        font-weight: 400;
-        line-height: 1;
-        letter-spacing: -0.02em;
-        background: linear-gradient(
-          135deg,
-          #f4d472 0%,
-          #d4af37 40%,
-          #c5a059 100%
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .authority-stat-title {
-        font-family: "Inter", sans-serif;
-        font-size: 13px;
-        font-weight: 500;
-        color: rgba(226, 226, 226, 0.88);
-        line-height: 1.3;
-        text-align: center;
-        letter-spacing: 0.01em;
-      }
-      .authority-stat-sub {
-        font-family: "Inter", sans-serif;
-        font-size: 9px;
-        font-weight: 600;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: rgba(226, 226, 226, 0.3);
-        text-align: center;
-        line-height: 1.5;
-      }
-      .authority-vdivider {
-        align-self: stretch;
-        width: 1px;
-        background: linear-gradient(
-          180deg,
-          transparent 0%,
-          rgba(212, 175, 55, 0.2) 25%,
-          rgba(160, 100, 220, 0.15) 75%,
-          transparent 100%
-        );
-        flex-shrink: 0;
       }
 
       /* ============================================
@@ -2162,18 +2015,11 @@
          ============================================ -->
     <nav
       class="fixed top-0 w-full z-50 flex justify-between items-center px-6 nav-rise"
-      style="
-        background: linear-gradient(
-          to bottom,
-          rgba(8, 9, 10, 0.95) 0%,
-          rgba(8, 9, 10, 0.6) 60%,
-          transparent 100%
-        );
-      "
+      style="background: transparent"
     >
-      <div class="max-w-7xl mx-auto w-full mt-6 px-6">
+      <div class="max-w-6xl mx-auto w-full mt-6">
         <div
-          class="relative overflow-hidden flex items-center justify-between px-6 py-2 rounded-full border border-white/10 backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.5),0_0_30px_rgba(212,175,55,0.08)] transition-all duration-500 hover:border-white/20 hover:shadow-[0_0_50px_rgba(0,0,0,0.5),0_0_40px_rgba(212,175,55,0.15)]"
+          class="glass-pill relative overflow-hidden flex justify-between items-center px-8 py-2 rounded-full border border-white/10 backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.5),0_0_30px_rgba(212,175,55,0.08)] transition-all duration-500 hover:border-white/20 hover:shadow-[0_0_50px_rgba(0,0,0,0.5),0_0_40px_rgba(212,175,55,0.15)]"
         >
           <div
             class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-shimmer pointer-events-none"
@@ -2192,12 +2038,10 @@
               class="h-20 w-20 object-contain drop-shadow-[0_0_8px_rgba(212,175,55,0.4)] -my-4"
             />
           </a>
-          <div
-            class="hidden lg:flex flex-1 items-center justify-evenly z-10 mx-8"
-          >
+          <div class="hidden lg:flex items-center gap-12 z-10">
             <a
               class="relative font-label-caps text-label-caps text-on-surface/60 hover:text-white transition-all uppercase tracking-[0.2em] group"
-              href="#expertise"
+              href="#about"
             >
               About
               <span
@@ -2206,43 +2050,34 @@
             </a>
             <a
               class="relative font-label-caps text-label-caps text-on-surface/60 hover:text-white transition-all uppercase tracking-[0.2em] group"
-              href="#about"
+              href="#expertise"
             >
-              Practice
+              Expertise
               <span
                 class="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-primary to-purple-400 transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_rgba(212,175,55,0.8)]"
               ></span>
             </a>
             <a
               class="relative font-label-caps text-label-caps text-on-surface/60 hover:text-white transition-all uppercase tracking-[0.2em] group"
-              href="#experience"
+              href="#strategy"
             >
-              Excellence
+              Strategy
               <span
                 class="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-primary to-purple-400 transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_rgba(212,175,55,0.8)]"
               ></span>
             </a>
             <a
               class="relative font-label-caps text-label-caps text-on-surface/60 hover:text-white transition-all uppercase tracking-[0.2em] group"
-              href="#why-us"
+              href="#crisis"
             >
-              Why Choose Us
-              <span
-                class="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-primary to-purple-400 transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_rgba(212,175,55,0.8)]"
-              ></span>
-            </a>
-            <a
-              class="relative font-label-caps text-label-caps text-on-surface/60 hover:text-white transition-all uppercase tracking-[0.2em] group"
-              href="#contact"
-            >
-              Contact
+              Crisis Response
               <span
                 class="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-primary to-purple-400 transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_rgba(212,175,55,0.8)]"
               ></span>
             </a>
           </div>
           <a
-            class="btn-primary z-10 font-label-caps text-label-caps text-on-primary px-8 py-3 rounded-full uppercase tracking-widest flex items-center gap-2 border border-white/10 flex-shrink-0"
+            class="btn-primary z-10 font-label-caps text-label-caps text-on-primary px-8 py-3 rounded-full uppercase tracking-widest flex items-center gap-2 border border-white/10"
             href="#contact"
             style="
               background: linear-gradient(
@@ -2253,7 +2088,7 @@
               );
             "
           >
-            Book Consultation
+            Consultation
             <span class="material-symbols-outlined scale-75"
               >arrow_forward</span
             >
@@ -2408,293 +2243,229 @@
           "
         ></div>
 
+
         <!-- Content -->
-        <div
-          class="relative z-30 space-y-8 max-w-2xl"
-          style="padding-top: 150px"
+         <div class="relative z-30 space-y-8 max-w-2xl" style="padding-top: 120px;">
+  <!-- Top label -->
+  <div
+    class="hero-rise-1 inline-flex items-center gap-4 text-primary font-label-caps text-label-caps uppercase tracking-[0.4em]"
+  >
+    <span
+      class="w-12 h-px bg-gradient-to-r from-transparent via-primary to-transparent"
+    ></span>
+    Advocate Jay Patel
+  </div>
+
+  <!-- Main heading -->
+  <h1
+    class="hero-rise-2 font-display-xl text-white text-headline-lg leading-[1.05]"
+  >
+    Experienced Legal Representation for <br />
+    <span class="italic relative inline-block gradient-text-animated">
+      Criminal, Civil &amp; Session Court Matters
+      <span
+        class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary/40 via-yellow-500/30 to-primary/40 blur-sm"
+      ></span>
+    </span>
+  </h1>
+
+  <!-- Tagline -->
+  <p
+    class="hero-rise-3 font-headline-md text-on-surface/90 italic max-w-xl leading-snug"
+    style="font-size: 20px;"
+  >
+    "Where Strategic Legal Solutions Meet Courtroom Excellence."
+  </p>
+
+  <!-- Supporting paragraph -->
+  <p
+    class="hero-rise-3 font-body-lg text-on-surface/65 max-w-xl leading-relaxed"
+  >
+    Representing clients across criminal, civil, family, cheque return,
+    land dispute, and serious trial matters with over 15 years of
+    courtroom experience across Gujarat.
+  </p>
+
+  <!-- Inline luxury trust strip -->
+  <div
+    class="hero-rise-3 inline-flex flex-wrap items-center gap-x-8 gap-y-4 px-6 py-4 rounded-2xl border border-white/10"
+    style="
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.03) 0%,
+        rgba(212, 175, 55, 0.04) 100%
+      );
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 220, 100, 0.08),
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 24px rgba(212, 175, 55, 0.06);
+    "
+  >
+    <div class="flex items-center gap-2.5 group">
+      <span
+        class="material-symbols-outlined text-primary transition-all duration-500 group-hover:scale-110"
+        style="font-size: 20px"
+        >workspace_premium</span
+      >
+      <div class="flex flex-col leading-tight">
+        <span
+          class="font-headline-md gradient-text-gold"
+          style="font-size: 18px; font-weight: 500;"
+          >15+</span
         >
-          <div
-            class="hero-rise-1 inline-flex items-center gap-4 text-primary font-label-caps text-label-caps uppercase tracking-[0.4em]"
-          >
-            <span
-              class="w-12 h-px bg-gradient-to-r from-transparent via-primary to-transparent"
-            ></span>
-            Legal Excellence
-          </div>
-          <h1
-            class="hero-rise-2 font-display-xl text-white text-headline-lg leading-[1.05]"
-          >
-            Experienced Legal Representation for <br />
-            <span class="italic relative inline-block gradient-text-mixed">
-              Criminal, Civil & Session Court Matters.
-              <span
-                class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary/40 via-purple-500/40 to-blue-500/40 blur-sm"
-              ></span>
-            </span>
-          </h1>
-          <!-- Tagline -->
-          <p
-            class="hero-rise-3 font-headline-md text-on-surface/90 italic max-w-xl leading-snug"
-            style="font-size: 20px"
-          >
-            "Where Strategic Legal Solutions Meet Courtroom Excellence."
-          </p>
-          <div
-            class="hero-rise-3 inline-flex flex-wrap items-center gap-x-8 gap-y-4 px-6 py-4 rounded-2xl border border-white/10"
-            style="
-              background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.03) 0%,
-                rgba(212, 175, 55, 0.04) 100%
-              );
-              backdrop-filter: blur(20px);
-              -webkit-backdrop-filter: blur(20px);
-              box-shadow:
-                inset 0 1px 0 rgba(255, 220, 100, 0.08),
-                0 8px 32px rgba(0, 0, 0, 0.3),
-                0 0 24px rgba(212, 175, 55, 0.06);
-            "
-          >
-            <div class="flex items-center gap-2.5 group">
-              <span
-                class="material-symbols-outlined text-primary transition-all duration-500 group-hover:scale-110"
-                style="font-size: 20px"
-                >workspace_premium</span
-              >
-              <div class="flex flex-col leading-tight">
-                <span
-                  class="font-headline-md gradient-text-gold"
-                  style="font-size: 18px; font-weight: 500"
-                  >15+</span
-                >
-                <span
-                  class="font-label-caps text-on-surface/55 uppercase"
-                  style="font-size: 9px; letter-spacing: 0.12em"
-                  >Years Experience</span
-                >
-              </div>
-            </div>
+        <span
+          class="font-label-caps text-on-surface/55 uppercase"
+          style="font-size: 9px; letter-spacing: 0.12em;"
+          >Years Experience</span
+        >
+      </div>
+    </div>
 
-            <span class="w-px h-8 bg-white/10 hidden sm:block"></span>
+    <span class="w-px h-8 bg-white/10 hidden sm:block"></span>
 
-            <div class="flex items-center gap-2.5 group">
-              <span
-                class="material-symbols-outlined text-primary transition-all duration-500 group-hover:scale-110"
-                style="font-size: 20px"
-                >gavel</span
-              >
-              <div class="flex flex-col leading-tight">
-                <span
-                  class="font-headline-md gradient-text-gold counter-animate"
-                  style="font-size: 18px; font-weight: 500"
-                  data-target="200"
-                  >0+</span
-                >
-                <span
-                  class="font-label-caps text-on-surface/55 uppercase"
-                  style="font-size: 9px; letter-spacing: 0.12em"
-                  >Successful Matters</span
-                >
-              </div>
-            </div>
+    <div class="flex items-center gap-2.5 group">
+      <span
+        class="material-symbols-outlined text-primary transition-all duration-500 group-hover:scale-110"
+        style="font-size: 20px"
+        >gavel</span
+      >
+      <div class="flex flex-col leading-tight">
+        <span
+          class="font-headline-md gradient-text-gold counter-animate"
+          style="font-size: 18px; font-weight: 500;"
+          data-target="200"
+          >0+</span
+        >
+        <span
+          class="font-label-caps text-on-surface/55 uppercase"
+          style="font-size: 9px; letter-spacing: 0.12em;"
+          >Successful Matters</span
+        >
+      </div>
+    </div>
 
-            <span class="w-px h-8 bg-white/10 hidden sm:block"></span>
+    <span class="w-px h-8 bg-white/10 hidden sm:block"></span>
 
-            <div class="flex items-center gap-2.5 group">
-              <span
-                class="material-symbols-outlined text-primary transition-all duration-500 group-hover:scale-110"
-                style="font-size: 20px"
-                >account_balance</span
-              >
-              <div class="flex flex-col leading-tight">
-                <span
-                  class="text-white"
-                  style="
-                    font-size: 13px;
-                    font-weight: 500;
-                    letter-spacing: 0.01em;
-                  "
-                  >Representation</span
-                >
-                <span
-                  class="font-label-caps text-on-surface/55 uppercase"
-                  style="font-size: 9px; letter-spacing: 0.12em"
-                  >Across Gujarat</span
-                >
-              </div>
-            </div>
-          </div>
+    <div class="flex items-center gap-2.5 group">
+      <span
+        class="material-symbols-outlined text-primary transition-all duration-500 group-hover:scale-110"
+        style="font-size: 20px"
+        >account_balance</span
+      >
+      <div class="flex flex-col leading-tight">
+        <span
+          class="text-white"
+          style="font-size: 13px; font-weight: 500; letter-spacing: 0.01em;"
+          >Representation</span
+        >
+        <span
+          class="font-label-caps text-on-surface/55 uppercase"
+          style="font-size: 9px; letter-spacing: 0.12em;"
+          >Across Gujarat</span
+        >
+      </div>
+    </div>
+  </div>
 
-          <!-- CTA Buttons: Call Now + WhatsApp -->
-          <div class="hero-rise-4 flex flex-wrap gap-4 pt-4">
-            <a
-              href="tel:+919998714891"
-              class="btn-primary font-label-caps text-label-caps text-on-primary px-10 py-5 rounded-full uppercase tracking-widest flex items-center gap-2"
-            >
-              <span class="material-symbols-outlined">call</span>
-              Call Now
-            </a>
-            <a
-              href="https://wa.me/919998714891"
-              target="_blank"
-              rel="noopener"
-              class="btn-ghost font-label-caps text-label-caps text-white px-10 py-5 rounded-full uppercase tracking-widest flex items-center gap-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="18"
-                height="18"
-              >
-                <path
-                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-                />
-              </svg>
-              WhatsApp
-            </a>
-          </div>
-        </div>
+  <!-- CTA Buttons: Call Now + WhatsApp -->
+  <div class="hero-rise-4 flex flex-wrap gap-4 pt-4">
+    
+      href="tel:+919998714891"
+      class="btn-primary font-label-caps text-label-caps text-on-primary px-10 py-5 rounded-full uppercase tracking-widest flex items-center gap-2"
+    >
+      <span class="material-symbols-outlined">call</span>
+      Call Now
+    </a>
+
+    <a
+      href="https://wa.me/919998714891"
+      target="_blank"
+      rel="noopener"
+      class="btn-ghost font-label-caps text-label-caps text-white px-10 py-5 rounded-full uppercase tracking-widest flex items-center gap-2"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        width="18"
+        height="18"
+      >
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
       </section>
 
-      <!-- Gradient animation + counter styles & script -->
-      <style>
-        .gradient-text-animated {
+      <!-- ============================================
+           AUTHORITY STRIP (slim)
+           ============================================ -->
+      <section
+        class="py-6 backdrop-blur-sm border-y border-white/5 relative z-10"
+        style="
           background: linear-gradient(
             90deg,
-            #c9a84c,
-            #e8c97a,
-            #b8860b,
-            #daa520,
-            #c9a84c
+            rgba(120, 80, 220, 0.04) 0%,
+            rgba(212, 175, 55, 0.04) 50%,
+            rgba(80, 130, 220, 0.04) 100%
           );
-          background-size: 300% 100%;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          animation: gradShift 4s linear infinite;
-        }
-
-        @keyframes gradShift {
-          0% {
-            background-position: 0% 50%;
-          }
-          100% {
-            background-position: 300% 50%;
-          }
-        }
-      </style>
-
-      <script>
-        document.querySelectorAll(".counter-animate").forEach((el) => {
-          const target = parseInt(el.dataset.target);
-          const duration = 1800;
-          const start = performance.now();
-          function step(now) {
-            const progress = Math.min((now - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            el.textContent = Math.round(eased * target) + "+";
-            if (progress < 1) requestAnimationFrame(step);
-          }
-          requestAnimationFrame(step);
-        });
-      </script>
-
-      <!-- ============================================
-           AUTHORITY STRIP (slim)
-           ============================================ -->
-      <!-- ============================================
-           AUTHORITY STRIP (slim)
-           ============================================ -->
-      <section class="py-10 relative z-10 overflow-hidden">
+        "
+      >
         <div
-          class="absolute inset-0 pointer-events-none"
-          style="
-            background: linear-gradient(
-              90deg,
-              rgba(120, 80, 220, 0.04) 0%,
-              rgba(212, 175, 55, 0.04) 50%,
-              rgba(80, 130, 220, 0.04) 100%
-            );
-          "
-        ></div>
-        <div class="px-margin-page relative z-10 reveal-stagger">
-          <div class="authority-strip-wrap" style="width: 100%; display: flex">
-            <!-- Stat 1: 15+ -->
-            <div class="authority-stat-item" style="flex: 1">
-              <span class="material-symbols-outlined authority-stat-icon"
-                >workspace_premium</span
-              >
-              <div class="authority-stat-num">15+</div>
-              <div class="authority-stat-title">
-                Years of<br />Professional Experience
-              </div>
-            </div>
-
-            <div class="authority-vdivider"></div>
-
-            <!-- Stat 2: 200+ with counter -->
-            <div class="authority-stat-item" style="flex: 1">
-              <span class="material-symbols-outlined authority-stat-icon"
-                >gavel</span
-              >
-              <div
-                class="authority-stat-num authority-counter"
-                data-target="200"
-              >
-                0+
-              </div>
-              <div class="authority-stat-title">
-                Matters with Successful<br />Judgement/Result
-              </div>
-            </div>
-
-            <div class="authority-vdivider"></div>
-
-            <!-- Stat 3: Multiple Court Practice -->
-            <div class="authority-stat-item" style="flex: 1">
-              <span class="material-symbols-outlined authority-stat-icon"
-                >account_balance</span
-              >
-              <div
-                class="authority-stat-title"
-                style="
-                  font-size: 15px;
-                  font-weight: 600;
-                  color: rgba(226, 226, 226, 0.95);
-                "
-              >
-                Multiple Court<br />Practice
-              </div>
-              <div class="authority-stat-sub">
-                Ahmedabad, Gandhinagar<br />&amp; Across Gujarat
-              </div>
-            </div>
-
-            <div class="authority-vdivider"></div>
-
-            <!-- Stat 4: Client-Centric Approach -->
-            <div class="authority-stat-item" style="flex: 1">
-              <span class="material-symbols-outlined authority-stat-icon"
-                >person</span
-              >
-              <div
-                class="authority-stat-title"
-                style="
-                  font-size: 15px;
-                  font-weight: 600;
-                  color: rgba(226, 226, 226, 0.95);
-                "
-              >
-                Client-Centric<br />Approach
-              </div>
-              <div class="authority-stat-sub">
-                Strategic, Transparent &amp;<br />Result Oriented
-              </div>
-            </div>
+          class="px-margin-page grid grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger"
+        >
+          <div class="authority-item flex flex-row items-center gap-3 group">
+            <span
+              class="material-symbols-outlined text-primary transition-all duration-500"
+              style="font-size: 20px"
+              >gavel</span
+            >
+            <span
+              class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-wider group-hover:text-on-surface/80 transition-colors"
+              >Trial-Focused Litigation</span
+            >
+          </div>
+          <div class="authority-item flex flex-row items-center gap-3 group">
+            <span
+              class="material-symbols-outlined text-primary transition-all duration-500"
+              style="font-size: 20px"
+              >verified_user</span
+            >
+            <span
+              class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-wider group-hover:text-on-surface/80 transition-colors"
+              >High-Stakes Matters</span
+            >
+          </div>
+          <div class="authority-item flex flex-row items-center gap-3 group">
+            <span
+              class="material-symbols-outlined text-primary transition-all duration-500"
+              style="font-size: 20px"
+              >account_balance</span
+            >
+            <span
+              class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-wider group-hover:text-on-surface/80 transition-colors"
+              >Corporate Expertise</span
+            >
+          </div>
+          <div class="authority-item flex flex-row items-center gap-3 group">
+            <span
+              class="material-symbols-outlined text-primary transition-all duration-500"
+              style="font-size: 20px"
+              >person</span
+            >
+            <span
+              class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-wider group-hover:text-on-surface/80 transition-colors"
+              >Direct Advocate Access</span
+            >
           </div>
         </div>
       </section>
+
       <!-- ============================================
            ABOUT
            ============================================ -->
@@ -2824,409 +2595,6 @@
 ║  measure of Success" and replace the whole <section>...</section> ║
 ╚══════════════════════════════════════════════════════════════╝
 -->
-      <!-- ============================================
-           PRACTICE AREAS
-           ============================================ -->
-      <section
-        class="relative py-section-padding px-margin-page overflow-hidden"
-        id="expertise"
-      >
-        <div class="section-glow-blue" style="top: 20%; left: -10%"></div>
-        <div class="section-glow-purple" style="bottom: 10%; right: -10%"></div>
-
-        <div class="floating-symbols">
-          <span
-            class="material-symbols-outlined float-symbol float-drift-2"
-            style="top: 15%; left: 30%"
-            >balance</span
-          >
-          <span
-            class="material-symbols-outlined float-symbol blue float-drift-4"
-            style="top: 60%; right: 20%"
-            >gavel</span
-          >
-          <span
-            class="material-symbols-outlined float-symbol purple large float-drift-5"
-            style="bottom: 20%; left: 12%"
-            >scale</span
-          >
-        </div>
-
-        <div class="relative z-10">
-          <div
-            class="practice-header flex flex-col md:flex-row justify-between items-end mb-24 gap-8 reveal"
-          >
-            <div class="space-y-4">
-              <p
-                class="font-label-caps text-label-caps text-primary uppercase tracking-[0.4em]"
-              >
-                Core Competencies
-              </p>
-              <h2 class="font-headline-lg text-headline-lg text-white">
-                Fields of
-                <span class="gradient-text-mixed italic">Practice</span>
-              </h2>
-            </div>
-            <p class="font-body-md text-on-surface/40 max-w-sm">
-              Specialized legal solutions for complex individual and corporate
-              challenges.
-            </p>
-          </div>
-
-          <div
-            class="practice-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger"
-          >
-            <div
-              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
-              onclick="openPracticeModal('cheque')"
-            >
-              <span
-                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
-                style="font-size: 28px"
-                >payments</span
-              >
-              <h3
-                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
-              >
-                Cheque Return Matters
-              </h3>
-              <p
-                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
-                style="font-size: 12px"
-              >
-                Section 138 NI Act enforcement &amp; defence
-              </p>
-              <span
-                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
-                style="font-size: 10px; letter-spacing: 0.12em"
-                >Details
-                <span class="material-symbols-outlined" style="font-size: 12px"
-                  >arrow_forward</span
-                ></span
-              >
-            </div>
-            <div
-              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
-              onclick="openPracticeModal('money')"
-            >
-              <span
-                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
-                style="font-size: 28px"
-                >savings</span
-              >
-              <h3
-                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
-              >
-                Money Recovery Suits
-              </h3>
-              <p
-                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
-                style="font-size: 12px"
-              >
-                Civil recovery through summary &amp; plaint proceedings
-              </p>
-              <span
-                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
-                style="font-size: 10px; letter-spacing: 0.12em"
-                >Details
-                <span class="material-symbols-outlined" style="font-size: 12px"
-                  >arrow_forward</span
-                ></span
-              >
-            </div>
-            <div
-              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
-              onclick="openPracticeModal('family')"
-            >
-              <span
-                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
-                style="font-size: 28px"
-                >family_restroom</span
-              >
-              <h3
-                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
-              >
-                Family Matters
-              </h3>
-              <p
-                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
-                style="font-size: 12px"
-              >
-                Matrimonial, custody &amp; succession disputes
-              </p>
-              <span
-                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
-                style="font-size: 10px; letter-spacing: 0.12em"
-                >Details
-                <span class="material-symbols-outlined" style="font-size: 12px"
-                  >arrow_forward</span
-                ></span
-              >
-            </div>
-            <div
-              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
-              onclick="openPracticeModal('divorce')"
-            >
-              <span
-                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
-                style="font-size: 28px"
-                >heart_broken</span
-              >
-              <h3
-                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
-              >
-                Divorce Cases
-              </h3>
-              <p
-                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
-                style="font-size: 12px"
-              >
-                Contested &amp; mutual consent divorce proceedings
-              </p>
-              <span
-                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
-                style="font-size: 10px; letter-spacing: 0.12em"
-                >Details
-                <span class="material-symbols-outlined" style="font-size: 12px"
-                  >arrow_forward</span
-                ></span
-              >
-            </div>
-            <div
-              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
-              onclick="openPracticeModal('domestic')"
-            >
-              <span
-                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
-                style="font-size: 28px"
-                >shield_person</span
-              >
-              <h3
-                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
-              >
-                Domestic Violence
-              </h3>
-              <p
-                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
-                style="font-size: 12px"
-              >
-                Protection orders &amp; PWDV Act proceedings
-              </p>
-              <span
-                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
-                style="font-size: 10px; letter-spacing: 0.12em"
-                >Details
-                <span class="material-symbols-outlined" style="font-size: 12px"
-                  >arrow_forward</span
-                ></span
-              >
-            </div>
-            <div
-              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
-              onclick="openPracticeModal('landrev')"
-            >
-              <span
-                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
-                style="font-size: 28px"
-                >terrain</span
-              >
-              <h3
-                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
-              >
-                Land Revenue Cases
-              </h3>
-              <p
-                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
-                style="font-size: 12px"
-              >
-                Revenue tribunal appeals &amp; tenancy matters
-              </p>
-              <span
-                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
-                style="font-size: 10px; letter-spacing: 0.12em"
-                >Details
-                <span class="material-symbols-outlined" style="font-size: 12px"
-                  >arrow_forward</span
-                ></span
-              >
-            </div>
-            <div
-              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
-              onclick="openPracticeModal('landdisp')"
-            >
-              <span
-                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
-                style="font-size: 28px"
-                >map</span
-              >
-              <h3
-                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
-              >
-                Land Disputes
-              </h3>
-              <p
-                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
-                style="font-size: 12px"
-              >
-                Title, encroachment &amp; partition litigation
-              </p>
-              <span
-                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
-                style="font-size: 10px; letter-spacing: 0.12em"
-                >Details
-                <span class="material-symbols-outlined" style="font-size: 12px"
-                  >arrow_forward</span
-                ></span
-              >
-            </div>
-            <div
-              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
-              onclick="openPracticeModal('bail')"
-            >
-              <span
-                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
-                style="font-size: 28px"
-                >key</span
-              >
-              <h3
-                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
-              >
-                Bail Matters
-              </h3>
-              <p
-                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
-                style="font-size: 12px"
-              >
-                Regular, anticipatory &amp; High Court bail applications
-              </p>
-              <span
-                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
-                style="font-size: 10px; letter-spacing: 0.12em"
-                >Details
-                <span class="material-symbols-outlined" style="font-size: 12px"
-                  >arrow_forward</span
-                ></span
-              >
-            </div>
-            <div
-              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
-              onclick="openPracticeModal('criminal')"
-            >
-              <span
-                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
-                style="font-size: 28px"
-                >gavel</span
-              >
-              <h3
-                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
-              >
-                Criminal Cases
-              </h3>
-              <p
-                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
-                style="font-size: 12px"
-              >
-                Full-spectrum criminal defence &amp; trial advocacy
-              </p>
-              <span
-                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
-                style="font-size: 10px; letter-spacing: 0.12em"
-                >Details
-                <span class="material-symbols-outlined" style="font-size: 12px"
-                  >arrow_forward</span
-                ></span
-              >
-            </div>
-            <div
-              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
-              onclick="openPracticeModal('sessions')"
-            >
-              <span
-                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
-                style="font-size: 28px"
-                >account_balance</span
-              >
-              <h3
-                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
-              >
-                Sessions Court
-              </h3>
-              <p
-                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
-                style="font-size: 12px"
-              >
-                Serious offence trials &amp; appellate representation
-              </p>
-              <span
-                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
-                style="font-size: 10px; letter-spacing: 0.12em"
-                >Details
-                <span class="material-symbols-outlined" style="font-size: 12px"
-                  >arrow_forward</span
-                ></span
-              >
-            </div>
-            <div
-              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
-              onclick="openPracticeModal('cbi')"
-            >
-              <span
-                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
-                style="font-size: 28px"
-                >policy</span
-              >
-              <h3
-                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
-              >
-                CBI Cases
-              </h3>
-              <p
-                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
-                style="font-size: 12px"
-              >
-                Federal investigation defence &amp; special court matters
-              </p>
-              <span
-                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
-                style="font-size: 10px; letter-spacing: 0.12em"
-                >Details
-                <span class="material-symbols-outlined" style="font-size: 12px"
-                  >arrow_forward</span
-                ></span
-              >
-            </div>
-            <div
-              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
-              onclick="openPracticeModal('ed')"
-            >
-              <span
-                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
-                style="font-size: 28px"
-                >currency_exchange</span
-              >
-              <h3
-                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
-              >
-                ED &amp; Money Laundering
-              </h3>
-              <p
-                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
-                style="font-size: 12px"
-              >
-                PMLA defence, ECIR &amp; attachment proceedings
-              </p>
-              <span
-                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
-                style="font-size: 10px; letter-spacing: 0.12em"
-                >Details
-                <span class="material-symbols-outlined" style="font-size: 12px"
-                  >arrow_forward</span
-                ></span
-              >
-            </div>
-          </div>
-        </div>
-      </section>
 
       <style>
         /* ── Experience Section ──────────────────────────────────────── */
@@ -3863,78 +3231,6 @@
           letter-spacing: 0.02em;
         }
 
-        /* Language bubbles */
-        .lang-bubble-wrap {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
-          cursor: default;
-        }
-        .lang-bubble {
-          width: 110px;
-          height: 110px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: linear-gradient(
-            145deg,
-            rgba(40, 32, 14, 0.9) 0%,
-            rgba(25, 20, 8, 0.95) 100%
-          );
-          border: 1px solid rgba(212, 175, 55, 0.25);
-          box-shadow:
-            inset 0 1px 0 rgba(255, 210, 80, 0.12),
-            0 8px 24px rgba(0, 0, 0, 0.4),
-            0 0 20px rgba(212, 175, 55, 0.06);
-          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-          position: relative;
-          overflow: hidden;
-        }
-        .lang-bubble::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          border-radius: 50%;
-          background: radial-gradient(
-            circle at 50% 50%,
-            rgba(212, 175, 55, 0.12),
-            rgba(120, 80, 220, 0.06) 60%,
-            transparent 80%
-          );
-          opacity: 0;
-          transition: opacity 0.4s ease;
-        }
-        .lang-bubble-wrap:hover .lang-bubble {
-          transform: translateY(-6px) scale(1.08);
-          border-color: rgba(212, 175, 55, 0.55);
-          box-shadow:
-            inset 0 1px 0 rgba(255, 210, 80, 0.2),
-            0 16px 40px rgba(0, 0, 0, 0.5),
-            0 0 30px rgba(212, 175, 55, 0.18),
-            0 0 60px rgba(212, 175, 55, 0.08);
-        }
-        .lang-bubble-wrap:hover .lang-bubble::before {
-          opacity: 1;
-        }
-        .lang-bubble-wrap:hover .lang-bubble-label {
-          color: rgba(212, 175, 55, 0.9);
-        }
-        .lang-bubble-wrap:hover .lang-bubble span {
-          filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
-        }
-        .lang-bubble-label {
-          font-family: "Inter", sans-serif;
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 0.14em;
-          text-transform: uppercase;
-          color: rgba(226, 226, 226, 0.45);
-          transition: color 0.4s ease;
-          margin-top: 4px;
-        }
-
         /* Mobile */
         @media (max-width: 1100px) {
           .exp-stat-grid {
@@ -3953,9 +3249,6 @@
           }
           .exp-hero-text {
             margin-bottom: 3rem;
-          }
-          .exp-stat-grid div[style*="grid-column: span 2"] {
-            grid-column: span 2;
           }
           .exp-stat-grid {
             grid-template-columns: 1fr 1fr;
@@ -4024,9 +3317,8 @@
               <span class="exp-eyebrow-bar right"></span>
             </p>
             <h2 class="exp-heading">
-              15+ Years of&nbsp;
-              <span class="gradient-text-mixed italic"
-                >Courtroom Experience</span
+              15+ Years of&nbsp;<em class="exp-heading-gold"
+                >Courtroom Experience</em
               >
             </h2>
             <p class="exp-subhead">
@@ -4037,129 +3329,50 @@
           </div>
 
           <!-- ── STAT CARDS — 4 columns ── -->
-          <!-- ── STAT CARDS — 4 columns ── -->
           <div class="exp-stat-grid reveal-stagger">
-            <!-- Card 1 & 2 MERGED: Languages Spoken -->
-            <div class="exp-card" tabindex="0" style="grid-column: span 2">
+            <!-- Card 1: Years -->
+            <div class="exp-card" tabindex="0">
               <div class="exp-card-shimmer" aria-hidden="true"></div>
               <div class="exp-card-glow" aria-hidden="true"></div>
-              <div
-                class="exp-card-inner"
-                style="
-                  justify-content: center;
-                  align-items: center;
-                  text-align: center;
-                  padding: 2.75rem 2rem;
-                "
-              >
-                <!-- Eyebrow -->
-                <div
-                  style="
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-                    margin-bottom: 2.5rem;
-                  "
+              <div class="exp-card-inner">
+                <span
+                  class="material-symbols-outlined exp-stat-icon"
+                  aria-hidden="true"
+                  >history_edu</span
                 >
-                  <span
-                    style="
-                      flex: 1;
-                      height: 1px;
-                      background: linear-gradient(
-                        90deg,
-                        transparent,
-                        rgba(212, 175, 55, 0.35)
-                      );
-                    "
-                  ></span>
-                  <span
-                    style="
-                      font-family: &quot;Inter&quot;, sans-serif;
-                      font-size: 10px;
-                      font-weight: 600;
-                      letter-spacing: 0.28em;
-                      text-transform: uppercase;
-                      color: rgba(212, 175, 55, 0.6);
-                    "
-                    >Languages Spoken</span
-                  >
-                  <span
-                    style="
-                      flex: 1;
-                      height: 1px;
-                      background: linear-gradient(
-                        270deg,
-                        transparent,
-                        rgba(212, 175, 55, 0.35)
-                      );
-                    "
-                  ></span>
-                </div>
+                <p class="exp-stat-num">
+                  15<span class="exp-stat-plus">+</span>
+                </p>
+                <p class="exp-stat-label">Years of Legal Experience</p>
+                <div class="exp-stat-rule"></div>
+                <p class="exp-stat-sub">
+                  Practising since 2009 across Gujarat's criminal and civil
+                  courts
+                </p>
+              </div>
+            </div>
 
-                <!-- Language bubbles -->
-                <div
-                  style="
-                    display: flex;
-                    justify-content: center;
-                    gap: 4rem;
-                    flex-wrap: wrap;
-                    padding: 1rem 0 0.5rem;
-                  "
+            <!-- Card 2: Matters -->
+            <div class="exp-card" tabindex="0">
+              <div class="exp-card-shimmer" aria-hidden="true"></div>
+              <div class="exp-card-glow" aria-hidden="true"></div>
+              <div class="exp-card-inner">
+                <span
+                  class="material-symbols-outlined exp-stat-icon"
+                  aria-hidden="true"
+                  >assured_workload</span
                 >
-                  <!-- English -->
-                  <div class="lang-bubble-wrap">
-                    <div class="lang-bubble">
-                      <span
-                        class="material-symbols-outlined"
-                        style="
-                          font-size: 40px;
-                          color: #d4af37;
-                          font-variation-settings:
-                            &quot;FILL&quot; 1,
-                            &quot;wght&quot; 400,
-                            &quot;GRAD&quot; 0,
-                            &quot;opsz&quot; 48;
-                        "
-                        >translate</span
-                      >
-                    </div>
-                    <span class="lang-bubble-label">English</span>
-                  </div>
-
-                  <!-- Gujarati -->
-                  <div class="lang-bubble-wrap">
-                    <div class="lang-bubble">
-                      <span
-                        style="
-                          font-size: 42px;
-                          font-weight: 700;
-                          color: #d4af37;
-                          font-family: serif;
-                          line-height: 1;
-                        "
-                        >અ</span
-                      >
-                    </div>
-                    <span class="lang-bubble-label">Gujarati</span>
-                  </div>
-
-                  <!-- Hindi -->
-                  <div class="lang-bubble-wrap">
-                    <div class="lang-bubble">
-                      <span
-                        style="
-                          font-size: 42px;
-                          font-weight: 700;
-                          color: #d4af37;
-                          font-family: serif;
-                          line-height: 1;
-                        "
-                        >अ</span
-                      >
-                    </div>
-                    <span class="lang-bubble-label">Hindi</span>
-                  </div>
-                </div>
+                <p class="exp-stat-num">
+                  200<span class="exp-stat-plus">+</span>
+                </p>
+                <p class="exp-stat-label">
+                  Successful Matters &amp; Judgements
+                </p>
+                <div class="exp-stat-rule"></div>
+                <p class="exp-stat-sub">
+                  Favourable outcomes across trial, appellate, and tribunal
+                  forums
+                </p>
               </div>
             </div>
 
@@ -4367,886 +3580,6 @@
         </div>
         <!-- /relative z-10 -->
       </section>
-      <!-- ============================================
-           WHY CHOOSE US + TESTIMONIALS
-           ============================================ -->
-      <style>
-        /* ── Why Choose Us ── */
-        .wcu-section {
-          position: relative;
-          padding: 100px 64px;
-          overflow: hidden;
-        }
-        .wcu-bg {
-          position: absolute;
-          inset: 0;
-          overflow: hidden;
-          pointer-events: none;
-          z-index: 0;
-        }
-        .wcu-orb-1 {
-          position: absolute;
-          width: 600px;
-          height: 600px;
-          top: -10%;
-          left: -5%;
-          border-radius: 50%;
-          background: radial-gradient(
-            circle,
-            rgba(80, 130, 220, 0.12) 0%,
-            transparent 70%
-          );
-          filter: blur(100px);
-          animation: drift-2 38s ease-in-out infinite;
-        }
-        .wcu-orb-2 {
-          position: absolute;
-          width: 500px;
-          height: 500px;
-          bottom: -10%;
-          right: -5%;
-          border-radius: 50%;
-          background: radial-gradient(
-            circle,
-            rgba(160, 100, 220, 0.1) 0%,
-            transparent 70%
-          );
-          filter: blur(90px);
-          animation: drift-4 44s ease-in-out infinite;
-        }
-        .wcu-orb-3 {
-          position: absolute;
-          width: 400px;
-          height: 400px;
-          top: 40%;
-          left: 40%;
-          border-radius: 50%;
-          background: radial-gradient(
-            circle,
-            rgba(212, 175, 55, 0.07) 0%,
-            transparent 70%
-          );
-          filter: blur(80px);
-          animation: drift-1 50s ease-in-out infinite;
-        }
-        .wcu-eyebrow {
-          font-family: "Inter", sans-serif;
-          font-size: 10.5px;
-          font-weight: 600;
-          letter-spacing: 0.3em;
-          text-transform: uppercase;
-          color: rgba(212, 175, 55, 0.65);
-          display: inline-flex;
-          align-items: center;
-          gap: 1rem;
-          margin-bottom: 3.5rem;
-        }
-        .wcu-eyebrow-bar {
-          display: inline-block;
-          width: 36px;
-          height: 1px;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(212, 175, 55, 0.55),
-            rgba(212, 175, 55, 0.8)
-          );
-        }
-        .wcu-eyebrow-bar.r {
-          background: linear-gradient(
-            270deg,
-            transparent,
-            rgba(212, 175, 55, 0.55),
-            rgba(212, 175, 55, 0.8)
-          );
-        }
-        .wcu-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 1.25rem;
-        }
-        .wcu-card {
-          position: relative;
-          border-radius: 24px;
-          overflow: hidden;
-          background: linear-gradient(
-            148deg,
-            rgba(22, 18, 30, 0.88) 0%,
-            rgba(14, 12, 22, 0.94) 50%,
-            rgba(10, 14, 24, 0.96) 100%
-          );
-          border: 1px solid rgba(80, 130, 220, 0.12);
-          backdrop-filter: blur(32px) saturate(1.6);
-          -webkit-backdrop-filter: blur(32px) saturate(1.6);
-          box-shadow:
-            inset 0 1px 0 rgba(100, 140, 255, 0.08),
-            inset 0 -1px 0 rgba(160, 100, 220, 0.05),
-            0 20px 50px rgba(0, 0, 0, 0.45),
-            0 0 30px rgba(80, 130, 220, 0.04);
-          padding: 2rem 1.75rem;
-          transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-          cursor: default;
-        }
-        .wcu-card::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 8%;
-          right: 8%;
-          height: 1px;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(100, 140, 255, 0.3) 35%,
-            rgba(160, 100, 220, 0.35) 65%,
-            transparent
-          );
-          border-radius: 0 0 2px 2px;
-          z-index: 2;
-        }
-        .wcu-card::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          border-radius: inherit;
-          background: radial-gradient(
-            380px circle at var(--wx, 50%) var(--wy, 50%),
-            rgba(100, 140, 255, 0.07),
-            rgba(160, 100, 220, 0.04) 45%,
-            transparent 65%
-          );
-          opacity: 0;
-          transition: opacity 0.5s ease;
-          pointer-events: none;
-          z-index: 1;
-        }
-        .wcu-card:hover::after {
-          opacity: 1;
-        }
-        .wcu-card:hover {
-          border-color: rgba(100, 140, 255, 0.22);
-          transform: translateY(-6px);
-          box-shadow:
-            inset 0 1px 0 rgba(100, 140, 255, 0.14),
-            0 32px 64px rgba(0, 0, 0, 0.55),
-            0 0 40px rgba(80, 130, 220, 0.08),
-            0 0 80px rgba(160, 100, 220, 0.05);
-        }
-        .wcu-card-inner {
-          position: relative;
-          z-index: 3;
-        }
-        .wcu-icon-box {
-          width: 56px;
-          height: 56px;
-          border-radius: 16px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: linear-gradient(
-            145deg,
-            rgba(30, 25, 50, 0.9),
-            rgba(18, 15, 35, 0.95)
-          );
-          border: 1px solid rgba(100, 140, 255, 0.2);
-          box-shadow:
-            inset 0 1px 0 rgba(100, 160, 255, 0.1),
-            0 4px 16px rgba(0, 0, 0, 0.3);
-          margin-bottom: 1.5rem;
-          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .wcu-card:hover .wcu-icon-box {
-          border-color: rgba(100, 140, 255, 0.4);
-          box-shadow:
-            inset 0 1px 0 rgba(100, 160, 255, 0.18),
-            0 0 20px rgba(80, 130, 220, 0.2);
-          transform: scale(1.08) rotate(-4deg);
-        }
-        .wcu-icon-box .material-symbols-outlined {
-          font-size: 26px;
-          color: rgba(140, 180, 255, 0.75);
-          font-variation-settings:
-            "FILL" 0,
-            "wght" 200,
-            "GRAD" 0,
-            "opsz" 24;
-          transition: all 0.5s ease;
-        }
-        .wcu-card:hover .wcu-icon-box .material-symbols-outlined {
-          color: rgba(160, 200, 255, 0.95);
-          filter: drop-shadow(0 0 10px rgba(100, 160, 255, 0.5));
-        }
-        .wcu-card-title {
-          font-family: "Newsreader", serif;
-          font-size: 20px;
-          font-weight: 400;
-          letter-spacing: -0.01em;
-          color: rgba(226, 226, 226, 0.92);
-          margin: 0 0 0.6rem;
-          line-height: 1.25;
-        }
-        .wcu-card-rule {
-          width: 100%;
-          height: 1px;
-          margin: 0.85rem 0;
-          background: linear-gradient(
-            90deg,
-            rgba(100, 140, 255, 0.2),
-            rgba(160, 100, 220, 0.15),
-            transparent 80%
-          );
-        }
-        .wcu-card-desc {
-          font-family: "Inter", sans-serif;
-          font-size: 13px;
-          line-height: 1.7;
-          color: rgba(200, 200, 220, 0.38);
-          transition: color 0.45s ease;
-        }
-        .wcu-card:hover .wcu-card-desc {
-          color: rgba(200, 200, 220, 0.58);
-        }
-
-        /* ── Testimonials ── */
-        .testi-section {
-          position: relative;
-          padding: 40px 64px 60px;
-          overflow: hidden;
-        }
-        .testi-eyebrow {
-          font-family: "Inter", sans-serif;
-          font-size: 10.5px;
-          font-weight: 600;
-          letter-spacing: 0.3em;
-          text-transform: uppercase;
-          color: rgba(212, 175, 55, 0.6);
-          display: block;
-          text-align: center;
-          margin-bottom: 0.75rem;
-        }
-        .testi-heading {
-          font-family: "Newsreader", serif;
-          font-size: clamp(32px, 4vw, 52px);
-          font-weight: 400;
-          letter-spacing: -0.02em;
-          color: rgba(232, 232, 232, 0.97);
-          text-align: center;
-          margin: 0 0 0.5rem;
-        }
-        .testi-subhead {
-          font-family: "Inter", sans-serif;
-          font-size: 15px;
-          color: rgba(226, 226, 226, 0.35);
-          text-align: center;
-          margin: 0 0 3rem;
-          line-height: 1.6;
-        }
-        .testi-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 1.25rem;
-          margin-bottom: 2.5rem;
-        }
-        .testi-card {
-          position: relative;
-          border-radius: 24px;
-          overflow: hidden;
-          background: linear-gradient(
-            148deg,
-            rgba(28, 22, 12, 0.88) 0%,
-            rgba(18, 14, 8, 0.94) 50%,
-            rgba(12, 10, 18, 0.96) 100%
-          );
-          border: 1px solid rgba(212, 175, 55, 0.1);
-          backdrop-filter: blur(28px) saturate(1.5);
-          -webkit-backdrop-filter: blur(28px) saturate(1.5);
-          box-shadow:
-            inset 0 1px 0 rgba(255, 210, 80, 0.07),
-            0 20px 50px rgba(0, 0, 0, 0.4);
-          padding: 2rem;
-          transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .testi-card::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 10%;
-          right: 10%;
-          height: 1px;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(212, 175, 55, 0.3) 40%,
-            rgba(212, 175, 55, 0.2) 60%,
-            transparent
-          );
-          z-index: 2;
-        }
-        .testi-card:hover {
-          border-color: rgba(212, 175, 55, 0.22);
-          transform: translateY(-5px);
-          box-shadow:
-            inset 0 1px 0 rgba(255, 210, 80, 0.13),
-            0 32px 60px rgba(0, 0, 0, 0.5),
-            0 0 40px rgba(212, 175, 55, 0.06);
-        }
-        .testi-quote-mark {
-          font-family: "Newsreader", serif;
-          font-size: 56px;
-          line-height: 0.8;
-          color: rgba(212, 175, 55, 0.2);
-          margin-bottom: 1rem;
-          display: block;
-          font-weight: 400;
-        }
-        .testi-text {
-          font-family: "Inter", sans-serif;
-          font-size: 14px;
-          line-height: 1.75;
-          color: rgba(210, 210, 220, 0.55);
-          margin-bottom: 1.5rem;
-          font-style: italic;
-        }
-        .testi-rule {
-          width: 100%;
-          height: 1px;
-          background: linear-gradient(
-            90deg,
-            rgba(212, 175, 55, 0.18),
-            transparent 70%
-          );
-          margin-bottom: 1.25rem;
-        }
-        .testi-author {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-        }
-        .testi-avatar {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background: linear-gradient(
-            135deg,
-            rgba(212, 175, 55, 0.2),
-            rgba(160, 100, 220, 0.15)
-          );
-          border: 1px solid rgba(212, 175, 55, 0.2);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-family: "Newsreader", serif;
-          font-size: 16px;
-          color: rgba(212, 175, 55, 0.8);
-          flex-shrink: 0;
-        }
-        .testi-author-name {
-          font-family: "Inter", sans-serif;
-          font-size: 13px;
-          font-weight: 600;
-          color: rgba(226, 226, 226, 0.78);
-          display: block;
-          letter-spacing: 0.01em;
-        }
-        .testi-author-role {
-          font-family: "Inter", sans-serif;
-          font-size: 10px;
-          font-weight: 500;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: rgba(212, 175, 55, 0.45);
-          display: block;
-          margin-top: 2px;
-        }
-        .testi-stars {
-          display: flex;
-          gap: 3px;
-          margin-bottom: 1rem;
-        }
-        .testi-star {
-          font-size: 14px;
-          color: rgba(212, 175, 55, 0.7);
-        }
-        .testi-view-all {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          padding: 14px 36px;
-          border-radius: 50px;
-          border: 1px solid rgba(212, 175, 55, 0.22);
-          background: rgba(212, 175, 55, 0.05);
-          color: rgba(212, 175, 55, 0.8);
-          font-family: "Inter", sans-serif;
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.16em;
-          text-transform: uppercase;
-          text-decoration: none;
-          transition: all 0.4s ease;
-          backdrop-filter: blur(12px);
-        }
-        .testi-view-all:hover {
-          border-color: rgba(212, 175, 55, 0.5);
-          background: rgba(212, 175, 55, 0.1);
-          color: rgba(212, 175, 55, 1);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(212, 175, 55, 0.12);
-        }
-
-        @media (max-width: 1024px) {
-          .wcu-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-          .testi-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-        @media (max-width: 768px) {
-          .wcu-section,
-          .testi-section {
-            padding: 60px 20px;
-          }
-          .wcu-grid {
-            grid-template-columns: 1fr;
-          }
-          .testi-grid {
-            grid-template-columns: 1fr;
-          }
-          .testi-section {
-            padding-bottom: 60px;
-          }
-        }
-      </style>
-
-      <!-- WHY CHOOSE US -->
-      <section class="wcu-section" id="why-us">
-        <div class="wcu-bg" aria-hidden="true">
-          <div class="wcu-orb-1"></div>
-          <div class="wcu-orb-2"></div>
-          <div class="wcu-orb-3"></div>
-        </div>
-        <div class="relative z-10">
-          <div style="text-align: center">
-            <p class="wcu-eyebrow">
-              <span class="wcu-eyebrow-bar"></span>
-              <span class="gradient-text-mixed italic"
-                >Why Clients Choose Us</span
-              >
-              <span class="wcu-eyebrow-bar r"></span>
-            </p>
-          </div>
-          <div class="wcu-grid reveal-stagger">
-            <!-- Card 1 -->
-            <div class="wcu-card" tabindex="0">
-              <div class="wcu-card-inner">
-                <div class="wcu-icon-box">
-                  <span class="material-symbols-outlined">history_edu</span>
-                </div>
-                <h3 class="wcu-card-title">15+ Years Experience</h3>
-                <div class="wcu-card-rule"></div>
-                <p class="wcu-card-desc">
-                  Extensive experience handling complex criminal, civil, and
-                  high-stakes matters across Gujarat's courts.
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="wcu-card" tabindex="0">
-              <div class="wcu-card-inner">
-                <div class="wcu-icon-box">
-                  <span class="material-symbols-outlined"
-                    >assured_workload</span
-                  >
-                </div>
-                <h3 class="wcu-card-title">Proven Results</h3>
-                <div class="wcu-card-rule"></div>
-                <p class="wcu-card-desc">
-                  200+ matters with successful judgement and outcomes across
-                  trial, appellate, and tribunal forums.
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="wcu-card" tabindex="0">
-              <div class="wcu-card-inner">
-                <div class="wcu-icon-box">
-                  <span class="material-symbols-outlined">groups</span>
-                </div>
-                <h3 class="wcu-card-title">Personalized Attention</h3>
-                <div class="wcu-card-rule"></div>
-                <p class="wcu-card-desc">
-                  Every case is handled with personal care and strategy. No
-                  junior delegation for critical decisions.
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="wcu-card" tabindex="0">
-              <div class="wcu-card-inner">
-                <div class="wcu-icon-box">
-                  <span class="material-symbols-outlined">verified_user</span>
-                </div>
-                <h3 class="wcu-card-title">Ethical &amp; Transparent</h3>
-                <div class="wcu-card-rule"></div>
-                <p class="wcu-card-desc">
-                  Honest advice, clear communication, and reliable
-                  representation with absolute client confidentiality.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TESTIMONIALS -->
-      <section class="testi-section" id="testimonials">
-        <div class="relative z-10">
-          <span class="testi-eyebrow">What Clients Say</span>
-          <h2 class="testi-heading">
-            <span class="gradient-text-mixed italic">Client Testimonials</span>
-          </h2>
-          <p class="testi-subhead" style="margin-bottom: 1.5rem">
-            We value the trust our clients place in us. Here's what they have to
-            say.
-          </p>
-
-          <!-- Testimonial Slider -->
-          <div
-            style="position: relative; overflow: hidden"
-            id="testi-slider-wrap"
-          >
-            <div
-              id="testi-slider"
-              style="
-                display: flex;
-                transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-                will-change: transform;
-              "
-            >
-              <!-- Slide 1 -->
-              <div
-                style="
-                  min-width: 100%;
-                  display: grid;
-                  grid-template-columns: repeat(3, 1fr);
-                  gap: 1.25rem;
-                "
-                class="testi-slide"
-              >
-                <div class="testi-card" tabindex="0">
-                  <span class="testi-quote-mark">"</span>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span>
-                  </div>
-                  <p class="testi-text">
-                    Advocate Jay Patel handled my sessions court matter with
-                    exceptional precision. His preparation and courtroom
-                    presence made all the difference. Highly recommended.
-                  </p>
-                  <div class="testi-rule"></div>
-                  <div class="testi-author">
-                    <div class="testi-avatar">R</div>
-                    <div>
-                      <span class="testi-author-name">Rajesh M.</span
-                      ><span class="testi-author-role"
-                        >Criminal Matter — Ahmedabad</span
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="testi-card" tabindex="0">
-                  <span class="testi-quote-mark">"</span>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span>
-                  </div>
-                  <p class="testi-text">
-                    Our cheque return case was resolved swiftly. Jay sir's
-                    understanding of Section 138 proceedings is unmatched.
-                    Professional, direct, and results-oriented.
-                  </p>
-                  <div class="testi-rule"></div>
-                  <div class="testi-author">
-                    <div class="testi-avatar">P</div>
-                    <div>
-                      <span class="testi-author-name">Priya S.</span
-                      ><span class="testi-author-role"
-                        >Cheque Return — Gandhinagar</span
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="testi-card" tabindex="0">
-                  <span class="testi-quote-mark">"</span>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span>
-                  </div>
-                  <p class="testi-text">
-                    During a deeply difficult family dispute, Jay Patel provided
-                    not just expert legal counsel but also calm, clear guidance
-                    at every step. A truly exceptional advocate.
-                  </p>
-                  <div class="testi-rule"></div>
-                  <div class="testi-author">
-                    <div class="testi-avatar">A</div>
-                    <div>
-                      <span class="testi-author-name">Amit D.</span
-                      ><span class="testi-author-role"
-                        >Family Matter — Ahmedabad</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 2 -->
-              <div
-                style="
-                  min-width: 100%;
-                  display: grid;
-                  grid-template-columns: repeat(3, 1fr);
-                  gap: 1.25rem;
-                "
-                class="testi-slide"
-              >
-                <div class="testi-card" tabindex="0">
-                  <span class="testi-quote-mark">"</span>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span>
-                  </div>
-                  <p class="testi-text">
-                    Jay sir handled my anticipatory bail matter with absolute
-                    urgency and professionalism. He was reachable at all hours
-                    and secured the order before any arrest could happen.
-                  </p>
-                  <div class="testi-rule"></div>
-                  <div class="testi-author">
-                    <div class="testi-avatar">N</div>
-                    <div>
-                      <span class="testi-author-name">Nikhil R.</span
-                      ><span class="testi-author-role"
-                        >Bail Matter — Ahmedabad</span
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="testi-card" tabindex="0">
-                  <span class="testi-quote-mark">"</span>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span>
-                  </div>
-                  <p class="testi-text">
-                    Our land dispute had been going on for years. Advocate Patel
-                    took charge, built a strong case, and we got a favourable
-                    decree within months. Outstanding legal mind.
-                  </p>
-                  <div class="testi-rule"></div>
-                  <div class="testi-author">
-                    <div class="testi-avatar">S</div>
-                    <div>
-                      <span class="testi-author-name">Suresh K.</span
-                      ><span class="testi-author-role"
-                        >Land Dispute — Gandhinagar</span
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="testi-card" tabindex="0">
-                  <span class="testi-quote-mark">"</span>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span>
-                  </div>
-                  <p class="testi-text">
-                    The divorce proceedings were handled with sensitivity and
-                    sharp legal strategy. Jay Patel ensured our interests were
-                    fully protected at every stage of the case.
-                  </p>
-                  <div class="testi-rule"></div>
-                  <div class="testi-author">
-                    <div class="testi-avatar">M</div>
-                    <div>
-                      <span class="testi-author-name">Meera V.</span
-                      ><span class="testi-author-role"
-                        >Divorce Matter — Ahmedabad</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Arrow controls + dots -->
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              gap: 1.5rem;
-              margin-top: 1.5rem;
-            "
-          >
-            <button
-              id="testi-prev"
-              aria-label="Previous"
-              style="
-                width: 44px;
-                height: 44px;
-                border-radius: 50%;
-                border: 1px solid rgba(212, 175, 55, 0.3);
-                background: rgba(212, 175, 55, 0.06);
-                color: rgba(212, 175, 55, 0.8);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(12px);
-              "
-              onmouseover="
-                this.style.background = 'rgba(212,175,55,0.15)';
-                this.style.borderColor = 'rgba(212,175,55,0.6)';
-              "
-              onmouseout="
-                this.style.background = 'rgba(212,175,55,0.06)';
-                this.style.borderColor = 'rgba(212,175,55,0.3)';
-              "
-            >
-              <span class="material-symbols-outlined" style="font-size: 20px"
-                >arrow_back</span
-              >
-            </button>
-
-            <div style="display: flex; gap: 8px" id="testi-dots">
-              <span class="testi-dot active" data-index="0"></span>
-              <span class="testi-dot" data-index="1"></span>
-            </div>
-
-            <button
-              id="testi-next"
-              aria-label="Next"
-              style="
-                width: 44px;
-                height: 44px;
-                border-radius: 50%;
-                border: 1px solid rgba(212, 175, 55, 0.3);
-                background: rgba(212, 175, 55, 0.06);
-                color: rgba(212, 175, 55, 0.8);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(12px);
-              "
-              onmouseover="
-                this.style.background = 'rgba(212,175,55,0.15)';
-                this.style.borderColor = 'rgba(212,175,55,0.6)';
-              "
-              onmouseout="
-                this.style.background = 'rgba(212,175,55,0.06)';
-                this.style.borderColor = 'rgba(212,175,55,0.3)';
-              "
-            >
-              <span class="material-symbols-outlined" style="font-size: 20px"
-                >arrow_forward</span
-              >
-            </button>
-          </div>
-
-          <style>
-            .testi-dot {
-              width: 8px;
-              height: 8px;
-              border-radius: 50%;
-              background: rgba(212, 175, 55, 0.25);
-              cursor: pointer;
-              transition: all 0.3s ease;
-              display: inline-block;
-            }
-            .testi-dot.active {
-              background: rgba(212, 175, 55, 0.9);
-              width: 24px;
-              border-radius: 4px;
-              box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
-            }
-          </style>
-
-          <script>
-            (function () {
-              var slider = document.getElementById("testi-slider");
-              var prev = document.getElementById("testi-prev");
-              var next = document.getElementById("testi-next");
-              var dots = document.querySelectorAll(".testi-dot");
-              var current = 0;
-              var total = 2;
-
-              function goTo(index) {
-                current = (index + total) % total;
-                slider.style.transform = "translateX(-" + current * 100 + "%)";
-                dots.forEach(function (d, i) {
-                  d.classList.toggle("active", i === current);
-                });
-              }
-
-              prev.addEventListener("click", function () {
-                goTo(current - 1);
-              });
-              next.addEventListener("click", function () {
-                goTo(current + 1);
-              });
-              dots.forEach(function (d) {
-                d.addEventListener("click", function () {
-                  goTo(parseInt(d.dataset.index));
-                });
-              });
-            })();
-          </script>
-        </div>
-      </section>
-
-      <!-- Mouse spotlight for WCU cards -->
-      <script>
-        document.querySelectorAll(".wcu-card").forEach(function (card) {
-          card.addEventListener("mousemove", function (e) {
-            var r = card.getBoundingClientRect();
-            card.style.setProperty(
-              "--wx",
-              ((e.clientX - r.left) / r.width) * 100 + "%",
-            );
-            card.style.setProperty(
-              "--wy",
-              ((e.clientY - r.top) / r.height) * 100 + "%",
-            );
-          });
-        });
-      </script>
 
       <!-- Script: mouse spotlight + counter animation -->
       <script>
@@ -5308,12 +3641,415 @@
           });
         })();
       </script>
+      <!-- ============================================
+           PRACTICE AREAS
+           ============================================ -->
+      <section
+        class="relative py-section-padding px-margin-page overflow-hidden"
+        id="expertise"
+      >
+        <div class="section-glow-blue" style="top: 20%; left: -10%"></div>
+        <div class="section-glow-purple" style="bottom: 10%; right: -10%"></div>
+
+        <div class="floating-symbols">
+          <span
+            class="material-symbols-outlined float-symbol float-drift-2"
+            style="top: 15%; left: 30%"
+            >balance</span
+          >
+          <span
+            class="material-symbols-outlined float-symbol blue float-drift-4"
+            style="top: 60%; right: 20%"
+            >gavel</span
+          >
+          <span
+            class="material-symbols-outlined float-symbol purple large float-drift-5"
+            style="bottom: 20%; left: 12%"
+            >scale</span
+          >
+        </div>
+
+        <div class="relative z-10">
+          <div
+            class="practice-header flex flex-col md:flex-row justify-between items-end mb-24 gap-8 reveal"
+          >
+            <div class="space-y-4">
+              <p
+                class="font-label-caps text-label-caps text-primary uppercase tracking-[0.4em]"
+              >
+                Core Competencies
+              </p>
+              <h2 class="font-headline-lg text-headline-lg text-white">
+                Fields of
+                <span class="gradient-text-mixed italic">Practice</span>
+              </h2>
+            </div>
+            <p class="font-body-md text-on-surface/40 max-w-sm">
+              Specialized legal solutions for complex individual and corporate
+              challenges.
+            </p>
+          </div>
+
+          <div
+            class="practice-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger"
+          >
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+              onclick="openPracticeModal('cheque')"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >payments</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Cheque Return Matters
+              </h3>
+              <p
+                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
+                style="font-size: 12px"
+              >
+                Section 138 NI Act enforcement &amp; defence
+              </p>
+              <span
+                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
+                style="font-size: 10px; letter-spacing: 0.12em"
+                >Details
+                <span class="material-symbols-outlined" style="font-size: 12px"
+                  >arrow_forward</span
+                ></span
+              >
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+              onclick="openPracticeModal('money')"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >savings</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Money Recovery Suits
+              </h3>
+              <p
+                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
+                style="font-size: 12px"
+              >
+                Civil recovery through summary &amp; plaint proceedings
+              </p>
+              <span
+                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
+                style="font-size: 10px; letter-spacing: 0.12em"
+                >Details
+                <span class="material-symbols-outlined" style="font-size: 12px"
+                  >arrow_forward</span
+                ></span
+              >
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+              onclick="openPracticeModal('family')"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >family_restroom</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Family Matters
+              </h3>
+              <p
+                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
+                style="font-size: 12px"
+              >
+                Matrimonial, custody &amp; succession disputes
+              </p>
+              <span
+                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
+                style="font-size: 10px; letter-spacing: 0.12em"
+                >Details
+                <span class="material-symbols-outlined" style="font-size: 12px"
+                  >arrow_forward</span
+                ></span
+              >
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+              onclick="openPracticeModal('divorce')"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >heart_broken</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Divorce Cases
+              </h3>
+              <p
+                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
+                style="font-size: 12px"
+              >
+                Contested &amp; mutual consent divorce proceedings
+              </p>
+              <span
+                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
+                style="font-size: 10px; letter-spacing: 0.12em"
+                >Details
+                <span class="material-symbols-outlined" style="font-size: 12px"
+                  >arrow_forward</span
+                ></span
+              >
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+              onclick="openPracticeModal('domestic')"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >shield_person</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Domestic Violence
+              </h3>
+              <p
+                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
+                style="font-size: 12px"
+              >
+                Protection orders &amp; PWDV Act proceedings
+              </p>
+              <span
+                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
+                style="font-size: 10px; letter-spacing: 0.12em"
+                >Details
+                <span class="material-symbols-outlined" style="font-size: 12px"
+                  >arrow_forward</span
+                ></span
+              >
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+              onclick="openPracticeModal('landrev')"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >terrain</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Land Revenue Cases
+              </h3>
+              <p
+                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
+                style="font-size: 12px"
+              >
+                Revenue tribunal appeals &amp; tenancy matters
+              </p>
+              <span
+                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
+                style="font-size: 10px; letter-spacing: 0.12em"
+                >Details
+                <span class="material-symbols-outlined" style="font-size: 12px"
+                  >arrow_forward</span
+                ></span
+              >
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+              onclick="openPracticeModal('landdisp')"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >map</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Land Disputes
+              </h3>
+              <p
+                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
+                style="font-size: 12px"
+              >
+                Title, encroachment &amp; partition litigation
+              </p>
+              <span
+                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
+                style="font-size: 10px; letter-spacing: 0.12em"
+                >Details
+                <span class="material-symbols-outlined" style="font-size: 12px"
+                  >arrow_forward</span
+                ></span
+              >
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+              onclick="openPracticeModal('bail')"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >key</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Bail Matters
+              </h3>
+              <p
+                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
+                style="font-size: 12px"
+              >
+                Regular, anticipatory &amp; High Court bail applications
+              </p>
+              <span
+                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
+                style="font-size: 10px; letter-spacing: 0.12em"
+                >Details
+                <span class="material-symbols-outlined" style="font-size: 12px"
+                  >arrow_forward</span
+                ></span
+              >
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+              onclick="openPracticeModal('criminal')"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >gavel</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Criminal Cases
+              </h3>
+              <p
+                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
+                style="font-size: 12px"
+              >
+                Full-spectrum criminal defence &amp; trial advocacy
+              </p>
+              <span
+                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
+                style="font-size: 10px; letter-spacing: 0.12em"
+                >Details
+                <span class="material-symbols-outlined" style="font-size: 12px"
+                  >arrow_forward</span
+                ></span
+              >
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+              onclick="openPracticeModal('sessions')"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >account_balance</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                Sessions Court
+              </h3>
+              <p
+                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
+                style="font-size: 12px"
+              >
+                Serious offence trials &amp; appellate representation
+              </p>
+              <span
+                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
+                style="font-size: 10px; letter-spacing: 0.12em"
+                >Details
+                <span class="material-symbols-outlined" style="font-size: 12px"
+                  >arrow_forward</span
+                ></span
+              >
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+              onclick="openPracticeModal('cbi')"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >policy</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                CBI Cases
+              </h3>
+              <p
+                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
+                style="font-size: 12px"
+              >
+                Federal investigation defence &amp; special court matters
+              </p>
+              <span
+                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
+                style="font-size: 10px; letter-spacing: 0.12em"
+                >Details
+                <span class="material-symbols-outlined" style="font-size: 12px"
+                  >arrow_forward</span
+                ></span
+              >
+            </div>
+            <div
+              class="premium-card gradient-border-card p-10 rounded-xl group cursor-pointer"
+              onclick="openPracticeModal('ed')"
+            >
+              <span
+                class="material-symbols-outlined text-primary/60 group-hover:text-primary transition-colors mb-4 block"
+                style="font-size: 28px"
+                >currency_exchange</span
+              >
+              <h3
+                class="font-label-caps text-label-caps text-on-surface/80 group-hover:text-white transition-colors tracking-widest"
+              >
+                ED &amp; Money Laundering
+              </h3>
+              <p
+                class="pa-tagline mt-3 font-body-md text-on-surface/35 group-hover:text-on-surface/55 transition-colors"
+                style="font-size: 12px"
+              >
+                PMLA defence, ECIR &amp; attachment proceedings
+              </p>
+              <span
+                class="pa-details-link mt-4 inline-flex items-center gap-1 font-label-caps text-primary/50 group-hover:text-primary transition-colors"
+                style="font-size: 10px; letter-spacing: 0.12em"
+                >Details
+                <span class="material-symbols-outlined" style="font-size: 12px"
+                  >arrow_forward</span
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- ============================================
            STRATEGIC FRAMEWORK
            ============================================ -->
       <section
-        class="relative py-16 px-margin-page overflow-hidden"
+        class="relative py-section-padding px-margin-page overflow-hidden"
         id="strategy"
       >
         <div class="section-glow-purple" style="top: 20%; right: 10%"></div>
@@ -5342,7 +4078,7 @@
               </p>
               <h2 class="font-headline-lg text-headline-lg text-white">
                 Strategic
-                <span class="gradient-text-mixed italic">Framework</span>
+                <span class="gradient-text-gold italic">Framework</span>
               </h2>
             </div>
             <div
@@ -5617,7 +4353,7 @@
               <div>
                 <h2 class="font-headline-lg text-headline-lg text-white mb-6">
                   Initiate Strategic
-                  <span class="gradient-text-mixed italic">Consultation</span>
+                  <span class="gradient-text-gold italic">Consultation</span>
                 </h2>
                 <p class="font-body-lg text-on-surface/50">
                   Formal engagement begins with a confidential review of your
@@ -5740,50 +4476,11 @@
                     </a>
                   </div>
                 </div>
-
-                <!-- Embedded Map -->
-                <div
-                  class="rounded-2xl overflow-hidden border border-white/10 shadow-lg"
-                  style="height: 200px; background: rgba(255, 255, 255, 0.02)"
-                >
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3669.847!2d72.5873!3d23.1012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA2JzA0LjMiTiA3MsKwMzUnMTQuMyJF!5e0!3m2!1sen!2sin!4v1234567890"
-                    width="100%"
-                    height="200"
-                    style="
-                      border: 0;
-                      filter: invert(90%) hue-rotate(180deg) brightness(0.85)
-                        contrast(1.1);
-                    "
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-                <!-- View on Google Maps button -->
-                <a
-                  href="https://maps.google.com/?q=FF-13,Omkar+Lotus,Chandkheda,Ahmedabad"
-                  target="_blank"
-                  rel="noopener"
-                  class="inline-flex items-center justify-center gap-2 w-full py-4 rounded-full border border-primary/30 font-label-caps text-label-caps text-primary/80 hover:text-primary hover:border-primary/60 hover:bg-primary/5 transition-all duration-400 uppercase tracking-widest"
-                  style="
-                    font-size: 11px;
-                    backdrop-filter: blur(12px);
-                    background: rgba(212, 175, 55, 0.04);
-                  "
-                >
-                  <span
-                    class="material-symbols-outlined"
-                    style="font-size: 16px"
-                    >map</span
-                  >
-                  View on Google Maps
-                </a>
               </div>
             </div>
 
             <div
-              class="contact-form-card reveal premium-card p-8 lg:p-10 rounded-3xl relative shadow-2xl border-white/10 self-start"
+              class="contact-form-card reveal premium-card p-10 lg:p-16 rounded-3xl relative shadow-2xl border-white/10"
             >
               <form class="space-y-8">
                 <div class="space-y-2">
@@ -5970,7 +4667,7 @@
         class="max-w-6xl mx-auto flex flex-col items-center gap-12 text-center relative z-10"
       >
         <div
-          class="font-headline-md text-3xl gradient-text-mixed tracking-tight"
+          class="font-headline-md text-3xl gradient-text-gold tracking-tight"
         >
           Advocate Jay Patel
         </div>
@@ -7478,70 +6175,6 @@
           card.style.setProperty("--mouse-y", `${y}%`);
         });
       });
-      // Counter animation — with disclaimer delay support
-      function runCounter(el) {
-        if (el.dataset.counted) return;
-        el.dataset.counted = "true";
-        var target = parseInt(el.dataset.target);
-        var duration = 1800;
-        var start = performance.now();
-        function step(now) {
-          var progress = Math.min((now - start) / duration, 1);
-          var eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.round(eased * target) + "+";
-          if (progress < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      }
-
-      // Hero strip counters — run after disclaimer is dismissed
-      function startHeroCounters() {
-        document.querySelectorAll(".counter-animate").forEach(function (el) {
-          runCounter(el);
-        });
-      }
-
-      // Hook into disclaimer agree button
-      var vosAgreeBtn = document.getElementById("vos-agree");
-      if (vosAgreeBtn) {
-        vosAgreeBtn.addEventListener("click", function () {
-          setTimeout(startHeroCounters, 600);
-        });
-      } else {
-        startHeroCounters();
-      }
-
-      // Authority strip — runs when scrolled into view after disclaimer closes
-      var counterDone = new Set();
-      function observeAuthorityCounters() {
-        var counterObserver = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting && !counterDone.has(entry.target)) {
-                counterDone.add(entry.target);
-                runCounter(entry.target);
-                counterObserver.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.3, rootMargin: "0px 0px -50px 0px" },
-        );
-
-        document.querySelectorAll(".authority-counter").forEach(function (el) {
-          delete el.dataset.counted;
-          el.textContent = "0+";
-          counterDone.delete(el);
-          counterObserver.observe(el);
-        });
-      }
-
-      if (vosAgreeBtn) {
-        vosAgreeBtn.addEventListener("click", function () {
-          setTimeout(observeAuthorityCounters, 700);
-        });
-      } else {
-        observeAuthorityCounters();
-      }
 
       // Subtle parallax on aurora orbs based on scroll
       const orbs = document.querySelectorAll(".aurora-orb");
