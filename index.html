@@ -4295,19 +4295,46 @@
           .exp-card * {
             flex-shrink: 1 !important;
           }
-          [style*="grid-column: span 2"] {
-            grid-column: span 2 !important;
-            height: auto !important;
+          /* Languages card (top, full width) — compact */
+          .exp-stat-grid > .exp-card:nth-child(1) .exp-card-inner {
+            padding: 1.5rem 1rem !important;
           }
-          [style*="grid-column: span 2"] .exp-card-inner {
-            padding: 1.5rem 1.25rem !important;
+          .exp-stat-grid > .exp-card:nth-child(1) .lang-bubble {
+            width: 64px !important;
+            height: 64px !important;
+            min-width: 64px !important;
+            min-height: 64px !important;
           }
-          [style*="grid-column: span 2"] .lang-bubble {
-            width: 80px !important;
-            height: 80px !important;
+          .exp-stat-grid
+            > .exp-card:nth-child(1)
+            .lang-bubble
+            .material-symbols-outlined {
+            font-size: 26px !important;
           }
-          .exp-stat-grid div[style*="grid-column: span 2"] {
-            grid-column: span 2 !important;
+          .exp-stat-grid
+            > .exp-card:nth-child(1)
+            .lang-bubble
+            span:not(.material-symbols-outlined):not(.lang-bubble-label) {
+            font-size: 28px !important;
+          }
+          .exp-stat-grid > .exp-card:nth-child(1) .lang-bubble-label {
+            font-size: 10px !important;
+            margin-top: 2px !important;
+          }
+          /* Tighten the eyebrow spacing inside Languages card */
+          .exp-stat-grid
+            > .exp-card:nth-child(1)
+            .exp-card-inner
+            > div:first-child {
+            margin-bottom: 1.25rem !important;
+          }
+          /* Increase gap between bubbles on mobile */
+          .exp-stat-grid
+            > .exp-card:nth-child(1)
+            .exp-card-inner
+            > div:nth-child(2) {
+            padding: 0.5rem 0.5rem 0 !important;
+            gap: 1rem !important;
           }
           .exp-bottom-grid {
             grid-template-columns: 1fr;
