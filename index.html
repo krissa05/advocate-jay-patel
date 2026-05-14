@@ -2097,27 +2097,7 @@
         margin-top: 0 !important;
       }
 
-      /* Testimonial mobile fix */
-      .testi-section {
-        padding: 40px 20px 60px !important;
-      }
-      .testi-card {
-        display: none;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 380px;
-      }
-
-      .testi-card.active-card {
-        display: flex;
-      }
-
-      @media (max-width: 768px) {
-        .testi-card {
-          min-height: auto !important;
-          width: 100% !important;
-        }
-      }
+      /* Testimonial styles moved to dedicated section below */
 
       @media (max-width: 400px) {
         .practice-grid {
@@ -4940,10 +4920,10 @@
           color: rgba(200, 200, 220, 0.58);
         }
 
-        /* ── Testimonials ── */
+        /* ── Testimonials (Centered Card Style) ── */
         .testi-section {
           position: relative;
-          padding: 40px 64px 60px;
+          padding: 60px 64px 80px;
           overflow: hidden;
         }
         .testi-eyebrow {
@@ -4971,172 +4951,267 @@
           font-size: 15px;
           color: rgba(226, 226, 226, 0.35);
           text-align: center;
-          margin: 0 0 3rem;
+          margin: 0 0 4rem;
           line-height: 1.6;
         }
-        .testi-grid {
+
+        /* Slider viewport */
+        .testi-slider-viewport {
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        .testi-track {
+          display: flex;
+          transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+          will-change: transform;
+        }
+        .testi-slide {
+          flex: 0 0 100%;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 1.5rem;
-          margin-bottom: 2.5rem;
-          align-items: stretch;
+          padding: 0 4px;
         }
+
+        /* Glassmorphic centered card — Fingent style with gold theme */
         .testi-card {
           position: relative;
           border-radius: 24px;
           overflow: hidden;
           background: linear-gradient(
-            148deg,
-            rgba(28, 22, 12, 0.88) 0%,
-            rgba(18, 14, 8, 0.94) 50%,
-            rgba(12, 10, 18, 0.96) 100%
+            155deg,
+            rgba(40, 32, 14, 0.55) 0%,
+            rgba(22, 18, 10, 0.65) 50%,
+            rgba(14, 12, 18, 0.7) 100%
           );
-          border: 1px solid rgba(212, 175, 55, 0.1);
-          backdrop-filter: blur(28px) saturate(1.5);
-          -webkit-backdrop-filter: blur(28px) saturate(1.5);
+          border: 1px solid rgba(212, 175, 55, 0.18);
+          backdrop-filter: blur(24px) saturate(1.4);
+          -webkit-backdrop-filter: blur(24px) saturate(1.4);
           box-shadow:
-            inset 0 1px 0 rgba(255, 210, 80, 0.07),
-            0 20px 50px rgba(0, 0, 0, 0.4);
-          padding: 2.5rem 2rem;
-          transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            inset 0 1px 0 rgba(255, 210, 80, 0.1),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.02),
+            0 24px 60px rgba(0, 0, 0, 0.45),
+            0 0 40px rgba(212, 175, 55, 0.04);
+          padding: 3rem 2rem 2.25rem;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
-          min-height: 380px;
+          align-items: center;
+          text-align: center;
+          min-height: 420px;
+          transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .testi-card::before {
           content: "";
           position: absolute;
           top: 0;
-          left: 10%;
-          right: 10%;
+          left: 15%;
+          right: 15%;
           height: 1px;
           background: linear-gradient(
             90deg,
             transparent,
-            rgba(212, 175, 55, 0.3) 40%,
-            rgba(212, 175, 55, 0.2) 60%,
+            rgba(212, 175, 55, 0.5) 40%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(212, 175, 55, 0.5) 60%,
             transparent
           );
           z-index: 2;
         }
-        .testi-card:hover {
-          border-color: rgba(212, 175, 55, 0.22);
-          transform: translateY(-5px);
-          box-shadow:
-            inset 0 1px 0 rgba(255, 210, 80, 0.13),
-            0 32px 60px rgba(0, 0, 0, 0.5),
-            0 0 40px rgba(212, 175, 55, 0.06);
-        }
-        .testi-quote-mark {
-          font-family: "Newsreader", serif;
-          font-size: 56px;
-          line-height: 0.8;
-          color: rgba(212, 175, 55, 0.2);
-          margin-bottom: 1rem;
-          display: block;
-          font-weight: 400;
-        }
-        .testi-text {
-          font-family: "Inter", sans-serif;
-          font-size: 14px;
-          line-height: 1.75;
-          color: rgba(210, 210, 220, 0.55);
-          margin-bottom: 1.5rem;
-          font-style: italic;
-          flex-grow: 1;
-        }
-        .testi-rule {
-          width: 100%;
-          height: 1px;
-          background: linear-gradient(
-            90deg,
-            rgba(212, 175, 55, 0.18),
+        .testi-card::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          background: radial-gradient(
+            ellipse 80% 50% at 50% 0%,
+            rgba(212, 175, 55, 0.06) 0%,
             transparent 70%
           );
-          margin-bottom: 1.25rem;
+          pointer-events: none;
+          opacity: 0.6;
+          transition: opacity 0.5s ease;
         }
-        .testi-author {
-          display: flex;
-          align-items: center;
-          gap: 12px;
+        .testi-card:hover {
+          border-color: rgba(212, 175, 55, 0.35);
+          transform: translateY(-6px);
+          box-shadow:
+            inset 0 1px 0 rgba(255, 210, 80, 0.16),
+            0 32px 70px rgba(0, 0, 0, 0.55),
+            0 0 50px rgba(212, 175, 55, 0.1),
+            0 0 100px rgba(212, 175, 55, 0.04);
         }
-        .testi-avatar {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background: linear-gradient(
-            135deg,
-            rgba(212, 175, 55, 0.2),
-            rgba(160, 100, 220, 0.15)
-          );
-          border: 1px solid rgba(212, 175, 55, 0.2);
+        .testi-card:hover::after {
+          opacity: 1;
+        }
+
+        /* Quote text — large, centered, italic */
+        .testi-text {
+          font-family: "Newsreader", serif;
+          font-size: 17px;
+          line-height: 1.6;
+          color: rgba(232, 232, 232, 0.85);
+          font-style: italic;
+          margin: 0 0 2rem;
+          font-weight: 300;
+          letter-spacing: -0.005em;
+          flex-grow: 1;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-family: "Newsreader", serif;
-          font-size: 16px;
-          color: rgba(212, 175, 55, 0.8);
-          flex-shrink: 0;
+        }
+        .testi-text::before {
+          content: "\201C";
+          display: inline;
+          color: rgba(212, 175, 55, 0.5);
+        }
+        .testi-text::after {
+          content: "\201D";
+          display: inline;
+          color: rgba(212, 175, 55, 0.5);
+        }
+
+        /* Author block — name + role centered */
+        .testi-author-block {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 4px;
+          margin-bottom: 1.5rem;
         }
         .testi-author-name {
           font-family: "Inter", sans-serif;
-          font-size: 13px;
+          font-size: 15px;
           font-weight: 600;
-          color: rgba(226, 226, 226, 0.78);
-          display: block;
+          color: rgba(232, 232, 232, 0.95);
           letter-spacing: 0.01em;
         }
         .testi-author-role {
           font-family: "Inter", sans-serif;
-          font-size: 10px;
+          font-size: 11px;
           font-weight: 500;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: rgba(212, 175, 55, 0.45);
-          display: block;
-          margin-top: 2px;
+          color: rgba(226, 226, 226, 0.4);
+          letter-spacing: 0.02em;
         }
+
+        /* Big rating number — gradient gold */
+        .testi-rating-num {
+          font-family: "Newsreader", serif;
+          font-size: 44px;
+          font-weight: 300;
+          line-height: 1;
+          letter-spacing: -0.02em;
+          background: linear-gradient(
+            135deg,
+            #f4d472 0%,
+            #d4af37 50%,
+            #c5a059 100%
+          );
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin-bottom: 0.6rem;
+        }
+
+        /* Stars row — gold, centered */
         .testi-stars {
           display: flex;
-          gap: 3px;
-          margin-bottom: 1rem;
+          gap: 6px;
+          justify-content: center;
+          margin-bottom: 1.25rem;
         }
         .testi-star {
-          font-size: 14px;
-          color: rgba(212, 175, 55, 0.7);
+          font-size: 18px;
+          background: linear-gradient(135deg, #f4d472 0%, #d4af37 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.4));
         }
-        .testi-view-all {
+
+        /* Pill badge at bottom — #ClientReview style */
+        .testi-pill {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          padding: 14px 36px;
-          border-radius: 50px;
-          border: 1px solid rgba(212, 175, 55, 0.22);
+          gap: 6px;
+          padding: 8px 18px;
+          border-radius: 999px;
+          border: 1px solid rgba(212, 175, 55, 0.3);
           background: rgba(212, 175, 55, 0.05);
-          color: rgba(212, 175, 55, 0.8);
+          backdrop-filter: blur(8px);
           font-family: "Inter", sans-serif;
-          font-size: 11px;
+          font-size: 10.5px;
+          font-weight: 500;
+          letter-spacing: 0.08em;
+          color: rgba(226, 226, 226, 0.65);
+        }
+        .testi-pill-hash {
+          color: rgba(212, 175, 55, 0.85);
           font-weight: 600;
-          letter-spacing: 0.16em;
-          text-transform: uppercase;
-          text-decoration: none;
-          transition: all 0.4s ease;
+        }
+        .testi-pill-bold {
+          font-weight: 700;
+          color: rgba(244, 212, 114, 0.95);
+        }
+
+        /* Controls row — arrows + dots */
+        .testi-controls {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1.5rem;
+          margin-top: 3rem;
+        }
+        .testi-arrow {
+          width: 46px;
+          height: 46px;
+          border-radius: 50%;
+          border: 1px solid rgba(212, 175, 55, 0.3);
+          background: rgba(212, 175, 55, 0.06);
+          color: rgba(212, 175, 55, 0.8);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.3s ease;
           backdrop-filter: blur(12px);
         }
-        .testi-view-all:hover {
-          border-color: rgba(212, 175, 55, 0.5);
-          background: rgba(212, 175, 55, 0.1);
-          color: rgba(212, 175, 55, 1);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(212, 175, 55, 0.12);
+        .testi-arrow:hover {
+          background: rgba(212, 175, 55, 0.15);
+          border-color: rgba(212, 175, 55, 0.6);
+          color: rgba(244, 212, 114, 1);
+          transform: scale(1.05);
+        }
+        .testi-arrow:disabled {
+          opacity: 0.3;
+          cursor: not-allowed;
+          transform: none;
+        }
+        .testi-dots {
+          display: flex;
+          gap: 8px;
+        }
+        .testi-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: rgba(212, 175, 55, 0.25);
+          cursor: pointer;
+          transition: all 0.35s ease;
+          border: none;
+          padding: 0;
+        }
+        .testi-dot.active {
+          background: rgba(212, 175, 55, 0.9);
+          width: 26px;
+          border-radius: 4px;
+          box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
         @media (max-width: 1024px) {
           .wcu-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-          .testi-grid {
             grid-template-columns: repeat(2, 1fr);
           }
         }
@@ -5156,6 +5231,17 @@
           }
           .testi-card {
             min-height: auto !important;
+            padding: 2.5rem 1.5rem 2rem !important;
+          }
+          .testi-text {
+            font-size: 15px !important;
+          }
+          .testi-rating-num {
+            font-size: 36px !important;
+          }
+          .testi-controls {
+            gap: 1rem !important;
+            margin-top: 2rem !important;
           }
         }
       </style>
@@ -5250,310 +5336,300 @@
           <h2 class="testi-heading">
             <span class="gradient-text-mixed italic">Client Testimonials</span>
           </h2>
-          <p class="testi-subhead" style="margin-bottom: 1.5rem">
+          <p class="testi-subhead">
             We value the trust our clients place in us. Here's what they have to
             say.
           </p>
 
-          <!-- Testimonial Slider -->
-          <div
-            id="testi-slider-wrap"
-            style="position: relative; overflow: hidden"
-          >
-            <div id="testi-cards-container" style="display: block">
-              <div class="testi-card" data-index="0">
-                <span class="testi-quote-mark">"</span>
-                <div class="testi-stars">
-                  <span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span>
-                </div>
-                <p class="testi-text">
-                  Advocate Jay Patel handled my sessions court matter with
-                  exceptional precision. His preparation and courtroom presence
-                  made all the difference. Highly recommended.
-                </p>
-                <div class="testi-rule"></div>
-                <div class="testi-author">
-                  <div class="testi-avatar">R</div>
-                  <div>
-                    <span class="testi-author-name">Rajesh M.</span
-                    ><span class="testi-author-role"
+          <!-- Slider viewport -->
+          <div class="testi-slider-viewport">
+            <div class="testi-track" id="testi-track">
+              <!-- ─── Desktop slide 1 / Mobile slide 1 ─── -->
+              <div class="testi-slide">
+                <div class="testi-card">
+                  <p class="testi-text">
+                    Advocate Jay Patel handled my sessions court matter with
+                    exceptional precision. His preparation and courtroom
+                    presence made all the difference. Highly recommended.
+                  </p>
+                  <div class="testi-author-block">
+                    <span class="testi-author-name">Rajesh M.</span>
+                    <span class="testi-author-role"
                       >Criminal Matter — Ahmedabad</span
                     >
                   </div>
+                  <div class="testi-rating-num">5.0</div>
+                  <div class="testi-stars">
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                  </div>
+                  <span class="testi-pill">
+                    <span class="testi-pill-hash">#</span>
+                    <span
+                      >Client<span class="testi-pill-bold">Review</span></span
+                    >
+                  </span>
                 </div>
-              </div>
-              <div class="testi-card" data-index="1">
-                <span class="testi-quote-mark">"</span>
-                <div class="testi-stars">
-                  <span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span>
-                </div>
-                <p class="testi-text">
-                  Our cheque return case was resolved swiftly. Jay sir's
-                  understanding of Section 138 proceedings is unmatched.
-                  Professional, direct, and results-oriented.
-                </p>
-                <div class="testi-rule"></div>
-                <div class="testi-author">
-                  <div class="testi-avatar">P</div>
-                  <div>
-                    <span class="testi-author-name">Priya S.</span
-                    ><span class="testi-author-role"
+
+                <div class="testi-card">
+                  <p class="testi-text">
+                    Our cheque return case was resolved swiftly. Jay sir's
+                    understanding of Section 138 proceedings is unmatched.
+                    Professional, direct, and results-oriented.
+                  </p>
+                  <div class="testi-author-block">
+                    <span class="testi-author-name">Priya S.</span>
+                    <span class="testi-author-role"
                       >Cheque Return — Gandhinagar</span
                     >
                   </div>
+                  <div class="testi-rating-num">5.0</div>
+                  <div class="testi-stars">
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                  </div>
+                  <span class="testi-pill">
+                    <span class="testi-pill-hash">#</span>
+                    <span
+                      >Client<span class="testi-pill-bold">Review</span></span
+                    >
+                  </span>
                 </div>
-              </div>
-              <div class="testi-card" data-index="2">
-                <span class="testi-quote-mark">"</span>
-                <div class="testi-stars">
-                  <span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span>
-                </div>
-                <p class="testi-text">
-                  During a deeply difficult family dispute, Jay Patel provided
-                  not just expert legal counsel but also calm, clear guidance at
-                  every step. A truly exceptional advocate.
-                </p>
-                <div class="testi-rule"></div>
-                <div class="testi-author">
-                  <div class="testi-avatar">A</div>
-                  <div>
-                    <span class="testi-author-name">Amit D.</span
-                    ><span class="testi-author-role"
+
+                <div class="testi-card">
+                  <p class="testi-text">
+                    During a deeply difficult family dispute, Jay Patel provided
+                    not just expert legal counsel but also calm, clear guidance
+                    at every step. A truly exceptional advocate.
+                  </p>
+                  <div class="testi-author-block">
+                    <span class="testi-author-name">Amit D.</span>
+                    <span class="testi-author-role"
                       >Family Matter — Ahmedabad</span
                     >
                   </div>
+                  <div class="testi-rating-num">5.0</div>
+                  <div class="testi-stars">
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                  </div>
+                  <span class="testi-pill">
+                    <span class="testi-pill-hash">#</span>
+                    <span
+                      >Client<span class="testi-pill-bold">Review</span></span
+                    >
+                  </span>
                 </div>
               </div>
-              <div class="testi-card" data-index="3">
-                <span class="testi-quote-mark">"</span>
-                <div class="testi-stars">
-                  <span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span>
-                </div>
-                <p class="testi-text">
-                  Jay sir handled my anticipatory bail matter with absolute
-                  urgency and professionalism. He was reachable at all hours and
-                  secured the order before any arrest could happen.
-                </p>
-                <div class="testi-rule"></div>
-                <div class="testi-author">
-                  <div class="testi-avatar">N</div>
-                  <div>
-                    <span class="testi-author-name">Nikhil R.</span
-                    ><span class="testi-author-role"
+
+              <!-- ─── Desktop slide 2 / Mobile slide 4 ─── -->
+              <div class="testi-slide">
+                <div class="testi-card">
+                  <p class="testi-text">
+                    Jay sir handled my anticipatory bail matter with absolute
+                    urgency and professionalism. He was reachable at all hours
+                    and secured the order before any arrest could happen.
+                  </p>
+                  <div class="testi-author-block">
+                    <span class="testi-author-name">Nikhil R.</span>
+                    <span class="testi-author-role"
                       >Bail Matter — Ahmedabad</span
                     >
                   </div>
+                  <div class="testi-rating-num">5.0</div>
+                  <div class="testi-stars">
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                  </div>
+                  <span class="testi-pill">
+                    <span class="testi-pill-hash">#</span>
+                    <span
+                      >Client<span class="testi-pill-bold">Review</span></span
+                    >
+                  </span>
                 </div>
-              </div>
-              <div class="testi-card" data-index="4">
-                <span class="testi-quote-mark">"</span>
-                <div class="testi-stars">
-                  <span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span>
-                </div>
-                <p class="testi-text">
-                  Our land dispute had been going on for years. Advocate Patel
-                  took charge, built a strong case, and we got a favourable
-                  decree within months. Outstanding legal mind.
-                </p>
-                <div class="testi-rule"></div>
-                <div class="testi-author">
-                  <div class="testi-avatar">S</div>
-                  <div>
-                    <span class="testi-author-name">Suresh K.</span
-                    ><span class="testi-author-role"
+
+                <div class="testi-card">
+                  <p class="testi-text">
+                    Our land dispute had been going on for years. Advocate Patel
+                    took charge, built a strong case, and we got a favourable
+                    decree within months. Outstanding legal mind.
+                  </p>
+                  <div class="testi-author-block">
+                    <span class="testi-author-name">Suresh K.</span>
+                    <span class="testi-author-role"
                       >Land Dispute — Gandhinagar</span
                     >
                   </div>
+                  <div class="testi-rating-num">5.0</div>
+                  <div class="testi-stars">
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                  </div>
+                  <span class="testi-pill">
+                    <span class="testi-pill-hash">#</span>
+                    <span
+                      >Client<span class="testi-pill-bold">Review</span></span
+                    >
+                  </span>
                 </div>
-              </div>
-              <div class="testi-card" data-index="5">
-                <span class="testi-quote-mark">"</span>
-                <div class="testi-stars">
-                  <span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span
-                  ><span class="testi-star">★</span>
-                </div>
-                <p class="testi-text">
-                  The divorce proceedings were handled with sensitivity and
-                  sharp legal strategy. Jay Patel ensured our interests were
-                  fully protected at every stage of the case.
-                </p>
-                <div class="testi-rule"></div>
-                <div class="testi-author">
-                  <div class="testi-avatar">M</div>
-                  <div>
-                    <span class="testi-author-name">Meera V.</span
-                    ><span class="testi-author-role"
+
+                <div class="testi-card">
+                  <p class="testi-text">
+                    The divorce proceedings were handled with sensitivity and
+                    sharp legal strategy. Jay Patel ensured our interests were
+                    fully protected at every stage of the case.
+                  </p>
+                  <div class="testi-author-block">
+                    <span class="testi-author-name">Meera V.</span>
+                    <span class="testi-author-role"
                       >Divorce Matter — Ahmedabad</span
                     >
                   </div>
+                  <div class="testi-rating-num">5.0</div>
+                  <div class="testi-stars">
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                    <span class="testi-star">★</span>
+                  </div>
+                  <span class="testi-pill">
+                    <span class="testi-pill-hash">#</span>
+                    <span
+                      >Client<span class="testi-pill-bold">Review</span></span
+                    >
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Arrow controls + dots -->
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              gap: 1.5rem;
-              margin-top: 1.5rem;
-            "
-          >
-            <button
-              id="testi-prev"
-              aria-label="Previous"
-              style="
-                width: 44px;
-                height: 44px;
-                border-radius: 50%;
-                border: 1px solid rgba(212, 175, 55, 0.3);
-                background: rgba(212, 175, 55, 0.06);
-                color: rgba(212, 175, 55, 0.8);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(12px);
-              "
-              onmouseover="
-                this.style.background = 'rgba(212,175,55,0.15)';
-                this.style.borderColor = 'rgba(212,175,55,0.6)';
-              "
-              onmouseout="
-                this.style.background = 'rgba(212,175,55,0.06)';
-                this.style.borderColor = 'rgba(212,175,55,0.3)';
-              "
-            >
+          <!-- Controls -->
+          <div class="testi-controls">
+            <button id="testi-prev" class="testi-arrow" aria-label="Previous">
               <span class="material-symbols-outlined" style="font-size: 20px"
                 >arrow_back</span
               >
             </button>
-
-            <div style="display: flex; gap: 8px" id="testi-dots">
-              <span class="testi-dot active" data-index="0"></span>
-              <span class="testi-dot" data-index="1"></span>
-            </div>
-
-            <button
-              id="testi-next"
-              aria-label="Next"
-              style="
-                width: 44px;
-                height: 44px;
-                border-radius: 50%;
-                border: 1px solid rgba(212, 175, 55, 0.3);
-                background: rgba(212, 175, 55, 0.06);
-                color: rgba(212, 175, 55, 0.8);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(12px);
-              "
-              onmouseover="
-                this.style.background = 'rgba(212,175,55,0.15)';
-                this.style.borderColor = 'rgba(212,175,55,0.6)';
-              "
-              onmouseout="
-                this.style.background = 'rgba(212,175,55,0.06)';
-                this.style.borderColor = 'rgba(212,175,55,0.3)';
-              "
-            >
+            <div class="testi-dots" id="testi-dots"></div>
+            <button id="testi-next" class="testi-arrow" aria-label="Next">
               <span class="material-symbols-outlined" style="font-size: 20px"
                 >arrow_forward</span
               >
             </button>
           </div>
-
-          <style>
-            .testi-dot {
-              width: 8px;
-              height: 8px;
-              border-radius: 50%;
-              background: rgba(212, 175, 55, 0.25);
-              cursor: pointer;
-              transition: all 0.3s ease;
-              display: inline-block;
-            }
-            .testi-dot.active {
-              background: rgba(212, 175, 55, 0.9);
-              width: 24px;
-              border-radius: 4px;
-              box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
-            }
-          </style>
-
-          <script>
-            (function () {
-              var prev = document.getElementById("testi-prev");
-              var next = document.getElementById("testi-next");
-              var dotsContainer = document.getElementById("testi-dots");
-              var cards = document.querySelectorAll(".testi-card");
-              var total = cards.length;
-              var current = 0;
-
-              dotsContainer.innerHTML = "";
-              for (var i = 0; i < total; i++) {
-                var dot = document.createElement("span");
-                dot.className = "testi-dot" + (i === 0 ? " active" : "");
-                dot.dataset.index = i;
-                dot.addEventListener("click", function () {
-                  goTo(parseInt(this.dataset.index));
-                });
-                dotsContainer.appendChild(dot);
-              }
-
-              function goTo(index) {
-                current = (index + total) % total;
-                cards.forEach(function (c) {
-                  c.classList.remove("active-card");
-                });
-                cards[current].classList.add("active-card");
-                dotsContainer
-                  .querySelectorAll(".testi-dot")
-                  .forEach(function (d, i) {
-                    d.classList.toggle("active", i === current);
-                  });
-              }
-
-              prev.addEventListener("click", function () {
-                goTo(current - 1);
-              });
-              next.addEventListener("click", function () {
-                goTo(current + 1);
-              });
-
-              goTo(0);
-            })();
-          </script>
         </div>
+
+        <script>
+          (function () {
+            var track = document.getElementById("testi-track");
+            var prevBtn = document.getElementById("testi-prev");
+            var nextBtn = document.getElementById("testi-next");
+            var dotsWrap = document.getElementById("testi-dots");
+            if (!track) return;
+
+            // Collect all individual cards (6 total)
+            var allCards = Array.prototype.slice.call(
+              track.querySelectorAll(".testi-card"),
+            );
+            var desktopSlides = Array.prototype.slice.call(
+              track.querySelectorAll(".testi-slide"),
+            );
+
+            // Save original desktop HTML so we can rebuild on resize
+            var desktopHTML = track.innerHTML;
+
+            // Build mobile slides: 1 card per slide (6 slides total)
+            function buildMobileHTML() {
+              var html = "";
+              allCards.forEach(function (card) {
+                html +=
+                  '<div class="testi-slide" style="grid-template-columns:1fr;">' +
+                  card.outerHTML +
+                  "</div>";
+              });
+              return html;
+            }
+            var mobileHTML = buildMobileHTML();
+
+            var current = 0;
+            var mode = ""; // "desktop" or "mobile"
+
+            function applyLayout() {
+              var isMobile = window.matchMedia("(max-width: 768px)").matches;
+              var newMode = isMobile ? "mobile" : "desktop";
+              if (newMode === mode) return;
+              mode = newMode;
+              track.innerHTML = isMobile ? mobileHTML : desktopHTML;
+              current = 0;
+              buildDots();
+              goTo(0);
+            }
+
+            function getSlideCount() {
+              return track.querySelectorAll(".testi-slide").length;
+            }
+
+            function buildDots() {
+              var count = getSlideCount();
+              dotsWrap.innerHTML = "";
+              for (var i = 0; i < count; i++) {
+                var dot = document.createElement("button");
+                dot.className = "testi-dot" + (i === 0 ? " active" : "");
+                dot.setAttribute("aria-label", "Go to slide " + (i + 1));
+                (function (idx) {
+                  dot.addEventListener("click", function () {
+                    goTo(idx);
+                  });
+                })(i);
+                dotsWrap.appendChild(dot);
+              }
+            }
+
+            function goTo(index) {
+              var count = getSlideCount();
+              current = (index + count) % count;
+              track.style.transform = "translateX(-" + current * 100 + "%)";
+              var dots = dotsWrap.querySelectorAll(".testi-dot");
+              dots.forEach(function (d, i) {
+                d.classList.toggle("active", i === current);
+              });
+            }
+
+            prevBtn.addEventListener("click", function () {
+              goTo(current - 1);
+            });
+            nextBtn.addEventListener("click", function () {
+              goTo(current + 1);
+            });
+
+            // Initial setup
+            applyLayout();
+
+            // Re-layout on resize (debounced)
+            var resizeTimer;
+            window.addEventListener("resize", function () {
+              clearTimeout(resizeTimer);
+              resizeTimer = setTimeout(applyLayout, 150);
+            });
+          })();
+        </script>
       </section>
 
       <!-- Mouse spotlight for WCU cards -->
