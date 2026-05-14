@@ -5542,14 +5542,68 @@
               var next = document.getElementById("testi-next");
               var dots = document.querySelectorAll(".testi-dot");
               var current = 0;
-              var total = 2;
+
+              function isMobile() {
+                return window.innerWidth <= 768;
+              }
+
+              function getTotal() {
+                return isMobile() ? 6 : 2;
+              }
 
               function goTo(index) {
+                var total = getTotal();
                 current = (index + total) % total;
-                slider.style.transform = "translateX(-" + current * 100 + "%)";
+
+                if (isMobile()) {
+                  // On mobile, show one card at a time
+                  var cards = document.querySelectorAll(".testi-card");
+                  cards.forEach(function(card, i) {
+                    card.style.display = i === current ? "flex" : "none";
+                  });
+                  // Keep both slides visible but only show current card
+                  document.querySelectorAll(".testi-slide").forEach(function(slide) {
+                    slide.style.minWidth = "100%";
+                    slide.style.display = "block";
+                  });
+                  slider.style.transform = "none";
+                } else {
+                  // On desktop, show 3 cards per slide
+                  var cards = document.querySelectorAll(".testi-card");
+                  cards.forEach(function(card) {
+                    card.style.display = "";
+                  });
+                  slider.style.transform = "translateX(-" + current * 100 + "%)";
+                }
+
+                // Update dots
                 dots.forEach(function (d, i) {
                   d.classList.toggle("active", i === current);
                 });
+              }
+
+              // Update dots container for mobile
+              function updateDots() {
+                var dotsContainer = document.getElementById("testi-dots");
+                if (isMobile()) {
+                  dotsContainer.innerHTML = "";
+                  for (var i = 0; i < 6; i++) {
+                    var dot = document.createElement("span");
+                    dot.className = "testi-dot" + (i === 0 ? " active" : "");
+                    dot.dataset.index = i;
+                    dot.addEventListener("click", function() {
+                      goTo(parseInt(this.dataset.index));
+                    });
+                    dotsContainer.appendChild(dot);
+                  }
+                } else {
+                  dotsContainer.innerHTML = '<span class="testi-dot active" data-index="0"></span><span class="testi-dot" data-index="1"></span>';
+                  document.querySelectorAll(".testi-dot").forEach(function(d) {
+                    d.addEventListener("click", function() {
+                      goTo(parseInt(d.dataset.index));
+                    });
+                  });
+                }
               }
 
               prev.addEventListener("click", function () {
@@ -5558,10 +5612,15 @@
               next.addEventListener("click", function () {
                 goTo(current + 1);
               });
-              dots.forEach(function (d) {
-                d.addEventListener("click", function () {
-                  goTo(parseInt(d.dataset.index));
-                });
+
+              // Init
+              updateDots();
+              goTo(0);
+
+              window.addEventListener("resize", function() {
+                current = 0;
+                updateDots();
+                goTo(0);
               });
             })();
           </script>
