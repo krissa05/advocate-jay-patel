@@ -2101,17 +2101,15 @@
       .testi-section {
         padding: 40px 20px 60px !important;
       }
-      .testi-slide {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 1.5rem !important;
+      .testi-card {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 380px;
       }
 
-      .testi-card {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: space-between !important;
-        min-height: 380px !important;
+      .testi-card.active-card {
+        display: flex;
       }
 
       @media (max-width: 768px) {
@@ -5516,69 +5514,33 @@
             (function () {
               var prev = document.getElementById("testi-prev");
               var next = document.getElementById("testi-next");
-              var slider = document.getElementById("testi-slider");
-              var cards = document.querySelectorAll(".testi-card");
               var dotsContainer = document.getElementById("testi-dots");
+              var cards = document.querySelectorAll(".testi-card");
+              var total = cards.length;
               var current = 0;
 
-              function isMobile() {
-                return window.innerWidth <= 768;
-              }
-
-              function buildDots(total) {
-                dotsContainer.innerHTML = "";
-                for (var i = 0; i < total; i++) {
-                  var dot = document.createElement("span");
-                  dot.className = "testi-dot" + (i === 0 ? " active" : "");
-                  dot.dataset.index = i;
-                  dot.addEventListener("click", function () {
-                    goTo(parseInt(this.dataset.index));
-                  });
-                  dotsContainer.appendChild(dot);
-                }
-              }
-
-              function updateDots(total) {
-                var dots = dotsContainer.querySelectorAll(".testi-dot");
-                dots.forEach(function (d, i) {
-                  d.classList.toggle("active", i === current);
+              dotsContainer.innerHTML = "";
+              for (var i = 0; i < total; i++) {
+                var dot = document.createElement("span");
+                dot.className = "testi-dot" + (i === 0 ? " active" : "");
+                dot.dataset.index = i;
+                dot.addEventListener("click", function () {
+                  goTo(parseInt(this.dataset.index));
                 });
+                dotsContainer.appendChild(dot);
               }
 
               function goTo(index) {
-                if (isMobile()) {
-                  var total = cards.length;
-                  current = (index + total) % total;
-                  cards.forEach(function (c) {
-                    c.classList.remove("active-card");
+                current = (index + total) % total;
+                cards.forEach(function (c) {
+                  c.classList.remove("active-card");
+                });
+                cards[current].classList.add("active-card");
+                dotsContainer
+                  .querySelectorAll(".testi-dot")
+                  .forEach(function (d, i) {
+                    d.classList.toggle("active", i === current);
                   });
-                  cards[current].classList.add("active-card");
-                  updateDots(total);
-                } else {
-                  var total = 2;
-                  current = (index + total) % total;
-                  slider.style.transform =
-                    "translateX(-" + current * 100 + "%)";
-                  updateDots(total);
-                }
-              }
-
-              function init() {
-                current = 0;
-                if (isMobile()) {
-                  buildDots(cards.length);
-                  cards.forEach(function (c) {
-                    c.classList.remove("active-card");
-                  });
-                  cards[0].classList.add("active-card");
-                  slider.style.transform = "none";
-                } else {
-                  buildDots(2);
-                  cards.forEach(function (c) {
-                    c.classList.remove("active-card");
-                  });
-                  slider.style.transform = "translateX(0)";
-                }
               }
 
               prev.addEventListener("click", function () {
@@ -5588,8 +5550,7 @@
                 goTo(current + 1);
               });
 
-              init();
-              window.addEventListener("resize", init);
+              goTo(0);
             })();
           </script>
         </div>
