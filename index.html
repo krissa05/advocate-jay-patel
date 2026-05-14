@@ -2115,19 +2115,9 @@
       }
 
       @media (max-width: 768px) {
-        .testi-slide {
-          display: block !important;
-        }
         .testi-card {
-          display: none !important;
           min-height: auto !important;
-          flex-direction: column !important;
-        }
-        .testi-card.active-card {
-          display: flex !important;
-          flex-direction: column !important;
           width: 100% !important;
-          padding: 2rem !important;
         }
       }
 
@@ -5272,184 +5262,154 @@
             id="testi-slider-wrap"
             style="position: relative; overflow: hidden"
           >
-            <div
-              id="testi-slider"
-              style="
-                display: flex;
-                transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-                will-change: transform;
-              "
-            >
-              <!-- Slide 1 -->
-              <div
-                style="
-                  min-width: 100%;
-                  display: grid;
-                  grid-template-columns: repeat(3, 1fr);
-                  gap: 1.25rem;
-                "
-                class="testi-slide"
-              >
-                <div class="testi-card" tabindex="0">
-                  <span class="testi-quote-mark">"</span>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span>
-                  </div>
-                  <p class="testi-text">
-                    Advocate Jay Patel handled my sessions court matter with
-                    exceptional precision. His preparation and courtroom
-                    presence made all the difference. Highly recommended.
-                  </p>
-                  <div class="testi-rule"></div>
-                  <div class="testi-author">
-                    <div class="testi-avatar">R</div>
-                    <div>
-                      <span class="testi-author-name">Rajesh M.</span
-                      ><span class="testi-author-role"
-                        >Criminal Matter — Ahmedabad</span
-                      >
-                    </div>
-                  </div>
+            <div id="testi-cards-container" style="display: block">
+              <div class="testi-card" data-index="0">
+                <span class="testi-quote-mark">"</span>
+                <div class="testi-stars">
+                  <span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span>
                 </div>
-                <div class="testi-card" tabindex="0">
-                  <span class="testi-quote-mark">"</span>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span>
-                  </div>
-                  <p class="testi-text">
-                    Our cheque return case was resolved swiftly. Jay sir's
-                    understanding of Section 138 proceedings is unmatched.
-                    Professional, direct, and results-oriented.
-                  </p>
-                  <div class="testi-rule"></div>
-                  <div class="testi-author">
-                    <div class="testi-avatar">P</div>
-                    <div>
-                      <span class="testi-author-name">Priya S.</span
-                      ><span class="testi-author-role"
-                        >Cheque Return — Gandhinagar</span
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="testi-card" tabindex="0">
-                  <span class="testi-quote-mark">"</span>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span>
-                  </div>
-                  <p class="testi-text">
-                    During a deeply difficult family dispute, Jay Patel provided
-                    not just expert legal counsel but also calm, clear guidance
-                    at every step. A truly exceptional advocate.
-                  </p>
-                  <div class="testi-rule"></div>
-                  <div class="testi-author">
-                    <div class="testi-avatar">A</div>
-                    <div>
-                      <span class="testi-author-name">Amit D.</span
-                      ><span class="testi-author-role"
-                        >Family Matter — Ahmedabad</span
-                      >
-                    </div>
+                <p class="testi-text">
+                  Advocate Jay Patel handled my sessions court matter with
+                  exceptional precision. His preparation and courtroom presence
+                  made all the difference. Highly recommended.
+                </p>
+                <div class="testi-rule"></div>
+                <div class="testi-author">
+                  <div class="testi-avatar">R</div>
+                  <div>
+                    <span class="testi-author-name">Rajesh M.</span
+                    ><span class="testi-author-role"
+                      >Criminal Matter — Ahmedabad</span
+                    >
                   </div>
                 </div>
               </div>
-
-              <!-- Slide 2 -->
-              <div
-                style="
-                  min-width: 100%;
-                  display: grid;
-                  grid-template-columns: repeat(3, 1fr);
-                  gap: 1.25rem;
-                "
-                class="testi-slide"
-              >
-                <div class="testi-card" tabindex="0">
-                  <span class="testi-quote-mark">"</span>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span>
-                  </div>
-                  <p class="testi-text">
-                    Jay sir handled my anticipatory bail matter with absolute
-                    urgency and professionalism. He was reachable at all hours
-                    and secured the order before any arrest could happen.
-                  </p>
-                  <div class="testi-rule"></div>
-                  <div class="testi-author">
-                    <div class="testi-avatar">N</div>
-                    <div>
-                      <span class="testi-author-name">Nikhil R.</span
-                      ><span class="testi-author-role"
-                        >Bail Matter — Ahmedabad</span
-                      >
-                    </div>
+              <div class="testi-card" data-index="1">
+                <span class="testi-quote-mark">"</span>
+                <div class="testi-stars">
+                  <span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span>
+                </div>
+                <p class="testi-text">
+                  Our cheque return case was resolved swiftly. Jay sir's
+                  understanding of Section 138 proceedings is unmatched.
+                  Professional, direct, and results-oriented.
+                </p>
+                <div class="testi-rule"></div>
+                <div class="testi-author">
+                  <div class="testi-avatar">P</div>
+                  <div>
+                    <span class="testi-author-name">Priya S.</span
+                    ><span class="testi-author-role"
+                      >Cheque Return — Gandhinagar</span
+                    >
                   </div>
                 </div>
-                <div class="testi-card" tabindex="0">
-                  <span class="testi-quote-mark">"</span>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span>
-                  </div>
-                  <p class="testi-text">
-                    Our land dispute had been going on for years. Advocate Patel
-                    took charge, built a strong case, and we got a favourable
-                    decree within months. Outstanding legal mind.
-                  </p>
-                  <div class="testi-rule"></div>
-                  <div class="testi-author">
-                    <div class="testi-avatar">S</div>
-                    <div>
-                      <span class="testi-author-name">Suresh K.</span
-                      ><span class="testi-author-role"
-                        >Land Dispute — Gandhinagar</span
-                      >
-                    </div>
+              </div>
+              <div class="testi-card" data-index="2">
+                <span class="testi-quote-mark">"</span>
+                <div class="testi-stars">
+                  <span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span>
+                </div>
+                <p class="testi-text">
+                  During a deeply difficult family dispute, Jay Patel provided
+                  not just expert legal counsel but also calm, clear guidance at
+                  every step. A truly exceptional advocate.
+                </p>
+                <div class="testi-rule"></div>
+                <div class="testi-author">
+                  <div class="testi-avatar">A</div>
+                  <div>
+                    <span class="testi-author-name">Amit D.</span
+                    ><span class="testi-author-role"
+                      >Family Matter — Ahmedabad</span
+                    >
                   </div>
                 </div>
-                <div class="testi-card" tabindex="0">
-                  <span class="testi-quote-mark">"</span>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span
-                    ><span class="testi-star">★</span>
+              </div>
+              <div class="testi-card" data-index="3">
+                <span class="testi-quote-mark">"</span>
+                <div class="testi-stars">
+                  <span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span>
+                </div>
+                <p class="testi-text">
+                  Jay sir handled my anticipatory bail matter with absolute
+                  urgency and professionalism. He was reachable at all hours and
+                  secured the order before any arrest could happen.
+                </p>
+                <div class="testi-rule"></div>
+                <div class="testi-author">
+                  <div class="testi-avatar">N</div>
+                  <div>
+                    <span class="testi-author-name">Nikhil R.</span
+                    ><span class="testi-author-role"
+                      >Bail Matter — Ahmedabad</span
+                    >
                   </div>
-                  <p class="testi-text">
-                    The divorce proceedings were handled with sensitivity and
-                    sharp legal strategy. Jay Patel ensured our interests were
-                    fully protected at every stage of the case.
-                  </p>
-                  <div class="testi-rule"></div>
-                  <div class="testi-author">
-                    <div class="testi-avatar">M</div>
-                    <div>
-                      <span class="testi-author-name">Meera V.</span
-                      ><span class="testi-author-role"
-                        >Divorce Matter — Ahmedabad</span
-                      >
-                    </div>
+                </div>
+              </div>
+              <div class="testi-card" data-index="4">
+                <span class="testi-quote-mark">"</span>
+                <div class="testi-stars">
+                  <span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span>
+                </div>
+                <p class="testi-text">
+                  Our land dispute had been going on for years. Advocate Patel
+                  took charge, built a strong case, and we got a favourable
+                  decree within months. Outstanding legal mind.
+                </p>
+                <div class="testi-rule"></div>
+                <div class="testi-author">
+                  <div class="testi-avatar">S</div>
+                  <div>
+                    <span class="testi-author-name">Suresh K.</span
+                    ><span class="testi-author-role"
+                      >Land Dispute — Gandhinagar</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="testi-card" data-index="5">
+                <span class="testi-quote-mark">"</span>
+                <div class="testi-stars">
+                  <span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span
+                  ><span class="testi-star">★</span>
+                </div>
+                <p class="testi-text">
+                  The divorce proceedings were handled with sensitivity and
+                  sharp legal strategy. Jay Patel ensured our interests were
+                  fully protected at every stage of the case.
+                </p>
+                <div class="testi-rule"></div>
+                <div class="testi-author">
+                  <div class="testi-avatar">M</div>
+                  <div>
+                    <span class="testi-author-name">Meera V.</span
+                    ><span class="testi-author-role"
+                      >Divorce Matter — Ahmedabad</span
+                    >
                   </div>
                 </div>
               </div>
@@ -5628,9 +5588,7 @@
                 goTo(current + 1);
               });
 
-              window.addEventListener("load", function () {
-                init();
-              });
+              init();
               window.addEventListener("resize", init);
             })();
           </script>
