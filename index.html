@@ -1715,6 +1715,15 @@
           width: 100%;
         }
 
+        /* Hero fits one screen */
+        section.min-h-screen {
+          min-height: 100svh !important;
+          max-height: 100svh !important;
+          padding-top: 5rem !important;
+          padding-bottom: 0.5rem !important;
+          overflow: hidden !important;
+        }
+
         /* Aurora orbs — shrink & lighten for mobile performance */
         .aurora-orb {
           filter: blur(70px) !important;
@@ -1868,7 +1877,7 @@
 
         /* Hero headline */
         .hero-rise-2 {
-          font-size: 2.1rem !important;
+          font-size: 1.7rem !important;
           line-height: 1.1 !important;
           letter-spacing: -0.02em;
         }
@@ -1878,16 +1887,16 @@
 
         /* Body text */
         .hero-rise-3 {
-          font-size: 0.925rem !important;
+          font-size: 0.78rem !important;
           max-width: 100% !important;
         }
 
         /* Buttons: pushed to bottom via margin-top auto */
         .hero-rise-4 {
-          flex-direction: column !important;
-          gap: 0.75rem !important;
+          flex-direction: row !important;
+          gap: 0.5rem !important;
           margin-top: auto !important;
-          padding-top: 2rem !important;
+          padding-top: 0.5rem !important;
         }
         .hero-rise-4 button,
         .hero-rise-4 a {
@@ -4198,6 +4207,32 @@
           .exp-card-inner {
             height: auto !important;
             min-height: unset !important;
+            padding: 1.25rem !important;
+          }
+          .exp-stat-grid .exp-card {
+            height: auto !important;
+          }
+          .exp-bottom-grid .exp-card {
+            height: auto !important;
+          }
+          .exp-bottom-grid {
+            grid-template-columns: 1fr !important;
+          }
+          /* Force all exp cards to shrink to content */
+          .exp-card,
+          .exp-card * {
+            flex-shrink: 1 !important;
+          }
+          [style*="grid-column: span 2"] {
+            grid-column: span 2 !important;
+            height: auto !important;
+          }
+          [style*="grid-column: span 2"] .exp-card-inner {
+            padding: 1.5rem 1.25rem !important;
+          }
+          [style*="grid-column: span 2"] .lang-bubble {
+            width: 80px !important;
+            height: 80px !important;
           }
           .exp-stat-grid div[style*="grid-column: span 2"] {
             grid-column: span 2 !important;
