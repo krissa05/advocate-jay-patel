@@ -2114,6 +2114,19 @@
         min-height: 380px !important;
       }
 
+      @media (max-width: 768px) {
+        .testi-slide {
+          display: block !important;
+        }
+        .testi-card {
+          display: none !important;
+          min-height: auto !important;
+        }
+        .testi-card.active-card {
+          display: flex !important;
+        }
+      }
+
       @media (max-width: 400px) {
         .practice-grid {
           grid-template-columns: 1fr !important;
@@ -5537,72 +5550,70 @@
 
           <script>
             (function () {
-              var slider = document.getElementById("testi-slider");
               var prev = document.getElementById("testi-prev");
               var next = document.getElementById("testi-next");
-              var dots = document.querySelectorAll(".testi-dot");
+              var slider = document.getElementById("testi-slider");
+              var cards = document.querySelectorAll(".testi-card");
+              var dotsContainer = document.getElementById("testi-dots");
               var current = 0;
 
               function isMobile() {
                 return window.innerWidth <= 768;
               }
 
-              function getTotal() {
-                return isMobile() ? 6 : 2;
+              function buildDots(total) {
+                dotsContainer.innerHTML = "";
+                for (var i = 0; i < total; i++) {
+                  var dot = document.createElement("span");
+                  dot.className = "testi-dot" + (i === 0 ? " active" : "");
+                  dot.dataset.index = i;
+                  dot.addEventListener("click", function () {
+                    goTo(parseInt(this.dataset.index));
+                  });
+                  dotsContainer.appendChild(dot);
+                }
               }
 
-              function goTo(index) {
-                var total = getTotal();
-                current = (index + total) % total;
-
-                if (isMobile()) {
-                  // On mobile, show one card at a time
-                  var cards = document.querySelectorAll(".testi-card");
-                  cards.forEach(function(card, i) {
-                    card.style.display = i === current ? "flex" : "none";
-                  });
-                  // Keep both slides visible but only show current card
-                  document.querySelectorAll(".testi-slide").forEach(function(slide) {
-                    slide.style.minWidth = "100%";
-                    slide.style.display = "block";
-                  });
-                  slider.style.transform = "none";
-                } else {
-                  // On desktop, show 3 cards per slide
-                  var cards = document.querySelectorAll(".testi-card");
-                  cards.forEach(function(card) {
-                    card.style.display = "";
-                  });
-                  slider.style.transform = "translateX(-" + current * 100 + "%)";
-                }
-
-                // Update dots
+              function updateDots(total) {
+                var dots = dotsContainer.querySelectorAll(".testi-dot");
                 dots.forEach(function (d, i) {
                   d.classList.toggle("active", i === current);
                 });
               }
 
-              // Update dots container for mobile
-              function updateDots() {
-                var dotsContainer = document.getElementById("testi-dots");
+              function goTo(index) {
                 if (isMobile()) {
-                  dotsContainer.innerHTML = "";
-                  for (var i = 0; i < 6; i++) {
-                    var dot = document.createElement("span");
-                    dot.className = "testi-dot" + (i === 0 ? " active" : "");
-                    dot.dataset.index = i;
-                    dot.addEventListener("click", function() {
-                      goTo(parseInt(this.dataset.index));
-                    });
-                    dotsContainer.appendChild(dot);
-                  }
-                } else {
-                  dotsContainer.innerHTML = '<span class="testi-dot active" data-index="0"></span><span class="testi-dot" data-index="1"></span>';
-                  document.querySelectorAll(".testi-dot").forEach(function(d) {
-                    d.addEventListener("click", function() {
-                      goTo(parseInt(d.dataset.index));
-                    });
+                  var total = cards.length;
+                  current = (index + total) % total;
+                  cards.forEach(function (c) {
+                    c.classList.remove("active-card");
                   });
+                  cards[current].classList.add("active-card");
+                  updateDots(total);
+                } else {
+                  var total = 2;
+                  current = (index + total) % total;
+                  slider.style.transform =
+                    "translateX(-" + current * 100 + "%)";
+                  updateDots(total);
+                }
+              }
+
+              function init() {
+                current = 0;
+                if (isMobile()) {
+                  buildDots(cards.length);
+                  cards.forEach(function (c) {
+                    c.classList.remove("active-card");
+                  });
+                  cards[0].classList.add("active-card");
+                  slider.style.transform = "none";
+                } else {
+                  buildDots(2);
+                  cards.forEach(function (c) {
+                    c.classList.remove("active-card");
+                  });
+                  slider.style.transform = "translateX(0)";
                 }
               }
 
@@ -5613,15 +5624,8 @@
                 goTo(current + 1);
               });
 
-              // Init
-              updateDots();
-              goTo(0);
-
-              window.addEventListener("resize", function() {
-                current = 0;
-                updateDots();
-                goTo(0);
-              });
+              init();
+              window.addEventListener("resize", init);
             })();
           </script>
         </div>
