@@ -3794,7 +3794,7 @@
         /* ── STAT CARDS grid ────────────────────────────────────── */
         .exp-stat-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: 1.25rem;
           margin-bottom: 1.5rem;
           position: relative;
@@ -4230,7 +4230,7 @@
         /* Mobile */
         @media (max-width: 1100px) {
           .exp-stat-grid {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
           }
         }
         @media (max-width: 768px) {
@@ -4246,9 +4246,6 @@
           .exp-hero-text {
             margin-bottom: 3rem;
           }
-          .exp-stat-grid div[style*="grid-column: span 2"] {
-            grid-column: span 2;
-          }
           .exp-stat-grid {
             grid-template-columns: 1fr 1fr;
             gap: 0.75rem;
@@ -4256,16 +4253,16 @@
             grid-template-rows: auto auto;
           }
           .exp-stat-grid > div:nth-child(1) {
-            grid-column: span 2;
-            grid-row: 1;
+            grid-column: span 2 !important;
+            grid-row: 1 !important;
           }
           .exp-stat-grid > div:nth-child(2) {
-            grid-column: 1;
-            grid-row: 2;
+            grid-column: 1 !important;
+            grid-row: 2 !important;
           }
           .exp-stat-grid > div:nth-child(3) {
-            grid-column: 2;
-            grid-row: 2;
+            grid-column: 2 !important;
+            grid-row: 2 !important;
           }
           /* Force all exp cards to shrink to content */
           .exp-card,
@@ -4367,7 +4364,6 @@
             <div
               class="exp-card"
               tabindex="0"
-              style="grid-column: span 2; grid-row: 1"
             >
               <div class="exp-card-shimmer" aria-hidden="true"></div>
               <div class="exp-card-glow" aria-hidden="true"></div>
@@ -4494,7 +4490,7 @@
             </div>
 
             <!-- Card 3: Courts -->
-            <div class="exp-card" tabindex="0" style="grid-column: 1">
+            <div class="exp-card" tabindex="0">
               <div class="exp-card-shimmer" aria-hidden="true"></div>
               <div class="exp-card-glow" aria-hidden="true"></div>
               <div class="exp-card-inner">
@@ -4516,7 +4512,7 @@
             </div>
 
             <!-- Card 4: Multi-disciplinary -->
-            <div class="exp-card" tabindex="0" style="grid-column: 2">
+            <div class="exp-card" tabindex="0">
               <div class="exp-card-shimmer" aria-hidden="true"></div>
               <div class="exp-card-glow" aria-hidden="true"></div>
               <div class="exp-card-inner">
