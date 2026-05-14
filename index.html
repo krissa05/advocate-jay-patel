@@ -4273,21 +4273,25 @@
             margin-bottom: 3rem;
           }
           .exp-stat-grid {
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            grid-template-rows: auto auto auto;
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            grid-template-rows: auto !important;
+            gap: 0.75rem !important;
+            margin-bottom: 0.75rem !important;
+            width: 100% !important;
           }
-          .exp-stat-grid > div:nth-child(1) {
-            grid-column: 1 !important;
+          .exp-stat-grid > .exp-card {
+            grid-column: 1 / -1 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+          .exp-stat-grid > .exp-card:nth-child(1) {
             grid-row: 1 !important;
           }
-          .exp-stat-grid > div:nth-child(2) {
-            grid-column: 1 !important;
+          .exp-stat-grid > .exp-card:nth-child(2) {
             grid-row: 2 !important;
           }
-          .exp-stat-grid > div:nth-child(3) {
-            grid-column: 1 !important;
+          .exp-stat-grid > .exp-card:nth-child(3) {
             grid-row: 3 !important;
           }
           /* Force all exp cards to shrink to content */
@@ -4296,8 +4300,13 @@
             flex-shrink: 1 !important;
           }
           /* Languages card (top, full width) — compact */
+          .exp-stat-grid > .exp-card:nth-child(1) {
+            overflow: hidden !important;
+          }
           .exp-stat-grid > .exp-card:nth-child(1) .exp-card-inner {
-            padding: 1.5rem 1rem !important;
+            padding: 1.25rem 0.75rem !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
           }
           .exp-stat-grid > .exp-card:nth-child(1) .lang-bubble {
             width: 64px !important;
@@ -4326,15 +4335,23 @@
             > .exp-card:nth-child(1)
             .exp-card-inner
             > div:first-child {
-            margin-bottom: 1.25rem !important;
+            margin-bottom: 1rem !important;
+            width: 100% !important;
           }
-          /* Increase gap between bubbles on mobile */
+          /* Bubble container — fill width, evenly distribute */
           .exp-stat-grid
             > .exp-card:nth-child(1)
             .exp-card-inner
             > div:nth-child(2) {
-            padding: 0.5rem 0.5rem 0 !important;
-            gap: 1rem !important;
+            padding: 0.25rem 0 0 !important;
+            gap: 0 !important;
+            width: 100% !important;
+            justify-content: space-around !important;
+            flex-wrap: nowrap !important;
+          }
+          .exp-stat-grid > .exp-card:nth-child(1) .lang-bubble-wrap {
+            flex-shrink: 1 !important;
+            min-width: 0 !important;
           }
           .exp-bottom-grid {
             grid-template-columns: 1fr;
