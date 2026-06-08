@@ -1869,11 +1869,13 @@
         .relative.z-30.space-y-8 {
           max-width: 65% !important;
           padding-top: 0 !important;
+          padding-bottom: 2rem !important;
           display: flex !important;
           flex-direction: column !important;
           flex: 1 !important;
           min-height: calc(100svh - 7.5rem) !important;
-          gap: 0.75rem !important;
+          gap: 0 !important;
+          justify-content: space-between !important;
         }
 
         /* Hero headline */
@@ -1881,8 +1883,7 @@
           font-size: 1.7rem !important;
           line-height: 1.1 !important;
           letter-spacing: -0.02em;
-          margin-top: 0.75rem !important;
-          margin-bottom: 0.75rem !important;
+          margin: 0 !important;
         }
         .hero-rise-2 br {
           display: none;
@@ -1890,32 +1891,32 @@
 
         /* Body text / tagline */
         .hero-rise-3 {
-          font-size: 0.78rem !important;
+          font-size: 0.82rem !important;
           max-width: 100% !important;
-          margin-top: 0 !important;
-          margin-bottom: 0 !important;
+          margin: 0 !important;
         }
         /* Legal Excellence label top padding */
         .hero-rise-1 {
-          padding-top: 1rem !important;
-          margin-bottom: 0 !important;
+          padding-top: 0.5rem !important;
+          margin: 0 !important;
         }
 
-        /* Buttons */
+        /* Buttons anchored to bottom */
         .hero-rise-4 {
           flex-direction: row !important;
           gap: 0.75rem !important;
-          margin-top: 0 !important;
-          padding-top: 0 !important;
+          margin: 0 !important;
+          padding: 0 !important;
         }
-        .hero-rise-4 button,
         .hero-rise-4 a {
           width: auto !important;
-          justify-content: center;
-          text-align: center;
-          padding: 0.875rem 1.1rem !important;
-          font-size: 11px !important;
+          justify-content: center !important;
+          text-align: center !important;
+          padding: 1rem 1.5rem !important;
+          font-size: 12px !important;
           display: inline-flex !important;
+          align-items: center !important;
+          gap: 0.5rem !important;
           box-sizing: border-box !important;
         }
 
@@ -2886,13 +2887,14 @@
               target="_blank"
               rel="noopener"
               class="btn-ghost font-label-caps text-label-caps text-white px-6 py-5 rounded-full uppercase tracking-widest flex items-center gap-2"
+              style="white-space: nowrap"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                width="18"
-                height="18"
+                width="22"
+                height="22"
                 style="flex-shrink: 0; display: block"
               >
                 <path
