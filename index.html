@@ -6665,12 +6665,14 @@
         </div>
         <nav class="flex flex-wrap justify-center gap-x-12 gap-y-6">
           <a
-            class="font-label-caps text-label-caps text-on-surface/40 hover:text-primary transition-colors uppercase tracking-widest"
+            id="footer-legal-btn"
+            class="font-label-caps text-label-caps text-on-surface/40 hover:text-primary transition-colors uppercase tracking-widest cursor-pointer"
             href="#"
             >Legal Notice</a
           >
           <a
-            class="font-label-caps text-label-caps text-on-surface/40 hover:text-primary transition-colors uppercase tracking-widest"
+            id="footer-privacy-btn"
+            class="font-label-caps text-label-caps text-on-surface/40 hover:text-primary transition-colors uppercase tracking-widest cursor-pointer"
             href="#"
             >Privacy Policy</a
           >
@@ -8112,13 +8114,59 @@
           showOverlay();
         }
 
-        // Footer disclaimer link reopens the modal
+        <!-- Footer disclaimer link reopens the modal -->
         if (footerBtn) {
           footerBtn.addEventListener("click", function (e) {
             e.preventDefault();
             showOverlay();
           });
         }
+
+        // Privacy Policy modal
+        document
+          .getElementById("footer-privacy-btn")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+            document.getElementById("privacy-overlay").style.display = "flex";
+            document.body.style.overflow = "hidden";
+          });
+        document
+          .getElementById("privacy-close-btn")
+          .addEventListener("click", function () {
+            document.getElementById("privacy-overlay").style.display = "none";
+            document.body.style.overflow = "";
+          });
+        document
+          .getElementById("privacy-overlay")
+          .addEventListener("click", function (e) {
+            if (e.target === this) {
+              this.style.display = "none";
+              document.body.style.overflow = "";
+            }
+          });
+
+        // Legal Notice modal
+        document
+          .getElementById("footer-legal-btn")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+            document.getElementById("legal-overlay").style.display = "flex";
+            document.body.style.overflow = "hidden";
+          });
+        document
+          .getElementById("legal-close-btn")
+          .addEventListener("click", function () {
+            document.getElementById("legal-overlay").style.display = "none";
+            document.body.style.overflow = "";
+          });
+        document
+          .getElementById("legal-overlay")
+          .addEventListener("click", function (e) {
+            if (e.target === this) {
+              this.style.display = "none";
+              document.body.style.overflow = "";
+            }
+          });
 
         checkbox.addEventListener("change", function () {
           if (this.checked) {
@@ -8304,5 +8352,646 @@
           });
       }
     </script>
+    <!-- PRIVACY POLICY MODAL -->
+    <div
+      id="privacy-overlay"
+      style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9998;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        background:
+          radial-gradient(
+            ellipse 80% 60% at 50% 40%,
+            rgba(80, 130, 220, 0.08) 0%,
+            transparent 70%
+          ),
+          rgba(8, 9, 10, 0.88);
+        backdrop-filter: blur(28px) saturate(1.4);
+        animation: vos-fade-in 0.5s ease both;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          width: 500px;
+          height: 500px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-65%, -65%);
+          border-radius: 50%;
+          background: radial-gradient(
+            circle,
+            rgba(80, 130, 220, 0.18) 0%,
+            transparent 70%
+          );
+          filter: blur(90px);
+          pointer-events: none;
+        "
+      ></div>
+      <div
+        style="
+          position: relative;
+          width: 100%;
+          max-width: 680px;
+          max-height: 88vh;
+          display: flex;
+          flex-direction: column;
+          border-radius: 28px;
+          overflow: hidden;
+          background: linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.045) 0%,
+            rgba(255, 255, 255, 0.015) 40%,
+            rgba(80, 130, 220, 0.018) 100%
+          );
+          backdrop-filter: blur(40px) saturate(1.8) brightness(1.05);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          box-shadow:
+            0 2px 0 0 rgba(255, 255, 255, 0.06) inset,
+            0 40px 80px rgba(0, 0, 0, 0.6),
+            0 0 80px rgba(80, 130, 220, 0.08);
+          animation: vos-modal-rise 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+        "
+      >
+        <!-- Top shimmer -->
+        <div
+          style="
+            position: absolute;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 1px;
+            z-index: 2;
+            background: linear-gradient(
+              90deg,
+              transparent 0%,
+              rgba(80, 130, 220, 0.5) 35%,
+              rgba(255, 255, 255, 0.65) 50%,
+              rgba(80, 130, 220, 0.5) 65%,
+              transparent 100%
+            );
+          "
+        ></div>
+        <!-- Header -->
+        <div
+          style="
+            position: relative;
+            z-index: 1;
+            padding: 2rem 2.25rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: linear-gradient(
+              180deg,
+              rgba(80, 130, 220, 0.04) 0%,
+              transparent 100%
+            );
+            flex-shrink: 0;
+          "
+        >
+          <p
+            style="
+              font-family: &quot;Inter&quot;, sans-serif;
+              font-size: 10px;
+              font-weight: 600;
+              letter-spacing: 0.22em;
+              text-transform: uppercase;
+              color: rgba(80, 130, 220, 0.75);
+              margin-bottom: 0.625rem;
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+            "
+          >
+            <span
+              style="
+                display: inline-block;
+                width: 16px;
+                height: 1px;
+                background: rgba(80, 130, 220, 0.5);
+              "
+            ></span>
+            Advocate Jay Patel
+          </p>
+          <h2
+            style="
+              font-family: &quot;Newsreader&quot;, serif;
+              font-size: 30px;
+              font-weight: 400;
+              letter-spacing: -0.02em;
+              line-height: 1.2;
+              color: rgba(226, 226, 226, 0.97);
+              margin: 0;
+            "
+          >
+            Privacy Policy
+          </h2>
+          <p
+            style="
+              font-family: &quot;Inter&quot;, sans-serif;
+              font-size: 13px;
+              color: rgba(209, 197, 180, 0.38);
+              letter-spacing: 0.01em;
+              margin-top: 0.35rem;
+            "
+          >
+            How we handle your information
+          </p>
+          <button
+            id="privacy-close-btn"
+            style="
+              position: absolute;
+              top: 1.75rem;
+              right: 1.75rem;
+              width: 34px;
+              height: 34px;
+              border-radius: 50%;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              background: rgba(255, 255, 255, 0.03);
+              color: rgba(226, 226, 226, 0.4);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              transition: all 0.3s ease;
+            "
+          >
+            <span class="material-symbols-outlined" style="font-size: 16px"
+              >close</span
+            >
+          </button>
+        </div>
+        <!-- Body -->
+        <div
+          style="
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.75rem 2.25rem;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(80, 130, 220, 0.2) transparent;
+          "
+        >
+          <div
+            style="
+              position: relative;
+              padding: 1rem 1.25rem;
+              margin-bottom: 1.5rem;
+              border-radius: 12px;
+              background: rgba(80, 130, 220, 0.05);
+              border: 1px solid rgba(80, 130, 220, 0.2);
+            "
+          >
+            <p
+              style="
+                font-family: &quot;Inter&quot;, sans-serif;
+                font-size: 13px;
+                font-weight: 500;
+                color: rgba(80, 130, 220, 0.9);
+                line-height: 1.65;
+              "
+            >
+              This Privacy Policy outlines how Advocate Jay Patel collects,
+              uses, and protects any information you provide when using this
+              website.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div
+              class="vos-dot"
+              style="
+                background: rgba(80, 130, 220, 0.6);
+                box-shadow: 0 0 6px rgba(80, 130, 220, 0.35);
+              "
+            ></div>
+            <p class="vos-item-text">
+              This website does not collect any personal data automatically. Any
+              information you voluntarily submit through the contact form (name,
+              email, phone, matter description) is used solely for the purpose
+              of responding to your legal enquiry.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div
+              class="vos-dot"
+              style="
+                background: rgba(80, 130, 220, 0.6);
+                box-shadow: 0 0 6px rgba(80, 130, 220, 0.35);
+              "
+            ></div>
+            <p class="vos-item-text">
+              Your information is never sold, rented, shared, or disclosed to
+              any third party without your explicit consent, except where
+              required by law or court order.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div
+              class="vos-dot"
+              style="
+                background: rgba(80, 130, 220, 0.6);
+                box-shadow: 0 0 6px rgba(80, 130, 220, 0.35);
+              "
+            ></div>
+            <p class="vos-item-text">
+              All communications and information shared with Advocate Jay Patel
+              are treated with absolute confidentiality in accordance with the
+              professional obligations of the Bar Council of India.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div
+              class="vos-dot"
+              style="
+                background: rgba(80, 130, 220, 0.6);
+                box-shadow: 0 0 6px rgba(80, 130, 220, 0.35);
+              "
+            ></div>
+            <p class="vos-item-text">
+              This website may use session cookies strictly for functional
+              purposes. No tracking cookies, advertising cookies, or third-party
+              analytics are used.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div
+              class="vos-dot"
+              style="
+                background: rgba(80, 130, 220, 0.6);
+                box-shadow: 0 0 6px rgba(80, 130, 220, 0.35);
+              "
+            ></div>
+            <p class="vos-item-text">
+              Submission of the contact form does not create an attorney-client
+              relationship. Such a relationship is established only upon
+              execution of a formal engagement letter.
+            </p>
+          </div>
+          <p class="vos-footnote">
+            For any privacy-related queries, you may contact us directly at
+            jay1802@gmail.com or call +91 99987 14891.
+          </p>
+        </div>
+        <!-- Footer -->
+        <div
+          style="
+            position: relative;
+            z-index: 1;
+            padding: 1.375rem 2.25rem 1.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
+          "
+        >
+          <button
+            onclick="
+              document.getElementById('privacy-overlay').style.display = 'none';
+              document.body.style.overflow = '';
+            "
+            style="
+              width: 100%;
+              padding: 0.875rem 2rem;
+              border-radius: 50px;
+              border: 1px solid rgba(80, 130, 220, 0.4);
+              background: rgba(80, 130, 220, 0.08);
+              color: rgba(120, 170, 255, 0.95);
+              font-family: &quot;Inter&quot;, sans-serif;
+              font-size: 12px;
+              font-weight: 600;
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+              cursor: pointer;
+              transition: all 0.3s ease;
+            "
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEGAL NOTICE MODAL -->
+    <div
+      id="legal-overlay"
+      style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9998;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        background:
+          radial-gradient(
+            ellipse 80% 60% at 50% 40%,
+            rgba(160, 100, 220, 0.08) 0%,
+            transparent 70%
+          ),
+          rgba(8, 9, 10, 0.88);
+        backdrop-filter: blur(28px) saturate(1.4);
+        animation: vos-fade-in 0.5s ease both;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          width: 500px;
+          height: 500px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-65%, -65%);
+          border-radius: 50%;
+          background: radial-gradient(
+            circle,
+            rgba(160, 100, 220, 0.18) 0%,
+            transparent 70%
+          );
+          filter: blur(90px);
+          pointer-events: none;
+        "
+      ></div>
+      <div
+        style="
+          position: relative;
+          width: 100%;
+          max-width: 680px;
+          max-height: 88vh;
+          display: flex;
+          flex-direction: column;
+          border-radius: 28px;
+          overflow: hidden;
+          background: linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.045) 0%,
+            rgba(255, 255, 255, 0.015) 40%,
+            rgba(160, 100, 220, 0.018) 100%
+          );
+          backdrop-filter: blur(40px) saturate(1.8) brightness(1.05);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          box-shadow:
+            0 2px 0 0 rgba(255, 255, 255, 0.06) inset,
+            0 40px 80px rgba(0, 0, 0, 0.6),
+            0 0 80px rgba(160, 100, 220, 0.08);
+          animation: vos-modal-rise 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+        "
+      >
+        <!-- Top shimmer -->
+        <div
+          style="
+            position: absolute;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 1px;
+            z-index: 2;
+            background: linear-gradient(
+              90deg,
+              transparent 0%,
+              rgba(160, 100, 220, 0.5) 35%,
+              rgba(255, 255, 255, 0.65) 50%,
+              rgba(160, 100, 220, 0.5) 65%,
+              transparent 100%
+            );
+          "
+        ></div>
+        <!-- Header -->
+        <div
+          style="
+            position: relative;
+            z-index: 1;
+            padding: 2rem 2.25rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: linear-gradient(
+              180deg,
+              rgba(160, 100, 220, 0.04) 0%,
+              transparent 100%
+            );
+            flex-shrink: 0;
+          "
+        >
+          <p
+            style="
+              font-family: &quot;Inter&quot;, sans-serif;
+              font-size: 10px;
+              font-weight: 600;
+              letter-spacing: 0.22em;
+              text-transform: uppercase;
+              color: rgba(160, 100, 220, 0.75);
+              margin-bottom: 0.625rem;
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+            "
+          >
+            <span
+              style="
+                display: inline-block;
+                width: 16px;
+                height: 1px;
+                background: rgba(160, 100, 220, 0.5);
+              "
+            ></span>
+            Advocate Jay Patel
+          </p>
+          <h2
+            style="
+              font-family: &quot;Newsreader&quot;, serif;
+              font-size: 30px;
+              font-weight: 400;
+              letter-spacing: -0.02em;
+              line-height: 1.2;
+              color: rgba(226, 226, 226, 0.97);
+              margin: 0;
+            "
+          >
+            Legal Notice
+          </h2>
+          <p
+            style="
+              font-family: &quot;Inter&quot;, sans-serif;
+              font-size: 13px;
+              color: rgba(209, 197, 180, 0.38);
+              letter-spacing: 0.01em;
+              margin-top: 0.35rem;
+            "
+          >
+            Terms governing the use of this website
+          </p>
+          <button
+            id="legal-close-btn"
+            style="
+              position: absolute;
+              top: 1.75rem;
+              right: 1.75rem;
+              width: 34px;
+              height: 34px;
+              border-radius: 50%;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              background: rgba(255, 255, 255, 0.03);
+              color: rgba(226, 226, 226, 0.4);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              transition: all 0.3s ease;
+            "
+          >
+            <span class="material-symbols-outlined" style="font-size: 16px"
+              >close</span
+            >
+          </button>
+        </div>
+        <!-- Body -->
+        <div
+          style="
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.75rem 2.25rem;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(160, 100, 220, 0.2) transparent;
+          "
+        >
+          <div
+            style="
+              position: relative;
+              padding: 1rem 1.25rem;
+              margin-bottom: 1.5rem;
+              border-radius: 12px;
+              background: rgba(160, 100, 220, 0.05);
+              border: 1px solid rgba(160, 100, 220, 0.2);
+            "
+          >
+            <p
+              style="
+                font-family: &quot;Inter&quot;, sans-serif;
+                font-size: 13px;
+                font-weight: 500;
+                color: rgba(160, 100, 220, 0.9);
+                line-height: 1.65;
+              "
+            >
+              This Legal Notice governs your use of this website. By accessing
+              this website, you acknowledge and accept the terms stated herein.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div
+              class="vos-dot"
+              style="
+                background: rgba(160, 100, 220, 0.6);
+                box-shadow: 0 0 6px rgba(160, 100, 220, 0.35);
+              "
+            ></div>
+            <p class="vos-item-text">
+              This website is the property of Advocate Jay Patel, practising
+              advocate enrolled with the Bar Council of Gujarat. All content on
+              this website is protected under applicable Indian intellectual
+              property laws.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div
+              class="vos-dot"
+              style="
+                background: rgba(160, 100, 220, 0.6);
+                box-shadow: 0 0 6px rgba(160, 100, 220, 0.35);
+              "
+            ></div>
+            <p class="vos-item-text">
+              The content on this website is provided for general informational
+              purposes only and does not constitute legal advice. It should not
+              be relied upon as a substitute for consultation with a qualified
+              legal practitioner on your specific matter.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div
+              class="vos-dot"
+              style="
+                background: rgba(160, 100, 220, 0.6);
+                box-shadow: 0 0 6px rgba(160, 100, 220, 0.35);
+              "
+            ></div>
+            <p class="vos-item-text">
+              Advocate Jay Patel makes no representations or warranties, express
+              or implied, regarding the accuracy, completeness, or suitability
+              of any information contained on this website for any particular
+              purpose.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div
+              class="vos-dot"
+              style="
+                background: rgba(160, 100, 220, 0.6);
+                box-shadow: 0 0 6px rgba(160, 100, 220, 0.35);
+              "
+            ></div>
+            <p class="vos-item-text">
+              Unauthorised reproduction, distribution, or use of any content
+              from this website without prior written permission is strictly
+              prohibited and may attract legal consequences under applicable
+              law.
+            </p>
+          </div>
+          <div class="vos-item">
+            <div
+              class="vos-dot"
+              style="
+                background: rgba(160, 100, 220, 0.6);
+                box-shadow: 0 0 6px rgba(160, 100, 220, 0.35);
+              "
+            ></div>
+            <p class="vos-item-text">
+              This website and its contents are subject to the laws of India.
+              Any disputes arising from the use of this website shall be subject
+              to the exclusive jurisdiction of the courts at Ahmedabad, Gujarat.
+            </p>
+          </div>
+          <p class="vos-footnote">
+            For legal queries or concerns regarding this notice, please contact
+            jay1802@gmail.com or call +91 99987 14891.
+          </p>
+        </div>
+        <!-- Footer -->
+        <div
+          style="
+            position: relative;
+            z-index: 1;
+            padding: 1.375rem 2.25rem 1.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
+          "
+        >
+          <button
+            onclick="
+              document.getElementById('legal-overlay').style.display = 'none';
+              document.body.style.overflow = '';
+            "
+            style="
+              width: 100%;
+              padding: 0.875rem 2rem;
+              border-radius: 50px;
+              border: 1px solid rgba(160, 100, 220, 0.4);
+              background: rgba(160, 100, 220, 0.08);
+              color: rgba(190, 140, 255, 0.95);
+              font-family: &quot;Inter&quot;, sans-serif;
+              font-size: 12px;
+              font-weight: 600;
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+              cursor: pointer;
+              transition: all 0.3s ease;
+            "
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
