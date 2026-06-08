@@ -8096,8 +8096,62 @@
         var overlay = document.getElementById("vos-overlay");
         var checkbox = document.getElementById("vos-checkbox");
         var btn = document.getElementById("vos-agree");
-        var footerBtn = document.getElementById("footer-disclaimer-btn");
         if (!overlay) return;
+
+        function showOverlay() {
+          checkbox.checked = false;
+          btn.classList.remove("active");
+          btn.setAttribute("disabled", "true");
+          btn.setAttribute("aria-disabled", "true");
+          overlay.classList.remove("vos-dismiss");
+          overlay.style.display = "";
+          document.body.style.overflow = "hidden";
+        }
+
+        if (!sessionStorage.getItem(STORAGE_KEY)) {
+          showOverlay();
+        }
+
+        checkbox.addEventListener("change", function () {
+          if (this.checked) {
+            btn.classList.add("active");
+            btn.removeAttribute("disabled");
+            btn.removeAttribute("aria-disabled");
+          } else {
+            btn.classList.remove("active");
+            btn.setAttribute("disabled", "true");
+            btn.setAttribute("aria-disabled", "true");
+          }
+        });
+
+        btn.addEventListener("click", function () {
+          if (!checkbox.checked) return;
+          overlay.classList.add("vos-dismiss");
+          setTimeout(function () {
+            overlay.style.display = "none";
+            document.body.style.overflow = "";
+            sessionStorage.setItem(STORAGE_KEY, "true");
+          }, 520);
+        });
+
+        // Footer links — use event delegation so they work even if elements load late
+        document.addEventListener("click", function (e) {
+          if (e.target && e.target.id === "footer-disclaimer-btn") {
+            e.preventDefault();
+            showOverlay();
+          }
+          if (e.target && e.target.id === "footer-privacy-btn") {
+            e.preventDefault();
+            document.getElementById("privacy-overlay").style.display = "flex";
+            document.body.style.overflow = "hidden";
+          }
+          if (e.target && e.target.id === "footer-legal-btn") {
+            e.preventDefault();
+            document.getElementById("legal-overlay").style.display = "flex";
+            document.body.style.overflow = "hidden";
+          }
+        });
+      })();
 
         function showOverlay() {
           // Reset checkbox state
@@ -8113,60 +8167,6 @@
         if (!sessionStorage.getItem(STORAGE_KEY)) {
           showOverlay();
         }
-
-        <!-- Footer disclaimer link reopens the modal -->
-        if (footerBtn) {
-          footerBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-            showOverlay();
-          });
-        }
-
-        // Privacy Policy modal
-        document
-          .getElementById("footer-privacy-btn")
-          .addEventListener("click", function (e) {
-            e.preventDefault();
-            document.getElementById("privacy-overlay").style.display = "flex";
-            document.body.style.overflow = "hidden";
-          });
-        document
-          .getElementById("privacy-close-btn")
-          .addEventListener("click", function () {
-            document.getElementById("privacy-overlay").style.display = "none";
-            document.body.style.overflow = "";
-          });
-        document
-          .getElementById("privacy-overlay")
-          .addEventListener("click", function (e) {
-            if (e.target === this) {
-              this.style.display = "none";
-              document.body.style.overflow = "";
-            }
-          });
-
-        // Legal Notice modal
-        document
-          .getElementById("footer-legal-btn")
-          .addEventListener("click", function (e) {
-            e.preventDefault();
-            document.getElementById("legal-overlay").style.display = "flex";
-            document.body.style.overflow = "hidden";
-          });
-        document
-          .getElementById("legal-close-btn")
-          .addEventListener("click", function () {
-            document.getElementById("legal-overlay").style.display = "none";
-            document.body.style.overflow = "";
-          });
-        document
-          .getElementById("legal-overlay")
-          .addEventListener("click", function (e) {
-            if (e.target === this) {
-              this.style.display = "none";
-              document.body.style.overflow = "";
-            }
-          });
 
         checkbox.addEventListener("change", function () {
           if (this.checked) {
