@@ -1308,7 +1308,7 @@
         position: fixed;
         inset: 0;
         z-index: 9999;
-        display: none;
+        display: flex;
         align-items: center;
         justify-content: center;
         padding: 1.5rem;
@@ -8104,7 +8104,7 @@
           btn.disabled = true;
           btn.setAttribute("aria-disabled", "true");
           overlay.classList.remove("vos-dismiss");
-          overlay.style.display = "";
+          overlay.style.display = "flex";
           document.body.style.overflow = "hidden";
         }
 
@@ -8131,8 +8131,13 @@
             overlay.style.display = "none";
             document.body.style.overflow = "";
             sessionStorage.setItem(STORAGE_KEY, "true");
+            initReveal();
           }, 520);
         });
+
+        if (sessionStorage.getItem(STORAGE_KEY)) {
+          initReveal();
+        }
 
         document.addEventListener("click", function (e) {
           if (!e.target) return;
@@ -8174,105 +8179,97 @@
       });
     </script>
     <script>
-      // Scroll-reveal observer
-      const revealEls = document.querySelectorAll(".reveal, .reveal-stagger");
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              io.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.12, rootMargin: "0px 0px -80px 0px" },
-      );
-      revealEls.forEach((el) => io.observe(el));
-
-      // Card mouse-tracking spotlight
-      document.querySelectorAll(".premium-card").forEach((card) => {
-        card.addEventListener("mousemove", (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = ((e.clientX - rect.left) / rect.width) * 100;
-          const y = ((e.clientY - rect.top) / rect.height) * 100;
-          card.style.setProperty("--mouse-x", `${x}%`);
-          card.style.setProperty("--mouse-y", `${y}%`);
-        });
-      });
-
-      // Counter animation
-      function runCounter(el) {
-        if (el.dataset.counted) return;
-        el.dataset.counted = "true";
-        var target = parseInt(el.dataset.target);
-        var duration = 1800;
-        var start = performance.now();
-        function step(now) {
-          var progress = Math.min((now - start) / duration, 1);
-          var eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.round(eased * target) + "+";
-          if (progress < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      }
-
-      function startHeroCounters() {
-        document.querySelectorAll(".counter-animate").forEach(function (el) {
-          runCounter(el);
-        });
-      }
-
-      function observeAuthorityCounters() {
-        var counterDone = new Set();
-        var counterObserver = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting && !counterDone.has(entry.target)) {
-                counterDone.add(entry.target);
-                runCounter(entry.target);
-                counterObserver.unobserve(entry.target);
+      function initReveal() {
+        // Scroll-reveal observer
+        const revealEls = document.querySelectorAll(".reveal, .reveal-stagger");
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                io.unobserve(entry.target);
               }
             });
           },
-          { threshold: 0.3, rootMargin: "0px 0px -50px 0px" },
+          { threshold: 0.12, rootMargin: "0px 0px -80px 0px" },
         );
-        document.querySelectorAll(".authority-counter").forEach(function (el) {
-          delete el.dataset.counted;
-          el.textContent = "0+";
-          counterDone.delete(el);
-          counterObserver.observe(el);
-        });
-      }
+        revealEls.forEach((el) => io.observe(el));
 
-      // Run counters after disclaimer is agreed
-      var vosAgreeBtn = document.getElementById("vos-agree");
-      if (vosAgreeBtn) {
-        vosAgreeBtn.addEventListener("click", function () {
-          setTimeout(startHeroCounters, 600);
-          setTimeout(observeAuthorityCounters, 700);
+        document.querySelectorAll(".premium-card").forEach((card) => {
+          card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            card.style.setProperty("--mouse-x", `${x}%`);
+            card.style.setProperty("--mouse-y", `${y}%`);
+          });
         });
-      } else {
+
+        function runCounter(el) {
+          if (el.dataset.counted) return;
+          el.dataset.counted = "true";
+          var target = parseInt(el.dataset.target);
+          var duration = 1800;
+          var start = performance.now();
+          function step(now) {
+            var progress = Math.min((now - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(eased * target) + "+";
+            if (progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+
+        function startHeroCounters() {
+          document.querySelectorAll(".counter-animate").forEach(function (el) {
+            runCounter(el);
+          });
+        }
+
+        function observeAuthorityCounters() {
+          var counterDone = new Set();
+          var counterObserver = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting && !counterDone.has(entry.target)) {
+                  counterDone.add(entry.target);
+                  runCounter(entry.target);
+                  counterObserver.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.3, rootMargin: "0px 0px -50px 0px" },
+          );
+          document
+            .querySelectorAll(".authority-counter")
+            .forEach(function (el) {
+              delete el.dataset.counted;
+              el.textContent = "0+";
+              counterDone.delete(el);
+              counterObserver.observe(el);
+            });
+        }
+
         startHeroCounters();
         observeAuthorityCounters();
-      }
 
-      // Subtle parallax on aurora orbs based on scroll
-      const orbs = document.querySelectorAll(".aurora-orb");
-      let lastScroll = 0;
-      window.addEventListener(
-        "scroll",
-        () => {
-          const scroll = window.scrollY;
-          if (Math.abs(scroll - lastScroll) > 5) {
-            orbs.forEach((orb, i) => {
-              const speed = (i + 1) * 0.05;
-              orb.style.transform = `translateY(${scroll * speed * -0.3}px)`;
-            });
-            lastScroll = scroll;
-          }
-        },
-        { passive: true },
-      );
+        const orbs = document.querySelectorAll(".aurora-orb");
+        let lastScroll = 0;
+        window.addEventListener(
+          "scroll",
+          () => {
+            const scroll = window.scrollY;
+            if (Math.abs(scroll - lastScroll) > 5) {
+              orbs.forEach((orb, i) => {
+                const speed = (i + 1) * 0.05;
+                orb.style.transform = `translateY(${scroll * speed * -0.3}px)`;
+              });
+              lastScroll = scroll;
+            }
+          },
+          { passive: true },
+        );
+      }
     </script>
     <script>
       var SHEET_URL =
