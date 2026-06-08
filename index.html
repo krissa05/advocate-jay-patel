@@ -1909,15 +1909,17 @@
           padding: 0 !important;
         }
         .hero-rise-4 a {
+          white-space: nowrap !important;
           width: auto !important;
           justify-content: center !important;
           text-align: center !important;
-          padding: 1rem 1.5rem !important;
-          font-size: 12px !important;
+          padding: 1rem 1.75rem !important;
+          font-size: 11px !important;
           display: inline-flex !important;
           align-items: center !important;
           gap: 0.5rem !important;
           box-sizing: border-box !important;
+          letter-spacing: 0.08em !important;
         }
 
         /* Authority strip */
@@ -2613,8 +2615,14 @@
          ============================================ -->
     <aside class="fixed right-8 bottom-8 z-50 flex flex-col items-end gap-4">
       <a
-        class="rounded-full transition-all duration-500 hover:scale-110 hover:rotate-6"
         style="
+          width: 56px;
+          height: 56px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          border-radius: 50%;
           background: linear-gradient(
             135deg,
             rgba(212, 175, 55, 0.18) 0%,
@@ -2628,6 +2636,7 @@
             0 8px 32px rgba(0, 0, 0, 0.4),
             inset 0 1px 0 rgba(255, 220, 100, 0.12);
         "
+        class="transition-all duration-500 hover:scale-110 hover:rotate-6"
         href="https://wa.me/919998714891"
         target="_blank"
         rel="noopener"
