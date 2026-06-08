@@ -858,6 +858,27 @@
           0 0 60px rgba(212, 175, 55, 0.2);
         transform: translateY(-3px);
       }
+      /* CALL NOW resting glow — desktop + mobile */
+      .hero-rise-4 a:first-child {
+        box-shadow:
+          0 0 22px rgba(212, 175, 55, 0.45),
+          0 0 44px rgba(212, 175, 55, 0.22);
+        animation: callGlow 2.8s ease-in-out infinite;
+      }
+
+      @keyframes callGlow {
+        0%,
+        100% {
+          box-shadow:
+            0 0 18px rgba(212, 175, 55, 0.35),
+            0 0 36px rgba(212, 175, 55, 0.18);
+        }
+        50% {
+          box-shadow:
+            0 0 30px rgba(212, 175, 55, 0.6),
+            0 0 60px rgba(212, 175, 55, 0.3);
+        }
+      }
 
       .btn-ghost {
         position: relative;
@@ -2332,15 +2353,6 @@
             </a>
             <a
               class="relative font-label-caps text-label-caps text-on-surface/60 hover:text-white transition-all uppercase tracking-[0.2em] group"
-              href="#testimonials"
-            >
-              Results
-              <span
-                class="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-primary to-purple-400 transition-all duration-300 group-hover:w-full"
-              ></span>
-            </a>
-            <a
-              class="relative font-label-caps text-label-caps text-on-surface/60 hover:text-white transition-all uppercase tracking-[0.2em] group"
               href="#why-us"
             >
               Why Us
@@ -2435,6 +2447,14 @@
         ></div>
 
         <div style="padding: 1rem 0">
+          <a href="#about" class="mobile-nav-link" onclick="closeMobileMenu()">
+            <span
+              class="material-symbols-outlined"
+              style="font-size: 18px; color: rgba(212, 175, 55, 0.6)"
+              >person</span
+            >
+            About
+          </a>
           <a
             href="#expertise"
             class="mobile-nav-link"
@@ -2445,15 +2465,7 @@
               style="font-size: 18px; color: rgba(212, 175, 55, 0.6)"
               >gavel</span
             >
-            Practice
-          </a>
-          <a href="#about" class="mobile-nav-link" onclick="closeMobileMenu()">
-            <span
-              class="material-symbols-outlined"
-              style="font-size: 18px; color: rgba(212, 175, 55, 0.6)"
-              >person</span
-            >
-            About
+            Practices
           </a>
           <a
             href="#experience"
@@ -2466,18 +2478,6 @@
               >workspace_premium</span
             >
             Experience
-          </a>
-          <a
-            href="#testimonials"
-            class="mobile-nav-link"
-            onclick="closeMobileMenu()"
-          >
-            <span
-              class="material-symbols-outlined"
-              style="font-size: 18px; color: rgba(212, 175, 55, 0.6)"
-              >star</span
-            >
-            Results
           </a>
           <a href="#why-us" class="mobile-nav-link" onclick="closeMobileMenu()">
             <span
@@ -5602,321 +5602,6 @@
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- TESTIMONIALS -->
-      <section class="testi-section" id="testimonials">
-        <div class="relative z-10">
-          <span class="testi-eyebrow">What Clients Say</span>
-          <h2 class="testi-heading">
-            <span class="gradient-text-mixed italic">Client Testimonials</span>
-          </h2>
-          <p class="testi-subhead">
-            We value the trust our clients place in us. Here's what they have to
-            say.
-          </p>
-
-          <!-- Slider viewport -->
-          <div class="testi-slider-viewport">
-            <div class="testi-track" id="testi-track">
-              <!-- ─── Desktop slide 1 / Mobile slide 1 ─── -->
-              <div class="testi-slide">
-                <div class="testi-card">
-                  <p class="testi-text">
-                    Advocate Jay Patel handled my sessions court matter with
-                    exceptional precision. His preparation and courtroom
-                    presence made all the difference. Highly recommended.
-                  </p>
-                  <div class="testi-author-block">
-                    <span class="testi-author-name">Rajesh M.</span>
-                    <span class="testi-author-role"
-                      >Criminal Matter — Ahmedabad</span
-                    >
-                  </div>
-                  <div class="testi-rating-num">5.0</div>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                  </div>
-                  <span class="testi-pill">
-                    <span class="testi-pill-hash">#</span>
-                    <span
-                      >Client<span class="testi-pill-bold"
-                        >Testimonial</span
-                      ></span
-                    >
-                  </span>
-                </div>
-
-                <div class="testi-card">
-                  <p class="testi-text">
-                    Our cheque return case was resolved swiftly. Jay sir's
-                    understanding of Section 138 proceedings is unmatched.
-                    Professional, direct, and results-oriented.
-                  </p>
-                  <div class="testi-author-block">
-                    <span class="testi-author-name">Priya S.</span>
-                    <span class="testi-author-role"
-                      >Cheque Return — Gandhinagar</span
-                    >
-                  </div>
-                  <div class="testi-rating-num">5.0</div>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                  </div>
-                  <span class="testi-pill">
-                    <span class="testi-pill-hash">#</span>
-                    <span
-                      >Client<span class="testi-pill-bold"
-                        >Testimonial</span
-                      ></span
-                    >
-                  </span>
-                </div>
-
-                <div class="testi-card">
-                  <p class="testi-text">
-                    During a deeply difficult family dispute, Jay Patel provided
-                    not just expert legal counsel but also calm, clear guidance
-                    at every step. A truly exceptional advocate.
-                  </p>
-                  <div class="testi-author-block">
-                    <span class="testi-author-name">Amit D.</span>
-                    <span class="testi-author-role"
-                      >Family Matter — Ahmedabad</span
-                    >
-                  </div>
-                  <div class="testi-rating-num">5.0</div>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                  </div>
-                  <span class="testi-pill">
-                    <span class="testi-pill-hash">#</span>
-                    <span
-                      >Client<span class="testi-pill-bold"
-                        >Testimonial</span
-                      ></span
-                    >
-                  </span>
-                </div>
-              </div>
-
-              <!-- ─── Desktop slide 2 / Mobile slide 4 ─── -->
-              <div class="testi-slide">
-                <div class="testi-card">
-                  <p class="testi-text">
-                    Jay sir handled my anticipatory bail matter with absolute
-                    urgency and professionalism. He was reachable at all hours
-                    and secured the order before any arrest could happen.
-                  </p>
-                  <div class="testi-author-block">
-                    <span class="testi-author-name">Nikhil R.</span>
-                    <span class="testi-author-role"
-                      >Bail Matter — Ahmedabad</span
-                    >
-                  </div>
-                  <div class="testi-rating-num">5.0</div>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                  </div>
-                  <span class="testi-pill">
-                    <span class="testi-pill-hash">#</span>
-                    <span
-                      >Client<span class="testi-pill-bold"
-                        >Testimonial</span
-                      ></span
-                    >
-                  </span>
-                </div>
-
-                <div class="testi-card">
-                  <p class="testi-text">
-                    Our land dispute had been going on for years. Advocate Patel
-                    took charge, built a strong case, and we got a favourable
-                    decree within months. Outstanding legal mind.
-                  </p>
-                  <div class="testi-author-block">
-                    <span class="testi-author-name">Suresh K.</span>
-                    <span class="testi-author-role"
-                      >Land Dispute — Gandhinagar</span
-                    >
-                  </div>
-                  <div class="testi-rating-num">5.0</div>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                  </div>
-                  <span class="testi-pill">
-                    <span class="testi-pill-hash">#</span>
-                    <span
-                      >Client<span class="testi-pill-bold"
-                        >Testimonial</span
-                      ></span
-                    >
-                  </span>
-                </div>
-
-                <div class="testi-card">
-                  <p class="testi-text">
-                    The divorce proceedings were handled with sensitivity and
-                    sharp legal strategy. Jay Patel ensured our interests were
-                    fully protected at every stage of the case.
-                  </p>
-                  <div class="testi-author-block">
-                    <span class="testi-author-name">Meera V.</span>
-                    <span class="testi-author-role"
-                      >Divorce Matter — Ahmedabad</span
-                    >
-                  </div>
-                  <div class="testi-rating-num">5.0</div>
-                  <div class="testi-stars">
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                    <span class="testi-star">★</span>
-                  </div>
-                  <span class="testi-pill">
-                    <span class="testi-pill-hash">#</span>
-                    <span
-                      >Client<span class="testi-pill-bold"
-                        >Testimonial</span
-                      ></span
-                    >
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Controls -->
-          <div class="testi-controls">
-            <button id="testi-prev" class="testi-arrow" aria-label="Previous">
-              <span class="material-symbols-outlined" style="font-size: 20px"
-                >arrow_back</span
-              >
-            </button>
-            <div class="testi-dots" id="testi-dots"></div>
-            <button id="testi-next" class="testi-arrow" aria-label="Next">
-              <span class="material-symbols-outlined" style="font-size: 20px"
-                >arrow_forward</span
-              >
-            </button>
-          </div>
-        </div>
-
-        <script>
-          (function () {
-            var track = document.getElementById("testi-track");
-            var prevBtn = document.getElementById("testi-prev");
-            var nextBtn = document.getElementById("testi-next");
-            var dotsWrap = document.getElementById("testi-dots");
-            if (!track) return;
-
-            // Collect all individual cards (6 total)
-            var allCards = Array.prototype.slice.call(
-              track.querySelectorAll(".testi-card"),
-            );
-            var desktopSlides = Array.prototype.slice.call(
-              track.querySelectorAll(".testi-slide"),
-            );
-
-            // Save original desktop HTML so we can rebuild on resize
-            var desktopHTML = track.innerHTML;
-
-            // Build mobile slides: 1 card per slide (6 slides total)
-            function buildMobileHTML() {
-              var html = "";
-              allCards.forEach(function (card) {
-                html +=
-                  '<div class="testi-slide" style="grid-template-columns:1fr;">' +
-                  card.outerHTML +
-                  "</div>";
-              });
-              return html;
-            }
-            var mobileHTML = buildMobileHTML();
-
-            var current = 0;
-            var mode = ""; // "desktop" or "mobile"
-
-            function applyLayout() {
-              var isMobile = window.matchMedia("(max-width: 768px)").matches;
-              var newMode = isMobile ? "mobile" : "desktop";
-              if (newMode === mode) return;
-              mode = newMode;
-              track.innerHTML = isMobile ? mobileHTML : desktopHTML;
-              current = 0;
-              buildDots();
-              goTo(0);
-            }
-
-            function getSlideCount() {
-              return track.querySelectorAll(".testi-slide").length;
-            }
-
-            function buildDots() {
-              var count = getSlideCount();
-              dotsWrap.innerHTML = "";
-              for (var i = 0; i < count; i++) {
-                var dot = document.createElement("button");
-                dot.className = "testi-dot" + (i === 0 ? " active" : "");
-                dot.setAttribute("aria-label", "Go to slide " + (i + 1));
-                (function (idx) {
-                  dot.addEventListener("click", function () {
-                    goTo(idx);
-                  });
-                })(i);
-                dotsWrap.appendChild(dot);
-              }
-            }
-
-            function goTo(index) {
-              var count = getSlideCount();
-              current = (index + count) % count;
-              track.style.transform = "translateX(-" + current * 100 + "%)";
-              var dots = dotsWrap.querySelectorAll(".testi-dot");
-              dots.forEach(function (d, i) {
-                d.classList.toggle("active", i === current);
-              });
-            }
-
-            prevBtn.addEventListener("click", function () {
-              goTo(current - 1);
-            });
-            nextBtn.addEventListener("click", function () {
-              goTo(current + 1);
-            });
-
-            // Initial setup
-            applyLayout();
-
-            // Re-layout on resize (debounced)
-            var resizeTimer;
-            window.addEventListener("resize", function () {
-              clearTimeout(resizeTimer);
-              resizeTimer = setTimeout(applyLayout, 150);
-            });
-          })();
-        </script>
       </section>
 
       <!-- Mouse spotlight for WCU cards -->
