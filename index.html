@@ -2291,9 +2291,18 @@
             </a>
             <a
               class="relative font-label-caps text-label-caps text-on-surface/60 hover:text-white transition-all uppercase tracking-[0.2em] group"
-              href="#why-us"
+              href="#testimonials"
             >
               Results
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-primary to-purple-400 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            
+              class="relative font-label-caps text-label-caps text-on-surface/60 hover:text-white transition-all uppercase tracking-[0.2em] group"
+              href="#why-us"
+            >
+              Why Us
               <span
                 class="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-primary to-purple-400 transition-all duration-300 group-hover:w-full"
               ></span>
@@ -2417,13 +2426,21 @@
             >
             Experience
           </a>
+          <a href="#testimonials" class="mobile-nav-link" onclick="closeMobileMenu()">
+            <span
+              class="material-symbols-outlined"
+              style="font-size: 18px; color: rgba(212, 175, 55, 0.6)"
+              >star</span
+            >
+            Results
+          </a>
           <a href="#why-us" class="mobile-nav-link" onclick="closeMobileMenu()">
             <span
               class="material-symbols-outlined"
               style="font-size: 18px; color: rgba(212, 175, 55, 0.6)"
               >verified</span
             >
-            Results
+            Why Us
           </a>
           <a
             href="#contact"
@@ -2819,22 +2836,18 @@
               <span
                 class="material-symbols-outlined text-primary transition-all duration-500 group-hover:scale-110"
                 style="font-size: 20px"
-                >account_balance</span
+                >verified</span
               >
               <div class="flex flex-col leading-tight">
                 <span
-                  class="text-white"
-                  style="
-                    font-size: 13px;
-                    font-weight: 500;
-                    letter-spacing: 0.01em;
-                  "
-                  >Representation</span
+                  class="font-headline-md gradient-text-gold"
+                  style="font-size: 18px; font-weight: 500"
+                  >98%</span
                 >
                 <span
                   class="font-label-caps text-on-surface/55 uppercase"
                   style="font-size: 9px; letter-spacing: 0.12em"
-                  >Across Gujarat</span
+                  >Success Rate</span
                 >
               </div>
             </div>
@@ -2988,24 +3001,13 @@
 
             <div class="authority-vdivider"></div>
 
-            <!-- Stat 4: Client-Centric Approach -->
+            <!-- Stat 4: Success Rate -->
             <div class="authority-stat-item" style="flex: 1">
               <span class="material-symbols-outlined authority-stat-icon"
-                >person</span
+                >verified</span
               >
-              <div
-                class="authority-stat-title"
-                style="
-                  font-size: 15px;
-                  font-weight: 600;
-                  color: rgba(226, 226, 226, 0.95);
-                "
-              >
-                Client-Centric<br />Approach
-              </div>
-              <div class="authority-stat-sub">
-                Strategic, Transparent &amp;<br />Result Oriented
-              </div>
+              <div class="authority-stat-num">98%</div>
+              <div class="authority-stat-title">Success<br />Rate</div>
             </div>
           </div>
         </div>
@@ -5388,13 +5390,21 @@
           <div class="wcu-orb-3"></div>
         </div>
         <div class="relative z-10">
-          <div style="text-align: center">
+          <div style="text-align: center; margin-bottom: 3.5rem;">
             <p class="wcu-eyebrow">
               <span class="wcu-eyebrow-bar"></span>
               <span class="gradient-text-mixed italic"
-                >Why Clients Choose Us</span
+                >Why Clients Trust Us</span
               >
               <span class="wcu-eyebrow-bar r"></span>
+            </p>
+            <h2 style="font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 56px); font-weight: 400; letter-spacing: -0.02em; color: rgba(232, 232, 232, 0.97); margin: 0.5rem 0 1rem;">
+              Excellence You Can
+              <span class="gradient-text-gold italic">Rely On</span>
+            </h2>
+            <p style="font-family: 'Inter', sans-serif; font-size: 17px; color: rgba(226, 226, 226, 0.4); max-width: 520px; margin: 0 auto; line-height: 1.7; letter-spacing: 0.01em;">
+              15+ years of courtroom experience, 200+ matters resolved, and a
+              commitment to your outcome — not just your case.
             </p>
           </div>
           <div class="wcu-grid reveal-stagger">
@@ -5424,8 +5434,9 @@
                 <h3 class="wcu-card-title">Proven Results</h3>
                 <div class="wcu-card-rule"></div>
                 <p class="wcu-card-desc">
-                  200+ matters with successful judgement and outcomes across
-                  trial, appellate, and tribunal forums.
+                  200+ matters solved with a 98% success rate across trial,
+                  appellate, and tribunal forums — delivering consistent,
+                  result-oriented outcomes for every client.
                 </p>
               </div>
             </div>
@@ -5434,13 +5445,14 @@
             <div class="wcu-card" tabindex="0">
               <div class="wcu-card-inner">
                 <div class="wcu-icon-box">
-                  <span class="material-symbols-outlined">groups</span>
+                  <span class="material-symbols-outlined">target</span>
                 </div>
-                <h3 class="wcu-card-title">Personalized Attention</h3>
+                <h3 class="wcu-card-title">Result Oriented Approach</h3>
                 <div class="wcu-card-rule"></div>
                 <p class="wcu-card-desc">
-                  Every case is handled with personal care and strategy. No
-                  junior delegation for critical decisions.
+                  Focused on practical legal solutions, strong case preparation,
+                  and strategic representation — ensuring every matter is fought
+                  with full commitment and precision.
                 </p>
               </div>
             </div>
@@ -5451,11 +5463,12 @@
                 <div class="wcu-icon-box">
                   <span class="material-symbols-outlined">verified_user</span>
                 </div>
-                <h3 class="wcu-card-title">Ethical &amp; Transparent</h3>
+                <h3 class="wcu-card-title">Confidential Transparent Handling</h3>
                 <div class="wcu-card-rule"></div>
                 <p class="wcu-card-desc">
-                  Honest advice, clear communication, and reliable
-                  representation with absolute client confidentiality.
+                  Every matter is handled with complete confidentiality, honest
+                  guidance, and professional transparency — so clients always
+                  know exactly where they stand.
                 </p>
               </div>
             </div>
@@ -5503,7 +5516,7 @@
                   <span class="testi-pill">
                     <span class="testi-pill-hash">#</span>
                     <span
-                      >Client<span class="testi-pill-bold">Review</span></span
+                      >Client<span class="testi-pill-bold">Testimonial</span></span
                     >
                   </span>
                 </div>
@@ -5531,7 +5544,7 @@
                   <span class="testi-pill">
                     <span class="testi-pill-hash">#</span>
                     <span
-                      >Client<span class="testi-pill-bold">Review</span></span
+                      >Client<span class="testi-pill-bold">Testimonial</span></span
                     >
                   </span>
                 </div>
@@ -5559,7 +5572,7 @@
                   <span class="testi-pill">
                     <span class="testi-pill-hash">#</span>
                     <span
-                      >Client<span class="testi-pill-bold">Review</span></span
+                      >Client<span class="testi-pill-bold">Testimonial</span></span
                     >
                   </span>
                 </div>
@@ -5590,7 +5603,7 @@
                   <span class="testi-pill">
                     <span class="testi-pill-hash">#</span>
                     <span
-                      >Client<span class="testi-pill-bold">Review</span></span
+                      >Client<span class="testi-pill-bold">Testimonial</span></span
                     >
                   </span>
                 </div>
@@ -5618,7 +5631,7 @@
                   <span class="testi-pill">
                     <span class="testi-pill-hash">#</span>
                     <span
-                      >Client<span class="testi-pill-bold">Review</span></span
+                      >Client<span class="testi-pill-bold">Testimonial</span></span
                     >
                   </span>
                 </div>
@@ -5646,7 +5659,7 @@
                   <span class="testi-pill">
                     <span class="testi-pill-hash">#</span>
                     <span
-                      >Client<span class="testi-pill-bold">Review</span></span
+                      >Client<span class="testi-pill-bold">Testimonial</span></span
                     >
                   </span>
                 </div>
@@ -6110,6 +6123,30 @@
                     >Property &amp; Revenue</span
                   >
                 </div>
+                <div
+                  class="flex items-center gap-4 text-on-surface/80 group transition-all duration-500 hover:translate-x-2"
+                >
+                  <span
+                    class="text-error/60 font-bold text-lg group-hover:text-error transition-colors"
+                    >05</span
+                  >
+                  <span
+                    class="font-label-caps text-label-caps uppercase tracking-widest"
+                    >Cheque Return &amp; Recovery</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-4 text-on-surface/80 group transition-all duration-500 hover:translate-x-2"
+                >
+                  <span
+                    class="text-error/60 font-bold text-lg group-hover:text-error transition-colors"
+                    >06</span
+                  >
+                  <span
+                    class="font-label-caps text-label-caps uppercase tracking-widest"
+                    >Legal Documentation &amp; Drafting</span
+                  >
+                </div>
               </div>
             </div>
             <div class="flex justify-center lg:justify-end">
@@ -6194,13 +6231,15 @@
                       Direct Line
                     </p>
                     <a
-                      class="contact-info-text text-2xl text-white hover:text-primary transition-colors block"
+                      class="contact-info-text text-white hover:text-primary transition-colors block font-headline-md"
                       href="tel:+919998714891"
+                      style="font-size: 22px; letter-spacing: -0.01em"
                       >+91 99987 14891</a
                     >
                     <a
-                      class="contact-info-text text-2xl text-white hover:text-primary transition-colors block"
+                      class="contact-info-text text-white hover:text-primary transition-colors block font-headline-md"
                       href="tel:+919913261013"
+                      style="font-size: 22px; letter-spacing: -0.01em"
                       >+91 99132 61013</a
                     >
                   </div>
@@ -6230,8 +6269,9 @@
                       Confidential Email
                     </p>
                     <a
-                      class="contact-email-text text-2xl text-white hover:text-primary transition-colors"
+                      class="contact-email-text text-white hover:text-primary transition-colors font-headline-md"
                       href="mailto:jay1802@gmail.com"
+                      style="font-size: 22px; letter-spacing: -0.01em"
                       >jay1802@gmail.com</a
                     >
                   </div>
@@ -6263,7 +6303,12 @@
                     <div class="flex items-start gap-3 mt-1">
                       <div class="flex-1 min-w-0">
                         <p
-                          class="text-xl text-white leading-snug chambers-address-text"
+                          class="text-white leading-snug chambers-address-text font-headline-md"
+                          style="
+                            font-size: 18px;
+                            letter-spacing: -0.01em;
+                            font-weight: 300;
+                          "
                         >
                           FF-13, Omkar Lotus,<br />Opp. SMVS Swaminarayan
                           Temple,<br />Chandkheda, Ahmedabad – 382424
@@ -6357,16 +6402,18 @@
             <div
               class="contact-form-card reveal premium-card p-8 lg:p-10 rounded-3xl relative shadow-2xl border-white/10 self-start"
             >
-              <form class="space-y-8">
+              <form class="space-y-8" id="inquiry-form">
                 <div class="space-y-2">
                   <label
                     class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-widest text-[10px]"
                     >Full Name</label
                   >
                   <input
+                    id="inq-name"
                     class="input-line w-full px-0 py-3 font-body-lg placeholder:text-on-surface/10 text-white"
                     placeholder="John Doe"
                     type="text"
+                    required
                   />
                 </div>
                 <div class="space-y-2">
@@ -6375,9 +6422,23 @@
                     >Professional Email</label
                   >
                   <input
+                    id="inq-email"
                     class="input-line w-full px-0 py-3 font-body-lg placeholder:text-on-surface/10 text-white"
                     placeholder="email@company.com"
                     type="email"
+                    required
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-widest text-[10px]"
+                    >Phone Number</label
+                  >
+                  <input
+                    id="inq-phone"
+                    class="input-line w-full px-0 py-3 font-body-lg placeholder:text-on-surface/10 text-white"
+                    placeholder="+91 00000 00000"
+                    type="tel"
                   />
                 </div>
                 <div class="space-y-2">
@@ -6386,18 +6447,22 @@
                     >Matter Description</label
                   >
                   <textarea
+                    id="inq-matter"
                     class="input-line w-full px-0 py-3 font-body-lg placeholder:text-on-surface/10 resize-none text-white"
                     placeholder="Brief overview of legal requirements"
                     rows="2"
                   ></textarea>
                 </div>
                 <button
+                  id="inq-submit-btn"
                   class="btn-primary w-full font-label-caps text-label-caps text-on-primary py-6 rounded-full uppercase tracking-[0.2em] flex items-center justify-center gap-3"
-                  type="submit"
+                  type="button"
+                  onclick="submitInquiry()"
                 >
                   Submit Inquiry
                   <span class="material-symbols-outlined">send</span>
                 </button>
+                <p id="inq-status" style="text-align:center; font-family:'Inter',sans-serif; font-size:13px; display:none; margin-top: -1rem;"></p>
               </form>
             </div>
           </div>
@@ -7841,9 +7906,9 @@
             icon: "map",
             title: "Land Disputes",
             summary:
-              "Comprehensive litigation covering title disputes, encroachment, boundary conflicts, and partition suits involving urban and rural properties across civil courts in Gujarat.",
+              "Comprehensive litigation covering title disputes, encroachment, boundary conflicts, illegal possession, and partition suits involving urban and rural properties across civil courts in Gujarat — including all proceedings under The Gujarat Land Grabbing (Prohibition) Act, 2020.",
             approach:
-              "Title deed analysis, survey & measurement applications, injunction suits to prevent dispossession, partition decrees, and execution of court orders — ensuring legal rights over property are established and enforced with finality.",
+              "Title deed analysis, survey & measurement applications, injunction suits to prevent dispossession, partition decrees, and execution of court orders. Where illegal possession or land grabbing is involved, all legal and lawful proceedings under The Gujarat Land Grabbing (Prohibition) Act, 2020 are initiated — including complaints before the Special Court, applications for eviction of unauthorised occupants, and claims for compensation — ensuring legal rights over property are established and enforced with finality.",
           },
           bail: {
             icon: "key",
@@ -7851,7 +7916,7 @@
             summary:
               "Rapid and strategic bail applications for regular bail, anticipatory bail, and High Court bail — minimising pre-trial detention and safeguarding personal liberty.",
             approach:
-              "Anticipatory bail under Section 438 CrPC, regular bail hearings, bail cancellation defence, and High Court bail applications — with merit-based arguments on custodial necessity, flight risk, and the right to liberty under Article 21.",
+              "Anticipatory bail under Section 482 of BNSS, regular bail hearings, bail cancellation defence, and High Court bail applications — with merit-based arguments on custodial necessity, flight risk, and the right to liberty under Article 21.",
           },
           criminal: {
             icon: "gavel",
@@ -8133,5 +8198,51 @@
         { passive: true },
       );
     </script>
+    <script>
+    var SHEET_URL = "https://script.google.com/macros/s/AKfycbwK5xzeutFXKRcNv_Zdl7Og_Mg8ivt8aA84TxmMLZALFCXQwXLLFsKJwwZOPLbWJ-Hv/exec";
+
+  function submitInquiry() {
+    var name   = document.getElementById("inq-name").value.trim();
+    var email  = document.getElementById("inq-email").value.trim();
+    var phone  = document.getElementById("inq-phone").value.trim();
+    var matter = document.getElementById("inq-matter").value.trim();
+    var status = document.getElementById("inq-status");
+    var btn    = document.getElementById("inq-submit-btn");
+
+    if (!name || !email) {
+      status.textContent = "Please fill in your name and email.";
+      status.style.color = "rgba(255,82,82,0.9)";
+      status.style.display = "block";
+      return;
+    }
+
+    btn.textContent = "Sending...";
+    btn.disabled = true;
+
+    fetch(SHEET_URL, {
+      method: "POST",
+      body: JSON.stringify({ name, email, phone, matter }),
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      status.textContent = "✓ Inquiry submitted successfully. We will be in touch shortly.";
+      status.style.color = "rgba(212,175,55,0.9)";
+      status.style.display = "block";
+      document.getElementById("inq-name").value = "";
+      document.getElementById("inq-email").value = "";
+      document.getElementById("inq-phone").value = "";
+      document.getElementById("inq-matter").value = "";
+      btn.textContent = "Submit Inquiry";
+      btn.disabled = false;
+    })
+    .catch(function() {
+      status.textContent = "Something went wrong. Please call or WhatsApp directly.";
+      status.style.color = "rgba(255,82,82,0.9)";
+      status.style.display = "block";
+      btn.textContent = "Submit Inquiry";
+      btn.disabled = false;
+    });
+  }
+</script>
   </body>
 </html>
