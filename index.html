@@ -1923,13 +1923,12 @@
         }
 
         .hero-rise-4 a:first-child {
-          padding: 14px 24px !important;
-          height: auto !important;
-          min-height: 56px !important;
+          padding: 0 24px !important;
+          height: 64px !important;
           border-radius: 20px !important;
-          white-space: normal !important;
-          line-height: 1.2 !important;
-          flex-wrap: wrap !important;
+          white-space: nowrap !important;
+          flex-wrap: nowrap !important;
+          flex-shrink: 0 !important;
         }
 
         .hero-rise-4 a:last-child {
@@ -2937,7 +2936,17 @@
                 style="font-size: 18px; flex-shrink: 0"
                 >call</span
               >
-              Call Now
+              <span
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  line-height: 1.2;
+                "
+              >
+                <span>CALL</span>
+                <span>NOW</span>
+              </span>
             </a>
             <a
               href="https://wa.me/919998714891"
